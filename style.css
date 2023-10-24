@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+body {
+    font: 62.5%/1.5 "Arial", "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
+    background: url(wallpaper.jpg) fixed; /* Das Hintergrundbild ist noch nicht gesetzt */
+    background-size: cover;
+    color: #ffffff;
+  }
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.header {
+    margin-top: 20px;
+}
+
+.gameelements {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.gameelements .gameinfo {
+    text-align: right;
+    width: 78%; /* 80% setzt den Text an den rechten Rand der Game-Elemente, für eine bessere Übersicht verschieben wir auf 78% */
+    font-size: larger;
+}
+
+.gameelements img {
+    width: 60%;
+    border-radius: 30px;
+}
+
+.buttonbar {
+    margin-top: 20px;
+}
+
+.buttonbar-buttons {
+    background-color: #c3c3c3;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 15px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 150px;
+}
+
+.buttonbar-buttons:hover {
+    background-color: #404040;
+    color: white;
+}
