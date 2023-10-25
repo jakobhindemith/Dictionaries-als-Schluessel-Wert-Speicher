@@ -14,6 +14,15 @@ function button2Action() {
 
 function button3Action() {
     alert("Button 3 wurde gedrückt");
+    const levelTippsCollection = [];
+    levelTippsCollection.push("Hallo. <p>Das ist ein Absatz</p><p>Und das ist auch ein Absatz</p>");
+    const levels = {levelNumber: 1, levelName: "Der Levelname", levelSchluessel: "ZZ", levelImage: 1, levelTipps: ""}; // Neues Levelobjekt, die am Ende in ein Array gespeichert werden könnten
+    levels.levelTipps = levelTippsCollection[levels.levelNumber - 1];
+    
+    document.getElementById("schluesselText").innerHTML = levels.levelSchluessel;
+    document.getElementById("levelText").innerHTML = levels.levelNumber + " - " + levels.levelName;
+    document.getElementById("gameimage").src = "Level" + levels.levelImage + ".jpg"; // Wenn Levelimages als "Level1.jpg" ... gespeichert werden, können sie so duch automatisches Hochzählen aufgerufen werden
+    document.getElementById("levelTipps").innerHTML = levels.levelTipps;
 }
 
 
