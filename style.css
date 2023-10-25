@@ -9,6 +9,8 @@ body {
     background: url(wallpaper.jpg) fixed; /* Das Hintergrundbild ist noch nicht gesetzt */
     background-size: cover;
     color: #ffffff;
+    width: 1600px;
+    overflow: hidden;
   }
 
 h1 {
@@ -77,11 +79,11 @@ h2 {
  /* Füge dem unsichtbaren Button-Stil hinzu */
  .invisible-button {
     background-color: transparent; /* Unsichtbare Hintergrundfarbe */
-    width: 100px; /* Breite des Buttons anpassen */
-    height: 100px; /* Höhe des Buttons anpassen */
+    width: 50px; /* Breite des Buttons anpassen */
+    height: 50px; /* Höhe des Buttons anpassen */
     position: absolute; /* Absolute Positionierung */
-    top: 100px; /* Anpassen der Top-Position */
-    left: 200px; /* Anpassen der Left-Position */
+    top: 280px; /* Anpassen der Top-Position */
+    left: 500px; /* Anpassen der Left-Position */
     z-index: 2; /* Stelle sicher, dass der Button über dem Bild liegt */
     cursor: pointer;
 }
