@@ -4,25 +4,48 @@
 * Die Logik für die "Menü"-Buttons kann hier implementiert werden
 */
 
-function button1Action() {
-    alert("Button 1 wurde gedrückt");
+function show() {
+    document.getElementById("gamebutton1").style.border = "5px solid rgba(185, 185, 185, 1)";
+}
+
+function hide() {
+    document.getElementById("gamebutton1").style.border = "5px solid rgba(185, 185, 185, 0)";
 }
 
 function button2Action() {
     alert("Button 2 wurde gedrückt");
+
 }
 
 function button3Action() {
     alert("Button 3 wurde gedrückt");
+
+}
+
+function gameAction() {
     const levelTippsCollection = [];
     levelTippsCollection.push("Hallo. <p>Das ist ein Absatz</p><p>Und das ist auch ein Absatz</p>");
+
     const levels = {levelNumber: 1, levelName: "Der Levelname", levelSchluessel: "ZZ", levelImage: 1, levelTipps: ""}; // Neues Levelobjekt, die am Ende in ein Array gespeichert werden könnten
     levels.levelTipps = levelTippsCollection[levels.levelNumber - 1];
     
+    // Ändern der Texte und Infos und des Bildes
     document.getElementById("schluesselText").innerHTML = levels.levelSchluessel;
     document.getElementById("levelText").innerHTML = levels.levelNumber + " - " + levels.levelName;
     document.getElementById("gameimage").src = "Level" + levels.levelImage + ".jpg"; // Wenn Levelimages als "Level1.jpg" ... gespeichert werden, können sie so duch automatisches Hochzählen aufgerufen werden
     document.getElementById("levelTipps").innerHTML = levels.levelTipps;
+
+    // Ändern des Buttons
+    document.getElementById("gamebutton1").style.top = "420px";
+    document.getElementById("gamebutton1").style.left = "400px";
+    document.getElementById("gamebutton1").style.width = "70px";
+    document.getElementById("gamebutton1").style.height = "70px";
+    document.getElementById("gamebutton1").setAttribute('onclick', 'clickedAction()');
+
+}
+
+function clickedAction() {
+    alert("Lecker Schmecker.");
 }
 
 

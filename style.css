@@ -78,12 +78,13 @@ h2 {
 
  /* Füge dem unsichtbaren Button-Stil hinzu */
  .invisible-button {
-    background-color: black; /* Unsichtbare Hintergrundfarbe */
+    background-color: transparent; /* Unsichtbare Hintergrundfarbe */
     width: 60px; /* Breite des Buttons anpassen */
     height: 60px; /* Höhe des Buttons anpassen */
     position: absolute; /* Absolute Positionierung */
     top: 290px; /* Anpassen der Top-Position */
     left: 530px; /* Anpassen der Left-Position */
     z-index: 2; /* Stelle sicher, dass der Button über dem Bild liegt */
-    cursor: pointer;
+    cursor: pointer;  
+    border-radius: 50px;
 }
