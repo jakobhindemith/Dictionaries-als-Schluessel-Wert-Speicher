@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta contenteditable="false">
     <link rel="stylesheet" href="style.css">
     <script src="game.js"></script>
-    <link rel="icon" href="favicon.png" type="image/png"> <!-- ICON ist noch nicht gewählt, muss noch hinzugefügt werden -->
+    <link rel="icon" href="favicon.png" type="image/png">
     <meta name="description" content="In dieser Webanwendung wird spielerisch die Funktionsweise von HashMaps und Ähnlichem erklärt.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaktives Tutorial</title>
@@ -17,10 +18,14 @@
     <div class="gameelements">
         <div class="game">
             <div class="gameinfo">
-                <span>Aktueller Raum: <span id="levelText">#Level</span> - Gesammelter Schlüssel: <span id="schluesselText">#ABC123</span></span> <!-- Muss noch nach links oder rechts verschoben werden via CSS -->
+                <span>Aktueller Raum: <span id="levelText">#Level</span> - Gesammelter Schlüssel: <span id="schluesselText">#ABC123</span></span>
             </div>
             <br>
             <img src="test.jpg" id="gameimage" alt="Das ist ein Testbild">
+            
+            <!-- Unsichtbarer Button -->
+            <div class="invisible-button" onclick="invisibleButtonAction()"></div>
+
             <div class="buttonbar">
                 <button class="buttonbar-buttons" id="Button 1" onclick="button1Action()">Button 1</button>
                 <button class="buttonbar-buttons" id="Button 2" onclick="button2Action()">Button 2</button>
@@ -31,5 +36,5 @@
             <span id="levelTipps">Hier stehen die Infos zu dem Level</span>
         </div>
     </div>
-   </body>
+</body>
 </html>
