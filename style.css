@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +12,7 @@ body {
     background-size: cover;
     background-blend-mode: darken;
     color: #ffffff;
-    width: 1600px;
+    width: 1920px;
     overflow: hidden;
   }
 
@@ -35,7 +37,8 @@ h2 {
 .gameelements .gameinfo {
     text-align: right;
     width: 78%; /* 80% setzt den Text an den rechten Rand der Game-Elemente, für eine bessere Übersicht verschieben wir auf 78% */
-    font-size: larger;
+    font-size: 16px;
+    font-family: "Pixelify Sans";
 }
 
 .gameelements .game {
@@ -70,6 +73,7 @@ h2 {
     cursor: pointer;
     border-radius: 10px;
     width: 150px;
+    font-family: "Pixelify Sans";
 }
 
 .buttonbar-buttons:hover {
@@ -83,8 +87,8 @@ h2 {
     width: 60px; /* Breite des Buttons anpassen */
     height: 60px; /* Höhe des Buttons anpassen */
     position: absolute; /* Absolute Positionierung */
-    top: 290px; /* Anpassen der Top-Position */
-    left: 530px; /* Anpassen der Left-Position */
+    top: 320px; /* Anpassen der Top-Position */
+    left: 640px; /* Anpassen der Left-Position */
     z-index: 2; /* Stelle sicher, dass der Button über dem Bild liegt */
     cursor: pointer;  
     border-radius: 50px;

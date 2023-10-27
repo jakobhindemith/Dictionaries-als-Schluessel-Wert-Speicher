@@ -36,8 +36,8 @@ function gameAction() {
     document.getElementById("levelTipps").innerHTML = levels.levelTipps;
 
     // Ändern des Buttons
-    document.getElementById("gamebutton1").style.top = "420px";
-    document.getElementById("gamebutton1").style.left = "400px";
+    document.getElementById("gamebutton1").style.top = "480px";
+    document.getElementById("gamebutton1").style.left = "495px";
     document.getElementById("gamebutton1").style.width = "70px";
     document.getElementById("gamebutton1").style.height = "70px";
     document.getElementById("gamebutton1").setAttribute('onclick', 'clickedAction()');
