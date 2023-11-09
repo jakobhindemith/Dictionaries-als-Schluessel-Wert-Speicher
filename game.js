@@ -55,6 +55,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "100px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(2)');
 
+            stopAllAudio();
             playaudio("waves.mp3", 0.2);
             
             break;
