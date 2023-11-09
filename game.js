@@ -12,6 +12,12 @@ function hide() {
     document.getElementById("gamebutton1").style.border = "5px solid rgba(185, 185, 185, 0)";
 }
 
+function playaudio(audiofilename, volume) {
+    const audio = new Audio(audiofilename);
+    audio.volume = 0.2;
+    audio.play();
+}
+
 function button2Action() {
     alert("Button 2 wurde gedrückt");
 
