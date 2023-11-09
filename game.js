@@ -40,7 +40,7 @@ function restartGame() {
 
 function gameAction(viewID) {
 
-switch (viewID) {
+    switch (viewID) {
 
         case 1:
 
