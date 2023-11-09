@@ -5,11 +5,12 @@
 */
 
 function show() {
-    document.getElementById("gamebutton1").style.border = "5px solid rgba(185, 185, 185, 1)";
+    document.getElementById("gamebutton1").style.border = "3px solid rgba(185, 185, 185, 0.7)";
+
 }
 
 function hide() {
-    document.getElementById("gamebutton1").style.border = "5px solid rgba(185, 185, 185, 0)";
+    document.getElementById("gamebutton1").style.border = "3px solid rgba(185, 185, 185, 0)";
 }
 
 function playaudio(audiofilename, volume) {
@@ -42,8 +43,8 @@ function gameAction() {
     document.getElementById("levelTipps").innerHTML = levels.levelTipps;
 
     // Ändern des Buttons
-    document.getElementById("gamebutton1").style.top = "480px";
-    document.getElementById("gamebutton1").style.left = "507px";
+    document.getElementById("gamebutton1").style.top = "435px";
+    document.getElementById("gamebutton1").style.left = "824px";
     document.getElementById("gamebutton1").style.width = "70px";
     document.getElementById("gamebutton1").style.height = "70px";
     document.getElementById("gamebutton1").setAttribute('onclick', 'clickedAction()');
@@ -51,7 +52,7 @@ function gameAction() {
 }
 
 function clickedAction() {
-    alert("Lecker Schmecker.");
+    alert("Hello young travler");
 }
 
 
