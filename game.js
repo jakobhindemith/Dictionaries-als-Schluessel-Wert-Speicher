@@ -31,30 +31,46 @@ function restartGame() {
     }
 }
 
-function gameAction() {
-    const levelTippsCollection = [];
-    levelTippsCollection.push("Hallo. <p>Das ist ein Absatz</p><p>Und das ist auch ein Absatz</p>");
+function gameAction(viewID) {
 
-    const levels = {levelNumber: 1, levelName: "Der Levelname", levelSchluessel: "ZZ", levelImage: 1, levelTipps: ""}; // Neues Levelobjekt, die am Ende in ein Array gespeichert werden könnten
-    levels.levelTipps = levelTippsCollection[levels.levelNumber - 1];
-    
-    // Ändern der Texte und Infos und des Bildes
-    document.getElementById("schluesselText").innerHTML = levels.levelSchluessel;
-    document.getElementById("levelText").innerHTML = levels.levelNumber + " - " + levels.levelName;
-    document.getElementById("gameimage").src = "Level" + levels.levelImage + ".png"; // Wenn Levelimages als "Level1.jpg" ... gespeichert werden, können sie so duch automatisches Hochzählen aufgerufen werden
-    document.getElementById("levelTipps").innerHTML = levels.levelTipps;
+switch (viewID) {
 
-    // Ändern des Buttons
-    document.getElementById("gamebutton1").style.top = "235px";
-    document.getElementById("gamebutton1").style.left = "320px";
-    document.getElementById("gamebutton1").style.width = "100px";
-    document.getElementById("gamebutton1").style.height = "100px";
-    document.getElementById("gamebutton1").setAttribute('onclick', 'clickedAction()');
+        case 1:
+
+            // Ändern der Texte und Infos und des Bildes
+            document.getElementById("schluesselText").innerHTML = "A";
+            document.getElementById("levelText").innerHTML = "Level 1";
+            document.getElementById("gameimage").src = "Level1.png";
+            document.getElementById("levelTipps").innerHTML = "Tipps für Level 1";
+        
+            // Ändern des Buttons
+            document.getElementById("gamebutton1").style.top = "235px";
+            document.getElementById("gamebutton1").style.left = "320px";
+            document.getElementById("gamebutton1").style.width = "100px";
+            document.getElementById("gamebutton1").style.height = "100px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(2)');
+            
+            break;
+
+        case 2:
+            alert("Hello young travler");
+
+            break;
+
+        case 3:
+
+            break;
+
+        case 4: 
+
+            break;
+
+        default:
+            break;
+    }
+
 }
 
-function clickedAction() {
-    alert("Hello young travler");
-}
 
 
 /*
