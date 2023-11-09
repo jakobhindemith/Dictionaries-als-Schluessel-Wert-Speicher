@@ -26,6 +26,7 @@ h2 {
 .gameelements {
     margin-top: 40px;
     text-align: center;
+    width: 1080px;;
     display: flex;
 }
 
@@ -36,7 +37,7 @@ h2 {
 }
 
 .gameelements .game {
-    width: 70%;
+    width: 1080px;
 }
 
 .gameelements .tipps {
@@ -45,7 +46,7 @@ h2 {
 }
 
 .gameelements img {
-    width: 60%;
+    width: 750px;
     border-radius: 30px;
 }
 
