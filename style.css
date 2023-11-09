@@ -32,7 +32,7 @@ h2 {
 
 .gameelements .gameinfo {
     text-align: right;
-    width: 78%; /* 80% setzt den Text an den rechten Rand der Game-Elemente, für eine bessere Übersicht verschieben wir auf 78% */
+    width: 800px; /* 80% setzt den Text an den rechten Rand der Game-Elemente, für eine bessere Übersicht verschieben wir auf 78% */
     font-size: larger;
 }
 
@@ -42,6 +42,7 @@ h2 {
 
 .gameelements .tipps {
     font-size: 16px;
+    width: 250px;
     text-align: left;
 }
 

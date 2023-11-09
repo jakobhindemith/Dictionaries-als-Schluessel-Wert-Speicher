@@ -48,7 +48,6 @@ function gameAction() {
     document.getElementById("gamebutton1").style.width = "70px";
     document.getElementById("gamebutton1").style.height = "70px";
     document.getElementById("gamebutton1").setAttribute('onclick', 'clickedAction()');
-
 }
 
 function clickedAction() {
