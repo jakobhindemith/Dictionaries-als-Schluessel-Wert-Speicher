@@ -49,7 +49,17 @@ switch (viewID) {
             break;
 
         case 2:
-            alert("Hello young travler");
+            document.getElementById("schluesselText").innerHTML = "AB";
+            document.getElementById("levelText").innerHTML = "Das Postoffice";
+            document.getElementById("gameimage").src = "Level_Postoffice.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Postoffice";
+        
+            // Ändern des Buttons
+            document.getElementById("gamebutton1").style.top = "235px";
+            document.getElementById("gamebutton1").style.left = "320px";
+            document.getElementById("gamebutton1").style.width = "100px";
+            document.getElementById("gamebutton1").style.height = "100px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(2)');
 
             break;
 
