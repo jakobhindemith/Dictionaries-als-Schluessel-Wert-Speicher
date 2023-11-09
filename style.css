@@ -6,8 +6,10 @@
 
 body {
     font: 62.5%/1.5 "Arial", "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
-    background: url(wallpaper.jpg) fixed; /* Das Hintergrundbild ist noch nicht gesetzt */
     background-size: cover;
+
+    background: rgba(0, 0, 0, 0.55) url(wallpaper.jpg);
+    background-blend-mode: darken;
     color: #ffffff;
   }
 
