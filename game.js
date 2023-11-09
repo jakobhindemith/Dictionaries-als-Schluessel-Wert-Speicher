@@ -35,9 +35,9 @@ switch (viewID) {
 
             // Ändern der Texte und Infos und des Bildes
             document.getElementById("schluesselText").innerHTML = "A";
-            document.getElementById("levelText").innerHTML = "Level 1";
-            document.getElementById("gameimage").src = "Level1.png";
-            document.getElementById("levelTipps").innerHTML = "Tipps für Level 1";
+            document.getElementById("levelText").innerHTML = "Die DHL Insel";
+            document.getElementById("gameimage").src = "Island_Postoffice.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen auf der Insel der Paketboten";
         
             // Ändern des Buttons
             document.getElementById("gamebutton1").style.top = "235px";
