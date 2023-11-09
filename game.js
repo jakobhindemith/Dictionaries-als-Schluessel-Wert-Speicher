@@ -1,9 +1,5 @@
 // Hier kommt die Spielelogik hin, welche die Elemente in index.html beeinflusst
 
-/*
-* Die Logik für die "Menü"-Buttons kann hier implementiert werden
-*/
-
 function show() {
     document.getElementById("gamebutton1").style.border = "3px solid rgba(185, 185, 185, 0.7)";
 
@@ -70,12 +66,6 @@ switch (viewID) {
     }
 
 }
-
-
-
-/*
-* Für andere Buttons, welche Aktionen innerhalb des Spiels auslösen sollen, kann hier Code stehen
-*/
 
 /*
 * Codeschnipsel, die wir benötigen werden:
