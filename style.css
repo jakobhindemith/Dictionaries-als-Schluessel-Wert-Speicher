@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -8,12 +6,9 @@
 
 body {
     font: 62.5%/1.5 "Arial", "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
-    background: rgba(0, 0, 0, .5) url(wallpaper.jpg) fixed; /* Das Hintergrundbild ist noch nicht gesetzt */
+    background: url(wallpaper.jpg) fixed; /* Das Hintergrundbild ist noch nicht gesetzt */
     background-size: cover;
-    background-blend-mode: darken;
     color: #ffffff;
-    width: 1920px;
-    overflow: hidden;
   }
 
 h1 {
@@ -37,8 +32,7 @@ h2 {
 .gameelements .gameinfo {
     text-align: right;
     width: 78%; /* 80% setzt den Text an den rechten Rand der Game-Elemente, für eine bessere Übersicht verschieben wir auf 78% */
-    font-size: 16px;
-    font-family: "Pixelify Sans";
+    font-size: larger;
 }
 
 .gameelements .game {
@@ -73,7 +67,6 @@ h2 {
     cursor: pointer;
     border-radius: 10px;
     width: 150px;
-    font-family: "Pixelify Sans";
 }
 
 .buttonbar-buttons:hover {
@@ -84,12 +77,11 @@ h2 {
  /* Füge dem unsichtbaren Button-Stil hinzu */
  .invisible-button {
     background-color: transparent; /* Unsichtbare Hintergrundfarbe */
-    width: 60px; /* Breite des Buttons anpassen */
-    height: 60px; /* Höhe des Buttons anpassen */
+    width: 100px; /* Breite des Buttons anpassen */
+    height: 100px; /* Höhe des Buttons anpassen */
     position: absolute; /* Absolute Positionierung */
-    top: 320px; /* Anpassen der Top-Position */
-    left: 640px; /* Anpassen der Left-Position */
+    top: 100px; /* Anpassen der Top-Position */
+    left: 200px; /* Anpassen der Left-Position */
     z-index: 2; /* Stelle sicher, dass der Button über dem Bild liegt */
-    cursor: pointer;  
-    border-radius: 50px;
+    cursor: pointer;
 }

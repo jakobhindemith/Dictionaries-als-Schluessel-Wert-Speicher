@@ -37,7 +37,7 @@ function gameAction() {
 
     // Ändern des Buttons
     document.getElementById("gamebutton1").style.top = "480px";
-    document.getElementById("gamebutton1").style.left = "495px";
+    document.getElementById("gamebutton1").style.left = "507px";
     document.getElementById("gamebutton1").style.width = "70px";
     document.getElementById("gamebutton1").style.height = "70px";
     document.getElementById("gamebutton1").setAttribute('onclick', 'clickedAction()');
