@@ -9,15 +9,25 @@ function hide() {
     document.getElementById("gamebutton1").style.border = "3px solid rgba(185, 185, 185, 0)";
 }
 
+const audioArray = []; // globally accessible array to store audio objects
+
 function playaudio(audiofilename, volume) {
+
     const audio = new Audio(audiofilename);
-    audio.volume = 0.2;
+    audio.volume = volume;
+    audioArray.push(audio); // push the audio object to the array
     audio.play();
 }
 
-function returnToMap() {
-    // zur Karte zurückkehren
+function stopAllAudio() {
+    // Stop all audio from the array
+     audioArray.forEach(audio => {
+        audio.pause();
+    });
+}
 
+function returnToMap() {
+    // Zur Karte zurückkehren
 }
 
 function restartGame() {
@@ -60,6 +70,9 @@ switch (viewID) {
             document.getElementById("gamebutton1").style.width = "100px";
             document.getElementById("gamebutton1").style.height = "100px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(2)');
+
+            stopAllAudio();
+            playaudio("8-bit-arcade.mp3", 0.02);
 
             break;
 
