@@ -83,7 +83,7 @@ h2 {
     height: 100px; /* Höhe des Buttons anpassen */
     position: absolute; /* Absolute Positionierung */
     top: 400px; /* Anpassen der Top-Position */
-    left: 325px; /* Anpassen der Left-Position */
+    left: 98px; /* Anpassen der Left-Position */
     z-index: 2; /* Stelle sicher, dass der Button über dem Bild liegt */
     cursor: pointer;
     border-radius: 50%;

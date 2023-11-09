@@ -45,10 +45,10 @@ function gameAction() {
     document.getElementById("levelTipps").innerHTML = levels.levelTipps;
 
     // Ändern des Buttons
-    document.getElementById("gamebutton1").style.top = "435px";
-    document.getElementById("gamebutton1").style.left = "824px";
-    document.getElementById("gamebutton1").style.width = "70px";
-    document.getElementById("gamebutton1").style.height = "70px";
+    document.getElementById("gamebutton1").style.top = "235px";
+    document.getElementById("gamebutton1").style.left = "320px";
+    document.getElementById("gamebutton1").style.width = "100px";
+    document.getElementById("gamebutton1").style.height = "100px";
     document.getElementById("gamebutton1").setAttribute('onclick', 'clickedAction()');
 }
 
