@@ -1,12 +1,12 @@
 // Hier kommt die Spielelogik hin, welche die Elemente in index.html beeinflusst
 
 function show() {
-    document.getElementById("gamebutton1").style.border = "3px solid rgba(185, 185, 185, 0.7)";
+    document.getElementById("gamebutton1").style.border = "3px solid rgba(255, 255, 255, 0.7)"; // alte Farbe: 185, 185, 185
 
 }
 
 function hide() {
-    document.getElementById("gamebutton1").style.border = "3px solid rgba(185, 185, 185, 0)";
+    document.getElementById("gamebutton1").style.border = "3px solid rgba(255, 255, 255, 0)";
 }
 
 const audioArray = []; // globally accessible array to store audio objects
@@ -28,7 +28,7 @@ function stopAllAudio() {
 }
 
 function returnToMap() {
-    // Zur Karte zurückkehren
+    gameAction(1);
 }
 
 function restartGame() {
@@ -43,7 +43,23 @@ function gameAction(viewID) {
     switch (viewID) {
 
         case 1:
+            document.getElementById("schluesselText").innerHTML = "A";
+            document.getElementById("levelText").innerHTML = "Die Inseln";
+            document.getElementById("gameimage").src = "Island.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen auf der Insel";
+        
+            // Ändern des Buttons
+            document.getElementById("gamebutton1").style.top = "400px";
+            document.getElementById("gamebutton1").style.left = "98px";
+            document.getElementById("gamebutton1").style.width = "100px";
+            document.getElementById("gamebutton1").style.height = "100px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(2)');
 
+            playaudio("waves.mp3", 0.2);
+            
+            break;
+
+        case 2:
             // Ändern der Texte und Infos und des Bildes
             document.getElementById("schluesselText").innerHTML = "A";
             document.getElementById("levelText").innerHTML = "Die DHL Insel";
@@ -55,11 +71,11 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.left = "320px";
             document.getElementById("gamebutton1").style.width = "100px";
             document.getElementById("gamebutton1").style.height = "100px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(2)');
-            
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(3)');
+
             break;
 
-        case 2:
+        case 3:
             document.getElementById("schluesselText").innerHTML = "AB";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
             document.getElementById("gameimage").src = "Level_Postoffice.png";
@@ -70,20 +86,16 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.left = "699px";
             document.getElementById("gamebutton1").style.width = "70px";
             document.getElementById("gamebutton1").style.height = "70px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(3)');
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(4)');
 
             stopAllAudio();
             playaudio("8-bit-arcade.mp3", 0.02);
 
             break;
 
-        case 3:
-
-            alert("Ihr Paket? Ne das haben wir leider auch nicht. Fragen Sie mal Ihren Nachbarn, vielleicht hat der es ja angenommen.");
-
-            break;
-
         case 4: 
+
+        alert("Ihr Paket? Ne das haben wir leider auch nicht. Fragen Sie mal Ihren Nachbarn, vielleicht hat der es ja angenommen.");
 
             break;
 
