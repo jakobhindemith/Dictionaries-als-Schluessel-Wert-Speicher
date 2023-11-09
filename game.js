@@ -15,6 +15,7 @@ function playaudio(audiofilename, volume) {
 
     const audio = new Audio(audiofilename);
     audio.volume = volume;
+    audio.loop = true;
     audioArray.push(audio); // push the audio object to the array
     audio.play();
 }
