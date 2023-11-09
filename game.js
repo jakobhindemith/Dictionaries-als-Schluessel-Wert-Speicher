@@ -32,7 +32,7 @@ function gameAction() {
     // Ändern der Texte und Infos und des Bildes
     document.getElementById("schluesselText").innerHTML = levels.levelSchluessel;
     document.getElementById("levelText").innerHTML = levels.levelNumber + " - " + levels.levelName;
-    document.getElementById("gameimage").src = "Level" + levels.levelImage + ".jpg"; // Wenn Levelimages als "Level1.jpg" ... gespeichert werden, können sie so duch automatisches Hochzählen aufgerufen werden
+    document.getElementById("gameimage").src = "Level" + levels.levelImage + ".png"; // Wenn Levelimages als "Level1.jpg" ... gespeichert werden, können sie so duch automatisches Hochzählen aufgerufen werden
     document.getElementById("levelTipps").innerHTML = levels.levelTipps;
 
     // Ändern des Buttons
