@@ -19,14 +19,16 @@ function playaudio(audiofilename, volume) {
     audio.play();
 }
 
-function button2Action() {
-    alert("Button 2 wurde gedrückt");
+function returnToMap() {
+    // zur Karte zurückkehren
 
 }
 
-function button3Action() {
-    alert("Button 3 wurde gedrückt");
-
+function restartGame() {
+    const confirmed = confirm("Sind Sie sicher, dass Sie das Spiel neu starten wollen? Dadurch geht jeder Fortschritt verloren!");
+    if (confirmed) {
+        location.reload();
+    }
 }
 
 function gameAction() {
