@@ -79,6 +79,8 @@ function gameAction(viewID) {
 
         case 3:
 
+            alert("Ihr Paket? Ne das haben wir leider auch nicht. Fragen Sie mal Ihren Nachbarn, vielleicht hat der es ja angenommen.");
+
             break;
 
         case 4: 
