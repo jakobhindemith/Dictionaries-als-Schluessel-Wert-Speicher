@@ -66,11 +66,11 @@ switch (viewID) {
             document.getElementById("levelTipps").innerHTML = "Willkommen im Postoffice";
         
             // Ändern des Buttons
-            document.getElementById("gamebutton1").style.top = "235px";
-            document.getElementById("gamebutton1").style.left = "320px";
-            document.getElementById("gamebutton1").style.width = "100px";
-            document.getElementById("gamebutton1").style.height = "100px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(2)');
+            document.getElementById("gamebutton1").style.top = "465px";
+            document.getElementById("gamebutton1").style.left = "699px";
+            document.getElementById("gamebutton1").style.width = "70px";
+            document.getElementById("gamebutton1").style.height = "70px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(3)');
 
             stopAllAudio();
             playaudio("8-bit-arcade.mp3", 0.02);
