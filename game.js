@@ -9,7 +9,15 @@ function hide() {
     document.getElementById("gamebutton1").style.border = "3px solid rgba(255, 255, 255, 0)";
 }
 
+function zurueck() {
+    if (historyArray.length > 1) {
+        historyArray.pop();
+        gameAction(historyArray[historyArray.length - 1]);
+    }
+}
+
 const audioArray = []; // globally accessible array to store audio objects
+const historyArray = []; // globally accessible array to store history
 
 function playaudio(audiofilename, volume) {
 
@@ -43,7 +51,7 @@ function gameAction(viewID) {
     switch (viewID) {
 
         case 1:
-            document.getElementById("schluesselText").innerHTML = "A";
+            document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Die Inseln";
             document.getElementById("gameimage").src = "Island.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf der Insel";
@@ -58,11 +66,12 @@ function gameAction(viewID) {
             stopAllAudio();
             playaudio("waves.mp3", 0.2);
             
+            historyArray.push(1);
             break;
 
         case 2:
             // Ändern der Texte und Infos und des Bildes
-            document.getElementById("schluesselText").innerHTML = "A";
+            document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Die DHL Insel";
             document.getElementById("gameimage").src = "Island_Postoffice.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf der Insel der Paketboten";
@@ -74,31 +83,51 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "100px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(3)');
 
+            historyArray.push(2);
+
             break;
 
         case 3:
-            document.getElementById("schluesselText").innerHTML = "AB";
+            document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
             document.getElementById("gameimage").src = "Level_Postoffice.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen im Postoffice";
+        
+            // Ändern des Buttons
+            document.getElementById("gamebutton1").style.top = "390px";
+            document.getElementById("gamebutton1").style.left = "498px";
+            document.getElementById("gamebutton1").style.width = "100px";
+            document.getElementById("gamebutton1").style.height = "100px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(4)');
+
+            stopAllAudio();
+            playaudio("8-bit-arcade.mp3", 0.02);
+            
+            historyArray.push(3);
+
+            break;
+
+        case 4: 
+
+            document.getElementById("schluesselText").innerHTML = "ABC123";
+            document.getElementById("levelText").innerHTML = "Das Postoffice";
+            document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
+            document.getElementById("levelTipps").innerHTML = "Lösen Sie das Rätsel";
         
             // Ändern des Buttons
             document.getElementById("gamebutton1").style.top = "465px";
             document.getElementById("gamebutton1").style.left = "699px";
             document.getElementById("gamebutton1").style.width = "70px";
             document.getElementById("gamebutton1").style.height = "70px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(4)');
-
-            stopAllAudio();
-            playaudio("8-bit-arcade.mp3", 0.02);
-
-            break;
-
-        case 4: 
-
-        alert("Ihr Paket? Ne das haben wir leider auch nicht. Fragen Sie mal Ihren Nachbarn, vielleicht hat der es ja angenommen.");
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(5)');
+           
+            historyArray.push(4);
 
             break;
+
+        case 5:
+
+            alert("Sie haben das Rätsel gelöst!");
 
         default:
             break;
