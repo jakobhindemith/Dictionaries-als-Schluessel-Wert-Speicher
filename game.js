@@ -66,7 +66,9 @@ function gameAction(viewID) {
             stopAllAudio();
             playaudio("waves.mp3", 0.2);
             
-            historyArray.push(1);
+            if (historyArray[historyArray.length - 1] != 1) {
+                historyArray.push(1);
+            }
             break;
 
         case 2:
@@ -83,8 +85,12 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "100px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(3)');
 
-            historyArray.push(2);
+            stopAllAudio();
+            playaudio("waves.mp3", 0.02);
 
+            if (historyArray[historyArray.length - 1] != 2) {
+                historyArray.push(2);
+            }
             break;
 
         case 3:
@@ -103,8 +109,9 @@ function gameAction(viewID) {
             stopAllAudio();
             playaudio("8-bit-arcade.mp3", 0.02);
             
-            historyArray.push(3);
-
+            if (historyArray[historyArray.length - 1] != 3) {
+                historyArray.push(3);
+            }
             break;
 
         case 4: 
@@ -121,8 +128,9 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "70px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(5)');
            
-            historyArray.push(4);
-
+            if (historyArray[historyArray.length - 1] != 4) {
+                historyArray.push(4);
+            }
             break;
 
         case 5:
