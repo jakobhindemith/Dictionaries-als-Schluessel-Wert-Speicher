@@ -41,16 +41,16 @@
             <img src="titleScreen.jpg" id="gameimage" alt="Game Title Screen">
             
             <!-- Unsichtbarer Button -->
-            <div class="invisible-button" id="gamebutton1" onclick="gameAction(1)" onmouseover="show()" onmouseleave="hide()"></div>
+            <div class="invisible-button" id="gamebutton1" onclick="gameAction(1)" onmouseover="show('gamebutton1')" onmouseleave="hide('gamebutton1')"></div>
 
             <!-- MAP Buttons-->
-            <div class="invisible-button" id="insel2" onclick="gameAction(1)" onmouseover="show()" onmouseleave="hide()" style="display: none; width: ; height: ; left: ; top: ;"></div>
-            <div class="invisible-button" id="insel3" onclick="gameAction(5)" onmouseover="show()" onmouseleave="hide()" style="display: none; width: ; height: ; left: ; top: ;"></div>
-            <div class="invisible-button" id="insel4" onclick="gameAction(6)" onmouseover="show()" onmouseleave="hide()" style="display: none; width: ; height: ; left: ; top: ;"></div>
+            <div class="invisible-button" id="insel2" onclick="gameAction(1)" onmouseover="show('insel2')" onmouseleave="hide('insel2')" style="display: none; width: ; height: ; left: ; top: ;"></div>
+            <div class="invisible-button" id="insel3" onclick="gameAction(5)" onmouseover="show('insel3')" onmouseleave="hide('insel3')" style="display: none; width: ; height: ; left: ; top: ;"></div>
+            <div class="invisible-button" id="insel4" onclick="gameAction(6)" onmouseover="show('insel4')" onmouseleave="hide('insel4')" style="display: none; width: ; height: ; left: ; top: ;"></div>
 
 
             <div class="buttonbar">
-                <button class="buttonbar-buttons" id="Button 1" onmouseover="show()" onmouseleave="hide()" style="cursor: default;">Hinweis</button>
+                <button class="buttonbar-buttons" id="Button 1" onmouseover="showAll()" onmouseleave="hideAll()" style="cursor: default;">Hinweis</button>
                 <button class="buttonbar-buttons" id="Button 4" onclick="zurueck()">Zurück</button>
                 <button class="buttonbar-buttons" id="Button 2" onclick="returnToMap()">Zur Karte</button>
                 <button class="buttonbar-buttons" id="Button 3" onclick="restartGame()">Neu Starten</button>

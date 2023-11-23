@@ -1,11 +1,27 @@
 // Hier kommt die Spielelogik hin, welche die Elemente in index.html beeinflusst
 
-function show() {
-    document.getElementById("gamebutton1").style.border = "3px solid rgba(255, 255, 255, 0.7)"; // alte Farbe: 185, 185, 185
+function show(elementID) {
+    document.getElementById(elementID).style.border = "3px solid rgba(255, 255, 255, 0.7)"; // alte Farbe: 185, 185, 185
+    
 }
 
-function hide() {
-    document.getElementById("gamebutton1").style.border = "3px solid rgba(255, 255, 255, 0)";
+function hide(elementID) {
+    document.getElementById(elementID).style.border = "3px solid rgba(255, 255, 255, 0)";
+
+}
+
+function showAll() {
+    const levelButtons1 = document.querySelectorAll("[id^='insel']");
+    levelButtons1.forEach(button => button.style.border = "3px solid rgba(255, 255, 255, 0.7)"); // alte Farbe: 185, 185, 185
+    const levelButtons2 = document.querySelectorAll("[id^='gamebutton']");
+    levelButtons2.forEach(button => button.style.border = "3px solid rgba(255, 255, 255, 0.7)"); // alte Farbe: 185, 185, 185
+}
+
+function hideAll() {
+    const levelButtons1 = document.querySelectorAll("[id^='insel']");
+    levelButtons1.forEach(button => button.style.border = "3px solid rgba(255, 255, 255, 0)"); // alte Farbe: 185, 185, 185
+    const levelButtons2 = document.querySelectorAll("[id^='gamebutton']");
+    levelButtons2.forEach(button => button.style.border = "3px solid rgba(255, 255, 255, 0)"); // alte Farbe: 185, 185, 185
 }
 
 function zurueck() {
