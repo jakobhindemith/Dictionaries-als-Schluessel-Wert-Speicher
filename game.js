@@ -172,6 +172,8 @@ function gameAction(viewID) {
 
         case 4:
 
+            removeButtons();
+
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
             document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
