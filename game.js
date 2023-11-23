@@ -64,7 +64,6 @@ function makeButtons(raetselID) {
             // Buttons kreieren
 
             var buttonDetailsArray = [];
-            var buttonDetailsArrayAll = [];
 
             buttonDetailsArray.push([100, 100, 100, 100, 1, 1]); // Button-Eigenschaften: (ID) - Top - Left - Width - Height - Level - onclick
             buttonDetailsArray.push([200, 500, 100, 100, 1, 2]); // Button-Eigenschaften: (ID) - Top - Left - Width - Height - Level - onclick
