@@ -115,6 +115,9 @@ function gameAction(viewID) {
     switch (viewID) {
 
         case 1:
+
+            document.getElementById("insel2").style.display = "block";
+
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Die Inseln";
             document.getElementById("gameimage").src = "Island.png";
