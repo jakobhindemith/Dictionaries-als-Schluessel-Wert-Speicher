@@ -2,7 +2,6 @@
 
 function show() {
     document.getElementById("gamebutton1").style.border = "3px solid rgba(255, 255, 255, 0.7)"; // alte Farbe: 185, 185, 185
-
 }
 
 function hide() {
@@ -45,6 +44,45 @@ function restartGame() {
         location.reload();
     }
 }
+
+//mögliche erstellung der Buttons
+/*
+const buttonArray = []; 
+
+function createButtons(buttonCount, onClickAction) {
+    const buttonContainer = document.getElementById("buttonContainer");
+    
+    // Lösche vorherige Buttons, falls vorhanden
+    buttonContainer.innerHTML = '';
+    buttonArray.length = 0; 
+    for (let i = 1; i <= buttonCount; i++) {
+        const button = document.createElement("button");
+        button.id = "gamebutton" + i;
+        button.className = "gamebutton";
+        button.innerText = i;
+        button.style.top = "20px"; 
+        button.style.left = (i * 80) + "px"; 
+        button.style.width = "70px";
+        button.style.height = "70px";
+        buttonContainer.appendChild(button);
+
+        // Füge einen Event-Listener hinzu, der die übergebene onClickAction aufruft
+        button.addEventListener('click', function(event) {
+            onClickAction(i, event);
+        });
+
+        // Füge den Button dem Button-Array hinzu
+        buttonArray.push(button);
+    }
+}
+// Funktion, die aufgerufen wird, wenn ein Button geklickt wird
+function buttonClick(number, event) {
+    // Füge die Logik hier ein, um auf den Button-Klick zu reagieren
+    alert("Button " + number + " wurde geklickt!");
+}
+
+*/
+
 
 function gameAction(viewID) {
 
@@ -114,20 +152,27 @@ function gameAction(viewID) {
             }
             break;
 
-        case 4: 
+        case 4:
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
             document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
             document.getElementById("levelTipps").innerHTML = "Lösen Sie das Rätsel";
         
-            // Ändern des Buttons
+            // Ändern des Buttons#
+            /*
             document.getElementById("gamebutton1").style.top = "465px";
             document.getElementById("gamebutton1").style.left = "699px";
             document.getElementById("gamebutton1").style.width = "70px";
             document.getElementById("gamebutton1").style.height = "70px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(5)');
-           
+            */
+            createButtons(12, buttonClick);
+
+            const button = buttonArray[number - 1];
+            button.style.top = (event.clientY - button.clientHeight / 6) + "px";
+            button.style.left = (event.clientX - button.clientWidth / 2) + "px";
+
             if (historyArray[historyArray.length - 1] != 4) {
                 historyArray.push(4);
             }
