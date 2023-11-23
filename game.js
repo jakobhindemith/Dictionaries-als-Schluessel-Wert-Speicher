@@ -203,7 +203,7 @@ function gameAction(viewID) {
 
         case 5:
 
-            alert("Sie haben das Rätsel gelöst!");
+            alert("Das ist die zweite Insel");
 
         default:
             break;
