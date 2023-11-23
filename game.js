@@ -45,44 +45,55 @@ function restartGame() {
     }
 }
 
-//mögliche erstellung der Buttons
-/*
-const buttonArray = []; 
 
-function createButtons(buttonCount, onClickAction) {
-    const buttonContainer = document.getElementById("buttonContainer");
+function levelAction(levelID, LevelAction) {
+    switch (levelID) {
+        case 1:
+            alert(LevelAction);
+            break;
     
-    // Lösche vorherige Buttons, falls vorhanden
-    buttonContainer.innerHTML = '';
-    buttonArray.length = 0; 
-    for (let i = 1; i <= buttonCount; i++) {
-        const button = document.createElement("button");
-        button.id = "gamebutton" + i;
-        button.className = "gamebutton";
-        button.innerText = i;
-        button.style.top = "20px"; 
-        button.style.left = (i * 80) + "px"; 
-        button.style.width = "70px";
-        button.style.height = "70px";
-        buttonContainer.appendChild(button);
-
-        // Füge einen Event-Listener hinzu, der die übergebene onClickAction aufruft
-        button.addEventListener('click', function(event) {
-            onClickAction(i, event);
-        });
-
-        // Füge den Button dem Button-Array hinzu
-        buttonArray.push(button);
+        default:
+            break;
     }
 }
-// Funktion, die aufgerufen wird, wenn ein Button geklickt wird
-function buttonClick(number, event) {
-    // Füge die Logik hier ein, um auf den Button-Klick zu reagieren
-    alert("Button " + number + " wurde geklickt!");
+
+function makeButtons(raetselID) {
+    switch (raetselID) {
+        case 1:
+            
+            // Buttons kreieren
+
+            var buttonDetailsArray = [];
+            var buttonDetailsArrayAll = [];
+
+            buttonDetailsArray.push([100, 100, 100, 100, 1, 1]); // Button-Eigenschaften: (ID) - Top - Left - Width - Height - Level - onclick
+            buttonDetailsArray.push([200, 500, 100, 100, 1, 2]); // Button-Eigenschaften: (ID) - Top - Left - Width - Height - Level - onclick
+
+
+
+            for (let index = 0; index < buttonDetailsArray.length; index++) {
+                const newButton = document.createElement("div");
+                newButton.id = "levelbutton" + index;
+                newButton.setAttribute('class', 'invisible-button');
+                newButton.style.top = buttonDetailsArray[index][0] + "px";
+                newButton.style.left = buttonDetailsArray[index][1] + "px";
+                newButton.style.width = buttonDetailsArray[index][2] + "px";
+                newButton.style.height = buttonDetailsArray[index][3] + "px";
+                newButton.setAttribute('onclick', 'levelAction(' + buttonDetailsArray[index][4] + ', ' +  buttonDetailsArray[index][5] + ')');
+
+                document.getElementById("game").appendChild(newButton);
+            }
+            break;
+    
+        default:
+            break;
+    }
 }
 
-*/
-
+function removeButtons() {
+    const levelButtons = document.querySelectorAll("[id^='levelbutton']");
+    levelButtons.forEach(button => button.remove());
+}
 
 function gameAction(viewID) {
 
@@ -103,10 +114,13 @@ function gameAction(viewID) {
 
             stopAllAudio();
             playaudio("waves.mp3", 0.2);
+
+            removeButtons();
             
             if (historyArray[historyArray.length - 1] != 1) {
                 historyArray.push(1);
             }
+
             break;
 
         case 2:
@@ -125,6 +139,8 @@ function gameAction(viewID) {
 
             stopAllAudio();
             playaudio("waves.mp3", 0.02);
+            removeButtons();
+
 
             if (historyArray[historyArray.length - 1] != 2) {
                 historyArray.push(2);
@@ -146,6 +162,8 @@ function gameAction(viewID) {
 
             stopAllAudio();
             playaudio("8-bit-arcade.mp3", 0.02);
+            removeButtons();
+
             
             if (historyArray[historyArray.length - 1] != 3) {
                 historyArray.push(3);
@@ -159,19 +177,7 @@ function gameAction(viewID) {
             document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
             document.getElementById("levelTipps").innerHTML = "Lösen Sie das Rätsel";
         
-            // Ändern des Buttons#
-            /*
-            document.getElementById("gamebutton1").style.top = "465px";
-            document.getElementById("gamebutton1").style.left = "699px";
-            document.getElementById("gamebutton1").style.width = "70px";
-            document.getElementById("gamebutton1").style.height = "70px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(5)');
-            */
-            createButtons(12, buttonClick);
-
-            const button = buttonArray[number - 1];
-            button.style.top = (event.clientY - button.clientHeight / 6) + "px";
-            button.style.left = (event.clientX - button.clientWidth / 2) + "px";
+            makeButtons(1);
 
             if (historyArray[historyArray.length - 1] != 4) {
                 historyArray.push(4);
