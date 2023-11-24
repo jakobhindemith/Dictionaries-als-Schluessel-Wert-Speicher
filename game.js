@@ -1,5 +1,3 @@
-// Hier kommt die Spielelogik hin, welche die Elemente in index.html beeinflusst
-
 function show(elementID) {
     document.getElementById(elementID).style.border = "3px solid rgba(255, 255, 255, 0.7)"; // alte Farbe: 185, 185, 185
     
@@ -65,7 +63,18 @@ function restartGame() {
 function levelAction(levelID, LevelAction) {
     switch (levelID) {
         case 1:
-            alert(LevelAction);
+
+            if (LevelAction == -1) {
+                document.getElementById("levelbuttonTextfeld").innerHTML = "";
+            } else if (LevelAction == -2) {
+                if (document.getElementById("levelbuttonTextfeld").innerHTML == "12345") {
+                    document.getElementById("levelbuttonTextfeld").innerHTML = "vvvvv";
+                } else {
+                    document.getElementById("levelbuttonTextfeld").innerHTML = "xxxxx";
+                }
+            } else {
+                document.getElementById("levelbuttonTextfeld").innerHTML += LevelAction;
+            }
             break;
     
         default:
@@ -74,6 +83,7 @@ function levelAction(levelID, LevelAction) {
 }
 
 function makeButtons(raetselID) {
+
     switch (raetselID) {
         case 1:
             
@@ -81,9 +91,20 @@ function makeButtons(raetselID) {
 
             var buttonDetailsArray = [];
 
-            buttonDetailsArray.push([100, 100, 100, 100, 1, 1]); // Button-Eigenschaften: (ID) - Top - Left - Width - Height - Level - onclick
-            buttonDetailsArray.push([200, 500, 100, 100, 1, 2]); // Button-Eigenschaften: (ID) - Top - Left - Width - Height - Level - onclick
+            // Button-Eigenschaften: (ID) - Top - Left - Width - Height - Level - onclick
 
+            buttonDetailsArray.push([359, 547, 26, 10, 1, 1]);
+            buttonDetailsArray.push([359, 579, 26, 10, 1, 2]);
+            buttonDetailsArray.push([359, 613, 26, 10, 1, 3]);
+            buttonDetailsArray.push([373, 547, 26, 10, 1, 4]);
+            buttonDetailsArray.push([373, 579, 26, 10, 1, 5]);
+            buttonDetailsArray.push([373, 613, 26, 10, 1, 6]);
+            buttonDetailsArray.push([389, 547, 26, 10, 1, 7]);
+            buttonDetailsArray.push([389, 579, 26, 10, 1, 8]);
+            buttonDetailsArray.push([389, 613, 26, 10, 1, 9]);
+            buttonDetailsArray.push([403, 547, 26, 10, 1, -1]); // löschen
+            buttonDetailsArray.push([403, 579, 26, 10, 1, 0]);
+            buttonDetailsArray.push([403, 613, 26, 10, 1, -2]); // enter
 
 
             for (let index = 0; index < buttonDetailsArray.length; index++) {
@@ -98,6 +119,22 @@ function makeButtons(raetselID) {
 
                 document.getElementById("game").appendChild(newButton);
             }
+
+            // Textfeld kreieren
+
+            const newTextField = document.createElement("div");
+            newTextField.id = "levelbuttonTextfeld";
+            newTextField.setAttribute('class', 'invisible-button');
+            newTextField.style.top = "334px";
+            newTextField.style.left = "557px";
+            newTextField.style.width = "74px";
+            newTextField.style.height = "20px";
+            newTextField.style.fontSize = "16px";
+            newTextField.style.letterSpacing = "6px";
+            newTextField.style.textAlign = "left";
+            newTextField.style.fontFamily = "Pixelify Sans";
+            newTextField.style.overflow = "hidden";
+            document.getElementById("game").appendChild(newTextField);
             break;
     
         default:
@@ -116,11 +153,13 @@ function gameAction(viewID) {
 
         case 1:
 
-            document.getElementById("insel2").style.display = "block";
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Die Inseln";
-            document.getElementById("gameimage").src = "Island.png";
+            document.getElementById("gameimage").src = "Island.gif";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf der Insel";
         
             // Ändern des Buttons
@@ -132,8 +171,6 @@ function gameAction(viewID) {
 
             stopAllAudio();
             playaudio("waves.mp3", 0.2);
-
-            removeButtons();
             
             if (historyArray[historyArray.length - 1] != 1) {
                 historyArray.push(1);
@@ -142,6 +179,11 @@ function gameAction(viewID) {
             break;
 
         case 2:
+
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
+
             // Ändern der Texte und Infos und des Bildes
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Die DHL Insel";
@@ -156,7 +198,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(3)');
 
             stopAllAudio();
-            playaudio("waves.mp3", 0.02);
+            playaudio("waves.mp3", 0.2);
             removeButtons();
 
 
@@ -166,9 +208,15 @@ function gameAction(viewID) {
             break;
 
         case 3:
+
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
+
+
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
-            document.getElementById("gameimage").src = "Level_Postoffice.png";
+            document.getElementById("gameimage").src = "Level_Postoffice.gif";
             document.getElementById("levelTipps").innerHTML = "Willkommen im Postoffice";
         
             // Ändern des Buttons
@@ -191,6 +239,8 @@ function gameAction(viewID) {
         case 4:
 
             removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "none";
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
@@ -223,5 +273,7 @@ function gameAction(viewID) {
 * Texte in der GameInfo ändern: // den Gleichen Code können wir auch bei den Tipps verwenden, oder wir nutzen einen kompletten neuen Tag
 * document.getElementById("schluesselText").innerText = "Neuer Schlüssel";
 * document.getElementById("levelText").innerText = "Aktuelles Level";
+*
+* document.getElementById("insel2").style.display = "block"; //zum Freischalten der Inseln
 *
 */
