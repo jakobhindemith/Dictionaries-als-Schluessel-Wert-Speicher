@@ -67,7 +67,7 @@ function levelAction(levelID, LevelAction) {
             if (LevelAction == -1) {
                 document.getElementById("levelbuttonTextfeld").innerHTML = "";
             } else if (LevelAction == -2) {
-                if (document.getElementById("levelbuttonTextfeld").innerHTML == "12345") {
+                if (document.getElementById("levelbuttonTextfeld").innerHTML == "10502") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvvv";
                 } else {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxxx";
@@ -121,7 +121,6 @@ function makeButtons(raetselID) {
             }
 
             // Textfeld kreieren
-
             const newTextField = document.createElement("div");
             newTextField.id = "levelbuttonTextfeld";
             newTextField.setAttribute('class', 'invisible-button');
@@ -245,7 +244,15 @@ function gameAction(viewID) {
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
             document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
-            document.getElementById("levelTipps").innerHTML = "Lösen Sie das Rätsel";
+            document.getElementById("levelTipps").innerHTML = "Der Modulo-Operator, oft durch das Prozentzeichen (%) dargestellt, ist ein mathematischer Operator, der den Rest einer Division zweier Zahlen berechnet. Wenn du beispielsweise a % b berechnest, gibt der Modulo-Operator den Rest der Division von a durch b zurück.<br><br>" +
+            "Beispiel:<br>" + "10 % 3 ergibt 1, weil 10 durch 3 geteilt 3 mal geht und ein Rest von 1 bleibt.<br><br>" +
+            "Der Modulo-Operator ist in vielen Anwendungen nützlich, insbesondere wenn es um Zyklen oder Wiederholungen geht. Zum Beispiel kann er verwendet werden, um festzustellen, ob eine Zahl gerade oder ungerade ist (wenn a % 2 gleich 0 ist, ist die Zahl gerade).<br><br>" +
+            "1.Aufgabe: 3 % 2 = ?<br>" + // = 1
+            "2.Aufgabe: 4 % 4 = ?<br>" + // = 0
+            "3.Aufgabe: 5 % 8 = ?<br>" + // = 5
+            "4.Aufgabe: 21 % 3 = ?<br>" + // = 0
+            "5.Aufgabe: 44 % 14 = ?<br>"; + // = 2
+            
         
             makeButtons(1);
 
