@@ -251,7 +251,7 @@ function gameAction(viewID) {
             "2.Aufgabe: 4 % 4 = ?<br>" + // = 0
             "3.Aufgabe: 5 % 8 = ?<br>" + // = 5
             "4.Aufgabe: 21 % 3 = ?<br>" + // = 0
-            "5.Aufgabe: 44 % 14 = ?<br>"; + // = 2
+            "5.Aufgabe: 44 % 14 = ?<br>"; // = 2
             
         
             makeButtons(1);
