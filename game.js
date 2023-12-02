@@ -263,6 +263,37 @@ function gameAction(viewID) {
 
         case 5:
 
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
+            document.getElementById("insel12").style.display = "block";
+            
+
+            document.getElementById("schluesselText").innerHTML = "ABC123";
+            document.getElementById("levelText").innerHTML = "Das Postoffice";
+            document.getElementById("gameimage").src = "parkplatz.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Postoffice";
+        
+            // Ändern des Buttons
+            document.getElementById("gamebutton1").style.top = "390px";
+            document.getElementById("gamebutton1").style.left = "498px";
+            document.getElementById("gamebutton1").style.width = "100px";
+            document.getElementById("gamebutton1").style.height = "100px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(5)');
+
+            stopAllAudio();
+            playaudio("8-bit-arcade.mp3", 0.02);
+            removeButtons();
+
+            
+            if (historyArray[historyArray.length - 1] != 3) {
+                historyArray.push(3);
+            }
+            break;
+
+
+        case 6:
+
             alert("Das ist die zweite Insel");
 
         default:
