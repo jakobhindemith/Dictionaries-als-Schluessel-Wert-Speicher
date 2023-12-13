@@ -276,8 +276,8 @@ function gameAction(viewID) {
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
-            document.getElementById("gameimage").src = "parkplatz.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parlplatz";
+            document.getElementById("gameimage").src = "Insel_Gym.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parkplatz";
         
             // Ändern des Buttons
             document.getElementById("insel2").style.top = "390px";
