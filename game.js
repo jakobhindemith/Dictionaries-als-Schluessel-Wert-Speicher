@@ -32,6 +32,12 @@ function zurueck() {
 const audioArray = []; // globally accessible array to store audio objects
 const historyArray = []; // globally accessible array to store history
 
+
+// Inseln an oder aus
+var insel2ON = false;
+var insel3ON = false;
+var insel4ON = false;
+
 function playaudio(audiofilename, volume) {
 
     const audio = new Audio(audiofilename);
@@ -69,7 +75,7 @@ function levelAction(levelID, LevelAction) {
             } else if (LevelAction == -2) {
                 if (document.getElementById("levelbuttonTextfeld").innerHTML == "10502") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvvv";
-                    document.getElementById("insel2").style.display = "block";
+                    insel2ON = true;
                 } else {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxxx";
                 }
@@ -157,6 +163,15 @@ function gameAction(viewID) {
 
             document.getElementById("gamebutton1").style.display = "block";
            
+            if (insel2ON) {
+                document.getElementById("insel2").style.display = "block";
+            }
+            if (insel3ON) {
+                document.getElementById("insel3").style.display = "block";
+            }
+            if (insel4ON) {
+                document.getElementById("insel4").style.display = "block";
+            }
             
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Die Inseln";
@@ -184,6 +199,11 @@ function gameAction(viewID) {
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "block";
+
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+
 
             // Ändern der Texte und Infos und des Bildes
             document.getElementById("schluesselText").innerHTML = "ABC123";
@@ -213,6 +233,10 @@ function gameAction(viewID) {
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "block";
+
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
 
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
@@ -244,6 +268,10 @@ function gameAction(viewID) {
 
             document.getElementById("gamebutton1").style.display = "none";
 
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
             document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
@@ -270,6 +298,10 @@ function gameAction(viewID) {
 
             //Insel 1 Button verstecken
             document.getElementById("gamebutton1").style.display = "none";
+
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
         
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
@@ -303,11 +335,15 @@ function gameAction(viewID) {
         removeButtons();
 
         document.getElementById("gamebutton1").style.display = "none";
+
+        document.getElementById("insel2").style.display = "none";
+        document.getElementById("insel3").style.display = "none";
+        document.getElementById("insel4").style.display = "none";
         
 
         document.getElementById("schluesselText").innerHTML = "ABC123";
         document.getElementById("levelText").innerHTML = "Das Gym";
-        document.getElementById("gameimage").src = "gym.png";
+        document.getElementById("gameimage").src = "parkplatz.png";
         document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
     
         // Ändern des Buttons
