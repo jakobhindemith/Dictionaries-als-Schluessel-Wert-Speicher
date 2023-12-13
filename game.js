@@ -69,6 +69,7 @@ function levelAction(levelID, LevelAction) {
             } else if (LevelAction == -2) {
                 if (document.getElementById("levelbuttonTextfeld").innerHTML == "10502") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvvv";
+                    document.getElementById("insel2").style.display = "block";
                 } else {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxxx";
                 }
@@ -183,7 +184,6 @@ function gameAction(viewID) {
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "block";
-            document.getElementById("insel2").style.display = "none";
 
             // Ändern der Texte und Infos und des Bildes
             document.getElementById("schluesselText").innerHTML = "ABC123";
@@ -213,7 +213,6 @@ function gameAction(viewID) {
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "block";
-            document.getElementById("insel2").style.display = "none";
 
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
@@ -271,7 +270,6 @@ function gameAction(viewID) {
 
             //Insel 1 Button verstecken
             document.getElementById("gamebutton1").style.display = "none";
-            document.getElementById("insel2").style.display = "block";
         
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
