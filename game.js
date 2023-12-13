@@ -310,9 +310,9 @@ function gameAction(viewID) {
         
             // Ändern des Buttons
             document.getElementById("gamebutton1").style.top = "390px";
-            document.getElementById("gamebutton1").style.left = "498px";
-            document.getElementById("gamebutton1").style.width = "100px";
-            document.getElementById("gamebutton1").style.height = "200px";
+            document.getElementById("gamebutton1").style.left = "340px";
+            document.getElementById("gamebutton1").style.width = "205px";
+            document.getElementById("gamebutton1").style.height = "70px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(6)');
 
             makeButtons(1);
