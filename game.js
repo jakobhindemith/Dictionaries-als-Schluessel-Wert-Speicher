@@ -308,21 +308,22 @@ function gameAction(viewID) {
             document.getElementById("gameimage").src = "Insel_Gym.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parkplatz";
         
-            
+            /*
+            // Button Parkplatz
             document.getElementById("gamebutton1").style.top = "390px";
             document.getElementById("gamebutton1").style.left = "340px";
             document.getElementById("gamebutton1").style.width = "205px";
             document.getElementById("gamebutton1").style.height = "70px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(6)');
-            
-            /*
+            */
+
              // Button für Gym
              document.getElementById("gamebutton1").style.top = "300px";
              document.getElementById("gamebutton1").style.left = "340px";
              document.getElementById("gamebutton1").style.width = "205px";
              document.getElementById("gamebutton1").style.height = "70px";
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(7)');
-             */
+             
 
 
             makeButtons(1);
@@ -356,13 +357,7 @@ function gameAction(viewID) {
             document.getElementById("levelTipps").innerHTML = "Willkommen beim Parkplatz";
         
             
-            // Ändern des Buttons
-            document.getElementById("gamebutton1").style.top = "300px";
-            document.getElementById("gamebutton1").style.left = "340px";
-            document.getElementById("gamebutton1").style.width = "205px";
-            document.getElementById("gamebutton1").style.height = "70px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(6)');
-        
+            
 
             removeButtons(1);
 
@@ -376,7 +371,7 @@ function gameAction(viewID) {
 
             removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "none";
+            document.getElementById("gamebutton1").style.display = "block";
 
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
@@ -387,9 +382,38 @@ function gameAction(viewID) {
             document.getElementById("levelText").innerHTML = "Das Gym";
             document.getElementById("gameimage").src = "gym.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
+
+             // Buttons Bildschirm
+             document.getElementById("gamebutton1").style.top = "300px";
+             document.getElementById("gamebutton1").style.left = "340px";
+             document.getElementById("gamebutton1").style.width = "205px";
+             document.getElementById("gamebutton1").style.height = "70px";
+             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(8)');
         
             
         case 8:
+
+             removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "none";
+
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+            
+
+            document.getElementById("schluesselText").innerHTML = "ABC123";
+            document.getElementById("levelText").innerHTML = "Das Gym";
+            document.getElementById("gameimage").src = "pc.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
+
+             // //Buy Ticket
+             document.getElementById("gamebutton1").style.top = "300px";
+             document.getElementById("gamebutton1").style.left = "340px";
+             document.getElementById("gamebutton1").style.width = "205px";
+             document.getElementById("gamebutton1").style.height = "70px";
+             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(9)');
+    
 
         case 9:
             
