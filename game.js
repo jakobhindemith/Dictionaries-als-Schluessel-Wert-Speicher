@@ -296,7 +296,7 @@ function gameAction(viewID) {
             removeButtons();
 
             //Insel 1 Button verstecken
-            document.getElementById("gamebutton1").style.display = "none";
+            document.getElementById("gamebutton1").style.display = "block";
 
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
@@ -309,11 +309,11 @@ function gameAction(viewID) {
             document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parkplatz";
         
             // Ändern des Buttons
-            document.getElementById("insel2").style.top = "390px";
-            document.getElementById("insel2").style.left = "498px";
-            document.getElementById("insel2").style.width = "100px";
-            document.getElementById("insel2").style.height = "200px";
-            document.getElementById("insel2").setAttribute('onclick', 'gameAction(5)');
+            document.getElementById("gamebutton1").style.top = "390px";
+            document.getElementById("gamebutton1").style.left = "498px";
+            document.getElementById("gamebutton1").style.width = "100px";
+            document.getElementById("gamebutton1").style.height = "200px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(6)');
 
             makeButtons(1);
 
@@ -331,33 +331,40 @@ function gameAction(viewID) {
 
         case 6:
 
-        removeButtons();
+            removeButtons();
 
-        document.getElementById("gamebutton1").style.display = "none";
+            document.getElementById("gamebutton1").style.display = "block";
 
-        document.getElementById("insel2").style.display = "none";
-        document.getElementById("insel3").style.display = "none";
-        document.getElementById("insel4").style.display = "none";
-        
-
-        document.getElementById("schluesselText").innerHTML = "ABC123";
-        document.getElementById("levelText").innerHTML = "Das Gym";
-        document.getElementById("gameimage").src = "parkplatz.png";
-        document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
-    
-        // Ändern des Buttons
-        document.getElementById("insel2").style.top = "390px";
-        document.getElementById("insel2").style.left = "498px";
-        document.getElementById("insel2").style.width = "100px";
-        document.getElementById("insel2").style.height = "20px";
-        document.getElementById("insel2").setAttribute('onclick', 'gameAction(6)');
-
-        removeButtons(1);
-
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
             
-        if (historyArray[historyArray.length - 1] != 5) {
-            historyArray.push(5);
-        }
+
+            document.getElementById("schluesselText").innerHTML = "ABC123";
+            document.getElementById("levelText").innerHTML = "Das Gym";
+            document.getElementById("gameimage").src = "parkplatz.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
+        
+            // Ändern des Buttons
+            document.getElementById("gamebutton1").style.top = "390px";
+            document.getElementById("gamebutton1").style.left = "340px";
+            document.getElementById("gamebutton1").style.width = "205px";
+            document.getElementById("gamebutton1").style.height = "70px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(6)');
+
+            removeButtons(1);
+
+                
+            if (historyArray[historyArray.length - 1] != 5) {
+                historyArray.push(5);
+            }
+                break;
+
+        case 7:
+
+        break;
+
+        default:
             break;
     }
 
