@@ -356,14 +356,12 @@ function gameAction(viewID) {
             document.getElementById("gameimage").src = "parkplatz.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen beim Parkplatz";
         
-            
-            
 
             removeButtons(1);
 
                 
-            if (historyArray[historyArray.length - 1] != 5) {
-                historyArray.push(5);
+            if (historyArray[historyArray.length - 1] != 6) {
+                historyArray.push(6);
             }
                 break;
 
@@ -389,11 +387,16 @@ function gameAction(viewID) {
              document.getElementById("gamebutton1").style.width = "205px";
              document.getElementById("gamebutton1").style.height = "70px";
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(8)');
+
+             if (historyArray[historyArray.length - 1] != 7) {
+                historyArray.push(7);
+            }
+            break;
         
             
         case 8:
 
-             removeButtons();
+            removeButtons();
 
             document.getElementById("gamebutton1").style.display = "none";
 
@@ -413,6 +416,11 @@ function gameAction(viewID) {
              document.getElementById("gamebutton1").style.width = "205px";
              document.getElementById("gamebutton1").style.height = "70px";
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(9)');
+
+             if (historyArray[historyArray.length - 1] != 8) {
+                historyArray.push(8);
+            }
+            break;
     
 
         case 9:
