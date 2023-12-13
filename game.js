@@ -318,10 +318,10 @@ function gameAction(viewID) {
             */
 
              // Button für Gym
-             document.getElementById("gamebutton1").style.top = "300px";
-             document.getElementById("gamebutton1").style.left = "340px";
-             document.getElementById("gamebutton1").style.width = "205px";
-             document.getElementById("gamebutton1").style.height = "70px";
+             document.getElementById("gamebutton1").style.top = "250px";
+             document.getElementById("gamebutton1").style.left = "440px";
+             document.getElementById("gamebutton1").style.width = "125px";
+             document.getElementById("gamebutton1").style.height = "85px";
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(7)');
              
 
