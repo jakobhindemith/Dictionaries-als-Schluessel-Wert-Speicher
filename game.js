@@ -382,10 +382,10 @@ function gameAction(viewID) {
             document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
 
              // Buttons Bildschirm
-             document.getElementById("gamebutton1").style.top = "300px";
-             document.getElementById("gamebutton1").style.left = "340px";
-             document.getElementById("gamebutton1").style.width = "205px";
-             document.getElementById("gamebutton1").style.height = "70px";
+             document.getElementById("gamebutton1").style.top = "452px";
+             document.getElementById("gamebutton1").style.left = "533px";
+             document.getElementById("gamebutton1").style.width = "105px";
+             document.getElementById("gamebutton1").style.height = "60px";
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(8)');
 
              if (historyArray[historyArray.length - 1] != 7) {
