@@ -38,6 +38,9 @@ var insel2ON = false;
 var insel3ON = false;
 var insel4ON = false;
 
+// Raetsel geloest
+var Raetsel1Geloest = false;
+
 function playaudio(audiofilename, volume) {
 
     const audio = new Audio(audiofilename);
@@ -75,7 +78,10 @@ function levelAction(levelID, LevelAction) {
             } else if (LevelAction == -2) {
                 if (document.getElementById("levelbuttonTextfeld").innerHTML == "1625") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvv";
+                    removeButtons();
                     insel2ON = true;
+                    Raetsel1Geloest = true;
+                    document.getElementById("gameimage").src = "SchliessfachRaetselOpen.png";
                 } else {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxx";
                 }
@@ -277,7 +283,7 @@ function gameAction(viewID) {
 
             document.getElementById("schluesselText").innerHTML = "ABC123";
             document.getElementById("levelText").innerHTML = "Das Postoffice";
-            document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
+            (Raetsel1Geloest) ? document.getElementById("gameimage").src = "SchliessfachRaetselOpen.png" : document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
             document.getElementById("levelTipps").innerHTML = "Der Modulo-Operator, oft durch das Prozentzeichen (%) dargestellt, ist ein mathematischer Operator, der den Rest einer Division zweier Zahlen berechnet. Wenn du beispielsweise a % b berechnest, gibt der Modulo-Operator den Rest der Division von a durch b zurück.<br><br>" +
             "Beispiel:<br>" + "10 % 3 ergibt 1, weil 10 durch 3 geteilt 3 mal geht und ein Rest von 1 bleibt.<br><br>" +
             "Der Modulo-Operator ist in vielen Anwendungen nützlich, insbesondere wenn es um Zyklen oder Wiederholungen geht. Zum Beispiel kann er verwendet werden, um festzustellen, ob eine Zahl gerade oder ungerade ist (wenn a % 2 gleich 0 ist, ist die Zahl gerade).<br><br>" +
@@ -288,7 +294,7 @@ function gameAction(viewID) {
             "5.Aufgabe: 44 % 14 = ?<br>"; // = 2
             
         
-            makeButtons(1);
+            (Raetsel1Geloest) ? "" : makeButtons(1);
 
             if (historyArray[historyArray.length - 1] != 4) {
                 historyArray.push(4);
@@ -313,22 +319,22 @@ function gameAction(viewID) {
             document.getElementById("gameimage").src = "Insel_Gym.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parkplatz";
         
-            /*
+            
             // Button Parkplatz
             document.getElementById("gamebutton1").style.top = "390px";
             document.getElementById("gamebutton1").style.left = "340px";
             document.getElementById("gamebutton1").style.width = "205px";
             document.getElementById("gamebutton1").style.height = "70px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(6)');
-            */
-
+            
+            /*
              // Button für Gym
              document.getElementById("gamebutton1").style.top = "250px";
              document.getElementById("gamebutton1").style.left = "440px";
              document.getElementById("gamebutton1").style.width = "125px";
              document.getElementById("gamebutton1").style.height = "85px";
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(7)');
-             
+             */
 
             stopAllAudio();
             playaudio("8-bit-arcade.mp3", 0.02);
