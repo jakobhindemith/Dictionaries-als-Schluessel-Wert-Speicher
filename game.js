@@ -73,11 +73,11 @@ function levelAction(levelID, LevelAction) {
             if (LevelAction == -1) {
                 document.getElementById("levelbuttonTextfeld").innerHTML = "";
             } else if (LevelAction == -2) {
-                if (document.getElementById("levelbuttonTextfeld").innerHTML == "10502") {
-                    document.getElementById("levelbuttonTextfeld").innerHTML = "vvvvv";
+                if (document.getElementById("levelbuttonTextfeld").innerHTML == "1625") {
+                    document.getElementById("levelbuttonTextfeld").innerHTML = "vvvv";
                     insel2ON = true;
                 } else {
-                    document.getElementById("levelbuttonTextfeld").innerHTML = "xxxxx";
+                    document.getElementById("levelbuttonTextfeld").innerHTML = "xxxx";
                 }
             } else {
                 document.getElementById("levelbuttonTextfeld").innerHTML += LevelAction;
@@ -132,11 +132,11 @@ function makeButtons(raetselID) {
             newTextField.id = "levelbuttonTextfeld";
             newTextField.setAttribute('class', 'invisible-button');
             newTextField.style.top = "334px";
-            newTextField.style.left = "557px";
+            newTextField.style.left = "560px";
             newTextField.style.width = "74px";
             newTextField.style.height = "20px";
             newTextField.style.fontSize = "16px";
-            newTextField.style.letterSpacing = "6px";
+            newTextField.style.letterSpacing = "12px";
             newTextField.style.textAlign = "left";
             newTextField.style.fontFamily = "Pixelify Sans";
             newTextField.style.overflow = "hidden";
