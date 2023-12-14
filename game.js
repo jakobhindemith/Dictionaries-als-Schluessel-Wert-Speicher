@@ -157,12 +157,13 @@ function gameAction(viewID) {
 
     switch (viewID) {
 
-        case 1:
+        case 1: // MAP
 
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "block";
            
+            // Inseln werden auf der Map freigeschaltet, sobald über Rätsel erlaubt
             if (insel2ON) {
                 document.getElementById("insel2").style.display = "block";
             }
@@ -194,12 +195,13 @@ function gameAction(viewID) {
 
             break;
 
-        case 2:
+        case 2: // INSEL 1 NAH
 
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "block";
 
+            // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
             document.getElementById("insel4").style.display = "none";
@@ -228,12 +230,13 @@ function gameAction(viewID) {
             }
             break;
 
-        case 3:
+        case 3: // INSEL 1 - Postoffice
 
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "block";
 
+            // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
             document.getElementById("insel4").style.display = "none";
@@ -261,12 +264,13 @@ function gameAction(viewID) {
             }
             break;
 
-        case 4:
+        case 4: // INSEL 1 - Postoffice - Rätsel
 
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "none";
 
+            // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
             document.getElementById("insel4").style.display = "none";
@@ -291,13 +295,14 @@ function gameAction(viewID) {
             }
             break;
 
-        case 5:
+        case 5: // INSEL 2 NAH
 
             removeButtons();
 
             //Insel 1 Button verstecken
             document.getElementById("gamebutton1").style.display = "block";
 
+            // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
             document.getElementById("insel4").style.display = "none";
@@ -325,14 +330,9 @@ function gameAction(viewID) {
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(7)');
              
 
-
-            makeButtons(1);
-
             stopAllAudio();
             playaudio("8-bit-arcade.mp3", 0.02);
            
-            removeButtons();
-
             
             if (historyArray[historyArray.length - 1] != 5) {
                 historyArray.push(5);
@@ -346,6 +346,7 @@ function gameAction(viewID) {
 
             document.getElementById("gamebutton1").style.display = "none";
 
+            // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
             document.getElementById("insel4").style.display = "none";
@@ -356,9 +357,6 @@ function gameAction(viewID) {
             document.getElementById("gameimage").src = "parkplatz.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen beim Parkplatz";
         
-
-            removeButtons(1);
-
                 
             if (historyArray[historyArray.length - 1] != 6) {
                 historyArray.push(6);
@@ -371,6 +369,7 @@ function gameAction(viewID) {
 
             document.getElementById("gamebutton1").style.display = "block";
 
+            // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
             document.getElementById("insel4").style.display = "none";
@@ -400,6 +399,7 @@ function gameAction(viewID) {
 
             document.getElementById("gamebutton1").style.display = "none";
 
+            // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
             document.getElementById("insel4").style.display = "none";
@@ -425,7 +425,20 @@ function gameAction(viewID) {
 
         case 9:
             
-        break;
+            break;
+
+        case 10:
+
+            break;
+
+        case 11:
+
+            break;
+
+        case 12:
+
+            break;
+
 
         default:
             break;
