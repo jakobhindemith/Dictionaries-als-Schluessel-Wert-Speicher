@@ -40,6 +40,7 @@ var insel4ON = false;
 
 // Raetsel geloest
 var Raetsel1Geloest = false;
+var parkplatzGeloest = false;
 
 function playaudio(audiofilename, volume, looped) {
 
@@ -163,7 +164,6 @@ function removeButtons() {
     levelButtons.forEach(button => button.remove());
 }
 
-var gameStarted = false;
 
 function gameAction(viewID) {
 
@@ -326,23 +326,23 @@ function gameAction(viewID) {
             document.getElementById("gameimage").src = "Insel_Gym.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parkplatz";
         
+            if (!parkplatzGeloest) {
+                 // Button Parkplatz
+                document.getElementById("gamebutton1").style.top = "390px";
+                document.getElementById("gamebutton1").style.left = "340px";
+                document.getElementById("gamebutton1").style.width = "205px";
+                document.getElementById("gamebutton1").style.height = "70px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(6)');
+            } else {
+                // Button für Gym
+                document.getElementById("gamebutton1").style.top = "250px";
+                document.getElementById("gamebutton1").style.left = "440px";
+                document.getElementById("gamebutton1").style.width = "125px";
+                document.getElementById("gamebutton1").style.height = "85px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(7)');
+            }
             
-            // Button Parkplatz
-            document.getElementById("gamebutton1").style.top = "390px";
-            document.getElementById("gamebutton1").style.left = "340px";
-            document.getElementById("gamebutton1").style.width = "205px";
-            document.getElementById("gamebutton1").style.height = "70px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(6)');
-            
-            /*
-             // Button für Gym
-             document.getElementById("gamebutton1").style.top = "250px";
-             document.getElementById("gamebutton1").style.left = "440px";
-             document.getElementById("gamebutton1").style.width = "125px";
-             document.getElementById("gamebutton1").style.height = "85px";
-             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(7)');
-             */
-
+           
             stopAllAudio();
             playaudio("8-bit-arcade.mp3", 0.02, true);
            
