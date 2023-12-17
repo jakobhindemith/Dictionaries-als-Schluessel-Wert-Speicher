@@ -444,11 +444,63 @@ function gameAction(viewID) {
 
             break;
 
-        case 11:
+        case 11:    // IKEA-INSEL NAH
+            
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
+
+            // Inseln freischalten
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+            
+
+            document.getElementById("schluesselText").innerHTML = "ABC123";
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("gameimage").src = "Insel_IKEA.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im IKEA Möbelhaus";
+
+            // IKEA
+            document.getElementById("gamebutton1").style.top = "211px";
+            document.getElementById("gamebutton1").style.left = "288px";
+            document.getElementById("gamebutton1").style.width = "190px";
+            document.getElementById("gamebutton1").style.height = "120px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(12)');
+
+            if (historyArray[historyArray.length - 1] != 11) {
+                historyArray.push(11);
+            }
 
             break;
 
         case 12:
+
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "none";
+
+            // Inseln freischalten
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+            
+
+            document.getElementById("schluesselText").innerHTML = "ABC123";
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("gameimage").src = "lkw.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im IKEA Möbelhaus";
+
+            // IKEA
+            document.getElementById("gamebutton1").style.top = "211px";
+            document.getElementById("gamebutton1").style.left = "288px";
+            document.getElementById("gamebutton1").style.width = "190px";
+            document.getElementById("gamebutton1").style.height = "120px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(13)'); // ToDo: für Case 13
+
+            if (historyArray[historyArray.length - 1] != 12) {
+                historyArray.push(12);
+            }
 
             break;
 
