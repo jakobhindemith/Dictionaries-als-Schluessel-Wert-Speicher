@@ -41,11 +41,11 @@ var insel4ON = false;
 // Raetsel geloest
 var Raetsel1Geloest = false;
 
-function playaudio(audiofilename, volume) {
+function playaudio(audiofilename, volume, looped) {
 
     const audio = new Audio(audiofilename);
     audio.volume = volume;
-    audio.loop = true;
+    audio.loop = looped;
     audioArray.push(audio); // push the audio object to the array
     audio.play();
 }
@@ -74,18 +74,22 @@ function levelAction(levelID, LevelAction) {
         case 1:
 
             if (LevelAction == -1) {
+                playaudio("button.mp3", 0.3, false);
                 document.getElementById("levelbuttonTextfeld").innerHTML = "";
             } else if (LevelAction == -2) {
                 if (document.getElementById("levelbuttonTextfeld").innerHTML == "1625") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvv";
+                    playaudio("key-twist-in-lock.mp3", 0.6, false);
                     removeButtons();
                     insel2ON = true;
                     Raetsel1Geloest = true;
                     document.getElementById("gameimage").src = "SchliessfachRaetselOpen.png";
                 } else {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxx";
+                    playaudio("invalid-selection.mp3", 0.2, false);
                 }
             } else {
+                playaudio("button.mp3", 0.3, false);
                 document.getElementById("levelbuttonTextfeld").innerHTML += LevelAction;
             }
             break;
@@ -159,6 +163,8 @@ function removeButtons() {
     levelButtons.forEach(button => button.remove());
 }
 
+var gameStarted = false;
+
 function gameAction(viewID) {
 
     switch (viewID) {
@@ -193,7 +199,8 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(2)');
 
             stopAllAudio();
-            playaudio("waves.mp3", 0.2);
+
+            playaudio("waves.mp3", 0.2, true);
             
             if (historyArray[historyArray.length - 1] != 1) {
                 historyArray.push(1);
@@ -227,7 +234,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(3)');
 
             stopAllAudio();
-            playaudio("waves.mp3", 0.2);
+            playaudio("waves.mp3", 0.2, true);
             removeButtons();
 
 
@@ -262,7 +269,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(4)');
 
             stopAllAudio();
-            playaudio("8-bit-arcade.mp3", 0.02);
+            playaudio("8-bit-arcade.mp3", 0.02, true);
             removeButtons();
 
             if (historyArray[historyArray.length - 1] != 3) {
@@ -337,7 +344,7 @@ function gameAction(viewID) {
              */
 
             stopAllAudio();
-            playaudio("8-bit-arcade.mp3", 0.02);
+            playaudio("8-bit-arcade.mp3", 0.02, true);
            
             
             if (historyArray[historyArray.length - 1] != 5) {
