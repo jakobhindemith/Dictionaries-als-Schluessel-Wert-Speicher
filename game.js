@@ -42,6 +42,9 @@ var insel4ON = false;
 var Raetsel1Geloest = false;
 var parkplatzGeloest = false;
 
+// Speaker-Audio
+var speakerAudioPlayed = []; // Wurde das Audio vom Sprecher bereits abgespielt
+
 function playaudio(audiofilename, volume, looped) {
 
     const audio = new Audio(audiofilename);
@@ -172,6 +175,9 @@ function gameAction(viewID) {
         case 1: // MAP
 
             removeButtons();
+                        
+            // Menü freischalten
+            document.getElementById("buttonbar").style.display = "block";
 
             document.getElementById("gamebutton1").style.display = "block";
            
@@ -206,6 +212,12 @@ function gameAction(viewID) {
                 historyArray.push(1);
             }
 
+            // Section: Speaker-Audio
+            if (!speakerAudioPlayed[0]){
+                playaudio("Erste_Insel_Teil_eins.wav", 0.8, false); // Id 0
+                speakerAudioPlayed[0] = true;
+            }
+
             break;
 
         case 2: // INSEL 1 NAH
@@ -237,6 +249,12 @@ function gameAction(viewID) {
             playaudio("waves.mp3", 0.2, true);
             removeButtons();
 
+            // Section: Speaker-Audio
+            if (!speakerAudioPlayed[1]){
+                playaudio("HashMap_erklaerung.wav", 0.8, false); // Id 1
+                speakerAudioPlayed[1] = true;
+            }
+            
 
             if (historyArray[historyArray.length - 1] != 2) {
                 historyArray.push(2);
@@ -344,11 +362,17 @@ function gameAction(viewID) {
             
            
             stopAllAudio();
-            playaudio("8-bit-arcade.mp3", 0.02, true);
+            playaudio("waves.mp3", 0.2, true);
            
             
             if (historyArray[historyArray.length - 1] != 5) {
                 historyArray.push(5);
+            }
+
+            // Section: Speaker-Audio
+            if (!speakerAudioPlayed[3]){
+                playaudio("zweite_Insel_Intro.wav", 0.8, false); // Id 3
+                speakerAudioPlayed[3] = true;
             }
             break;
 
@@ -467,6 +491,9 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.width = "190px";
             document.getElementById("gamebutton1").style.height = "120px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(12)');
+
+            stopAllAudio();
+            playaudio("waves.mp3", 0.2, true);
 
             if (historyArray[historyArray.length - 1] != 11) {
                 historyArray.push(11);
