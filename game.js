@@ -47,6 +47,9 @@ var Raetsel3Geloest = false; // POSTREGAL
 // Speaker-Audio
 var speakerAudioPlayed = []; // Wurde das Audio vom Sprecher bereits abgespielt
 
+// Level Variablen
+var pressedcount = 0; // Anzahl der Knöpfe, die gedrückt wurden für Level Regal
+
 function playaudio(audiofilename, volume, looped) {
 
     const audio = new Audio(audiofilename);
@@ -154,16 +157,13 @@ function levelAction(levelID, LevelAction) {
 
         case 3: // Postregal
 
-            var pressedcount = 0;
-            
-
-            if (LevelAction == 1) {
+            if (LevelAction == 1 && pressedcount == 0) {
                 alert("richtig1!");
                 pressedcount++;
-            } else if (LevelAction == 2) {
+            } else if (LevelAction == 2 && pressedcount == 1) {
                 alert("richtig2!");
                 pressedcount++;
-            } else if (LevelAction == 3) {
+            } else if (LevelAction == 3 && pressedcount == 2) {
                 alert("richtig3!");
                 pressedcount++;
             } else {
