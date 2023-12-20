@@ -166,6 +166,8 @@ function levelAction(levelID, LevelAction) {
             } else if (LevelAction == 3 && pressedcount == 2) {
                 alert("richtig3!");
                 pressedcount++;
+                Raetsel3Geloest = true;
+                gameAction(3);
             } else {
                 alert("falsch!");
             }
@@ -323,7 +325,7 @@ function makeButtons(raetselID) {
             buttonDetailsArray.push([368, 331, 25, 29, 3, 0]); // Falsch
             buttonDetailsArray.push([399, 331, 25, 29, 3, 0]); // Falsch
             buttonDetailsArray.push([431, 331, 25, 29, 3, 0]); // Falsch
-            buttonDetailsArray.push([463, 331, 25, 29, 3, 1]); // Falsch
+            buttonDetailsArray.push([463, 331, 25, 29, 3, 1]); // Richtig 1
             buttonDetailsArray.push([494, 331, 25, 40, 3, 0]); // Falsch
 
             buttonDetailsArray.push([368, 359, 49, 29, 3, 0]); // Falsch
@@ -333,7 +335,7 @@ function makeButtons(raetselID) {
             buttonDetailsArray.push([494, 359, 49, 40, 3, 0]); // Falsch
 
             buttonDetailsArray.push([368, 410, 43, 29, 3, 0]); // Falsch
-            buttonDetailsArray.push([399, 410, 43, 29, 3, 3]); // Falsch
+            buttonDetailsArray.push([399, 410, 43, 29, 3, 3]); // Richtig 3
             buttonDetailsArray.push([431, 410, 43, 29, 3, 0]); // Falsch
             buttonDetailsArray.push([463, 410, 43, 29, 3, 0]); // Falsch
             buttonDetailsArray.push([494, 410, 43, 40, 3, 0]); // Falsch
@@ -342,7 +344,13 @@ function makeButtons(raetselID) {
             buttonDetailsArray.push([399, 455, 43, 29, 3, 0]); // Falsch
             buttonDetailsArray.push([431, 455, 43, 29, 3, 0]); // Falsch
             buttonDetailsArray.push([463, 455, 43, 29, 3, 0]); // Falsch
-            buttonDetailsArray.push([494, 455, 43, 40, 3, 2]); // Falsch
+            buttonDetailsArray.push([494, 455, 43, 40, 3, 2]); // Richtig 2
+
+            buttonDetailsArray.push([368, 497, 36, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([399, 497, 36, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([431, 497, 36, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([463, 497, 36, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([494, 497, 36, 40, 3, 0]); // Falsch
 
 
             for (let index = 0; index < buttonDetailsArray.length; index++) {
@@ -483,7 +491,7 @@ function gameAction(viewID) {
         
             // Ändern des Buttons
             document.getElementById("gamebutton1").style.top = "390px";
-            document.getElementById("gamebutton1").style.left = "498px";
+            document.getElementById("gamebutton1").style.left = "531px";
             document.getElementById("gamebutton1").style.width = "100px";
             document.getElementById("gamebutton1").style.height = "100px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(4)');
