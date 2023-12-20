@@ -39,8 +39,10 @@ var insel3ON = false;
 var insel4ON = false;
 
 // Raetsel geloest
-var Raetsel1Geloest = false;
-var parkplatzGeloest = false;
+var Raetsel1Geloest = false; // TRESOR
+var parkplatzGeloest = true; // Skip den Parkplatz weil doch kein Rätsel???
+var Raetsel2Geloest = false; // GYM PC
+var Raetsel3Geloest = false; // POSTREGAL
 
 // Speaker-Audio
 var speakerAudioPlayed = []; // Wurde das Audio vom Sprecher bereits abgespielt
@@ -102,13 +104,71 @@ function levelAction(levelID, LevelAction) {
         case 2: // PC im Fittnessstudio
 
             if (LevelAction == 1) {
-                alert(document.getElementById("levelbuttonTextfeldPCInput1").value);
+                if (document.getElementById("levelbuttonTextfeldPCInput1").value == "335") {
+                    document.getElementById("levelbuttonTextfeldPCInput1").disabled = true;
+                    document.getElementById("levelbuttonTextfeldPCInput2").disabled = false;
+                    document.getElementById("levelbuttonTextfeldPCInput2").focus();
+                    document.getElementById("levelbuttonTextfeldPCInputSubmit").setAttribute('onclick', 'levelAction(2, 2)');
+                    document.getElementById("levelbuttonTextfeldPCInputSubmit").style.top = "304px";
+                    stopAllAudio();
+                    playaudio("ID_zu_groß.wav", 0.8, false);
+                } else {
+                    document.getElementById("levelbuttonTextfeldPCInput1").value = "";
+                    document.getElementById("levelbuttonTextfeldPCInput1").focus();
+                    stopAllAudio();
+                    playaudio("Erstes_Raetsel_falsch.wav", 0.8, false);
+                }
             } else if (LevelAction == 2) {
-                alert(document.getElementById("levelbuttonTextfeldPCInput2").value);
+                if (document.getElementById("levelbuttonTextfeldPCInput2").value == "5") {
+                    document.getElementById("levelbuttonTextfeldPCInput2").disabled = true;
+                    document.getElementById("levelbuttonTextfeldPCInput3").disabled = false;
+                    document.getElementById("levelbuttonTextfeldPCInput3").focus();
+                    document.getElementById("levelbuttonTextfeldPCInputSubmit").setAttribute('onclick', 'levelAction(2, 3)');
+                    document.getElementById("levelbuttonTextfeldPCInputSubmit").style.top = "378px";
+                    stopAllAudio();
+                    playaudio("erklaerung_lineares_sondieren.wav", 0.8, false);
+                } else {
+                    document.getElementById("levelbuttonTextfeldPCInput2").value = "";
+                    document.getElementById("levelbuttonTextfeldPCInput2").focus();
+                    stopAllAudio();
+                    playaudio("Zweites_Raetsel_falsch.wav", 0.8, false);
+                }            
             } else if (LevelAction == 3) {
-                alert(document.getElementById("levelbuttonTextfeldPCInput3").value);
+                if (document.getElementById("levelbuttonTextfeldPCInput3").value == "21") {
+                    document.getElementById("levelbuttonTextfeldPCInput3").disabled = true;
+                    document.getElementById("levelbuttonTextfeldPCInputSubmit").style.display = "none";
+                    Raetsel2Geloest = true;
+                    insel3ON = true;
+                    stopAllAudio();
+                    playaudio("Outro_zweite_Insel.wav", 0.8, false);
+                } else {
+                    document.getElementById("levelbuttonTextfeldPCInput3").value = "";
+                    document.getElementById("levelbuttonTextfeldPCInput3").focus();
+                    stopAllAudio();
+                    playaudio("Zweites_Raetsel_falsch.wav", 0.8, false);
+                }  
             }
                 
+
+            break;
+
+        case 3: // Postregal
+
+            var pressedcount = 0;
+            
+
+            if (LevelAction == 1) {
+                alert("richtig1!");
+                pressedcount++;
+            } else if (LevelAction == 2) {
+                alert("richtig2!");
+                pressedcount++;
+            } else if (LevelAction == 3) {
+                alert("richtig3!");
+                pressedcount++;
+            } else {
+                alert("falsch!");
+            }
 
             break;
     
@@ -177,9 +237,10 @@ function makeButtons(raetselID) {
             newTextField.id = "levelbuttonTextfeldPCInput1";
             newTextField.setAttribute('type', 'text');
             newTextField.setAttribute('class', 'invisible-button');
+            newTextField.autofocus = true;
             newTextField.style.top = "230px";
             newTextField.style.left = "230px";
-            newTextField.style.width = "100px";
+            newTextField.style.width = "112px";
             newTextField.style.height = "40px";
             newTextField.style.fontSize = "16px";
             newTextField.style.letterSpacing = "12px";
@@ -192,9 +253,10 @@ function makeButtons(raetselID) {
             newTextField.id = "levelbuttonTextfeldPCInput2";
             newTextField.setAttribute('type', 'text');
             newTextField.setAttribute('class', 'invisible-button');
+            newTextField.disabled = true;
             newTextField.style.top = "304px";
             newTextField.style.left = "230px";
-            newTextField.style.width = "100px";
+            newTextField.style.width = "112px";
             newTextField.style.height = "40px";
             newTextField.style.fontSize = "16px";
             newTextField.style.letterSpacing = "12px";
@@ -207,9 +269,10 @@ function makeButtons(raetselID) {
             newTextField.id = "levelbuttonTextfeldPCInput3";
             newTextField.setAttribute('type', 'text');
             newTextField.setAttribute('class', 'invisible-button');
+            newTextField.disabled = true;
             newTextField.style.top = "378px";
             newTextField.style.left = "230px";
-            newTextField.style.width = "100px";
+            newTextField.style.width = "112px";
             newTextField.style.height = "40px";
             newTextField.style.fontSize = "16px";
             newTextField.style.letterSpacing = "12px";
@@ -239,6 +302,64 @@ function makeButtons(raetselID) {
 
             break;
     
+        case 3: // Postregal
+
+            var buttonDetailsArray = [];
+
+            // Button-Eigenschaften: (ID) - Top - Left - Width - Height - Level - onclick
+
+            buttonDetailsArray.push([368, 275, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([399, 275, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([431, 275, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([463, 275, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([494, 275, 25, 40, 3, 0]); // Falsch
+
+            buttonDetailsArray.push([368, 303, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([399, 303, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([431, 303, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([463, 303, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([494, 303, 25, 40, 3, 0]); // Falsch
+
+            buttonDetailsArray.push([368, 331, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([399, 331, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([431, 331, 25, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([463, 331, 25, 29, 3, 1]); // Falsch
+            buttonDetailsArray.push([494, 331, 25, 40, 3, 0]); // Falsch
+
+            buttonDetailsArray.push([368, 359, 49, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([399, 359, 49, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([431, 359, 49, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([463, 359, 49, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([494, 359, 49, 40, 3, 0]); // Falsch
+
+            buttonDetailsArray.push([368, 410, 43, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([399, 410, 43, 29, 3, 3]); // Falsch
+            buttonDetailsArray.push([431, 410, 43, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([463, 410, 43, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([494, 410, 43, 40, 3, 0]); // Falsch
+
+            buttonDetailsArray.push([368, 455, 43, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([399, 455, 43, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([431, 455, 43, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([463, 455, 43, 29, 3, 0]); // Falsch
+            buttonDetailsArray.push([494, 455, 43, 40, 3, 2]); // Falsch
+
+
+            for (let index = 0; index < buttonDetailsArray.length; index++) {
+                const newButton = document.createElement("div");
+                newButton.id = "levelbutton" + index;
+                newButton.setAttribute('class', 'invisible-button');
+                newButton.style.top = buttonDetailsArray[index][0] + "px";
+                newButton.style.left = buttonDetailsArray[index][1] + "px";
+                newButton.style.width = buttonDetailsArray[index][2] + "px";
+                newButton.style.height = buttonDetailsArray[index][3] + "px";
+                newButton.setAttribute('onclick', 'levelAction(' + buttonDetailsArray[index][4] + ', ' +  buttonDetailsArray[index][5] + ')');
+
+                document.getElementById("game").appendChild(newButton);
+            }
+
+            break;
+        
         default:
             break;
     }
@@ -347,7 +468,7 @@ function gameAction(viewID) {
 
             removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "block";
+            (Raetsel3Geloest) ? document.getElementById("gamebutton1").style.display = "block" : document.getElementById("gamebutton1").style.display = "none";
 
             // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
@@ -369,8 +490,7 @@ function gameAction(viewID) {
 
             stopAllAudio();
             playaudio("8-bit-arcade.mp3", 0.02, true);
-            removeButtons();
-
+            (Raetsel3Geloest) ? "" : makeButtons(3);
             if (historyArray[historyArray.length - 1] != 3) {
                 historyArray.push(3);
             }
@@ -472,6 +592,7 @@ function gameAction(viewID) {
             document.getElementById("gameimage").src = "parkplatz.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen beim Parkplatz";
         
+            stopAllAudio();
                 
             if (historyArray[historyArray.length - 1] != 6) {
                 historyArray.push(6);
@@ -495,11 +616,21 @@ function gameAction(viewID) {
             document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
 
              // Buttons Bildschirm
-             document.getElementById("gamebutton1").style.top = "452px";
-             document.getElementById("gamebutton1").style.left = "533px";
-             document.getElementById("gamebutton1").style.width = "105px";
-             document.getElementById("gamebutton1").style.height = "60px";
-             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(8)');
+
+             
+                document.getElementById("gamebutton1").style.top = "452px";
+                document.getElementById("gamebutton1").style.left = "533px";
+                document.getElementById("gamebutton1").style.width = "105px";
+                document.getElementById("gamebutton1").style.height = "60px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(8)');
+             
+             
+
+            stopAllAudio();
+            if (!speakerAudioPlayed[4]){
+                playaudio("Gym_willkommen.wav", 0.8, false); // ID 4
+                speakerAudioPlayed[4] = true;
+            }
 
              if (historyArray[historyArray.length - 1] != 7) {
                 historyArray.push(7);
@@ -511,28 +642,34 @@ function gameAction(viewID) {
 
             removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "none";
+    
 
-            // Inseln freischalten
-            document.getElementById("insel2").style.display = "none";
-            document.getElementById("insel3").style.display = "none";
-            document.getElementById("insel4").style.display = "none";
+                document.getElementById("gamebutton1").style.display = "none";
+
+                // Inseln freischalten
+                document.getElementById("insel2").style.display = "none";
+                document.getElementById("insel3").style.display = "none";
+                document.getElementById("insel4").style.display = "none";
+                
+
+                document.getElementById("levelText").innerHTML = "Das Gym";
+                document.getElementById("gameimage").src = "pc.png";
+                document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
+
+                // //Buy Ticket
+                document.getElementById("gamebutton1").style.top = "300px";
+                document.getElementById("gamebutton1").style.left = "340px";
+                document.getElementById("gamebutton1").style.width = "205px";
+                document.getElementById("gamebutton1").style.height = "70px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(9)');
+
+                stopAllAudio();
+                (Raetsel2Geloest) ? "" : makeButtons(2);
+
+                if (historyArray[historyArray.length - 1] != 8) {
+                    historyArray.push(8);
+                }
             
-
-            document.getElementById("levelText").innerHTML = "Das Gym";
-            document.getElementById("gameimage").src = "pc.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
-
-             // //Buy Ticket
-             document.getElementById("gamebutton1").style.top = "300px";
-             document.getElementById("gamebutton1").style.left = "340px";
-             document.getElementById("gamebutton1").style.width = "205px";
-             document.getElementById("gamebutton1").style.height = "70px";
-             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(9)');
-
-             if (historyArray[historyArray.length - 1] != 8) {
-                historyArray.push(8);
-            }
             break;
     
 
