@@ -189,7 +189,7 @@ function levelAction(levelID, LevelAction) {
 
                 if (LevelAction == 1) {
                     fragencount++;
-                    document.getElementById("levelbuttonTextfeld").innerHTML = "Warum sollte die Arraygröße in einer HashMap immer ein Primzahl sein?";
+                    document.getElementById("levelbuttonTextfeld").innerHTML = "Warum sollte die Arraygröße in einer HashMap immer eine Primzahl sein?";
                     document.getElementById("levelbutton0").innerHTML = "A) Um einen schnelleren Zugriff zu garantieren";
                     document.getElementById("levelbutton1").innerHTML = "B) Um Kollisionen zu vermeiden";
                     document.getElementById("levelbutton2").innerHTML = "C) Weil es bei der Überprüfung der Datenintegrität hilft";
