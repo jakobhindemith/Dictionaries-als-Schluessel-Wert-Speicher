@@ -733,7 +733,7 @@ function gameAction(viewID) {
             break;
         
             
-        case 8:
+            case 8:
 
             removeButtons();
 
@@ -749,7 +749,7 @@ function gameAction(viewID) {
 
                 document.getElementById("levelText").innerHTML = "Das Gym";
                 document.getElementById("gameimage").src = "pc.png";
-                document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
+                document.getElementById("levelTipps").innerHTML = "<br><br><img src='blog.png' style='width: 350px;'>";
 
                 // //Buy Ticket
                 document.getElementById("gamebutton1").style.top = "300px";
@@ -768,6 +768,7 @@ function gameAction(viewID) {
                 }
             
             break;
+    
     
 
         case 9:
@@ -841,8 +842,8 @@ function gameAction(viewID) {
             break;
 
 
-            //Lager Raum
-            case 13:
+        //Lager Raum
+        case 13:
 
             removeButtons();
 
@@ -873,7 +874,36 @@ function gameAction(viewID) {
 
             break;
 
+             //Tor
+             case 14:
 
+             removeButtons();
+ 
+             document.getElementById("gamebutton1").style.display = "none";
+ 
+             // Inseln freischalten
+             document.getElementById("insel2").style.display = "none";
+             document.getElementById("insel3").style.display = "none";
+             document.getElementById("insel4").style.display = "none";
+             
+ 
+             document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+             document.getElementById("gameimage").src = "Tor_Insel_4_Leer.png";
+             document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+  
+             //Button Lager
+             document.getElementById("gamebutton1").style.top = "366px";
+             document.getElementById("gamebutton1").style.left = "774px";
+             document.getElementById("gamebutton1").style.width = "18px";
+             document.getElementById("gamebutton1").style.height = "55px";
+             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(15)'); 
+ 
+             if (historyArray[historyArray.length - 1] != 14) {
+                 historyArray.push(12);
+             }
+ 
+             break;
+ 
 
         default:
             break;
