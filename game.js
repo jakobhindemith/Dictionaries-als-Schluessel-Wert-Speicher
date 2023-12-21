@@ -43,12 +43,14 @@ var Raetsel1Geloest = false; // TRESOR
 var parkplatzGeloest = true; // Skip den Parkplatz weil doch kein Rätsel???
 var Raetsel2Geloest = false; // GYM PC
 var Raetsel3Geloest = false; // POSTREGAL
+var Raetsel4Geloest = false; // LAGERHAUS
 
 // Speaker-Audio
 var speakerAudioPlayed = []; // Wurde das Audio vom Sprecher bereits abgespielt
 
 // Level Variablen
 var pressedcount = 0; // Anzahl der Knöpfe, die gedrückt wurden für Level Regal
+var fragencount = 0; // Anzahl der Fragen, die gestellt wurden für Level Lagerhaus
 
 function playaudio(audiofilename, volume, looped) {
 
@@ -176,6 +178,34 @@ function levelAction(levelID, LevelAction) {
                 gameAction(3);
             } else {
                 alert("falsch!");
+            }
+
+            break;
+
+        case 4: // Lagerhaus
+
+            if (fragencount == 0) { // Frage 1
+
+                if (LevelAction == 1) {
+                    fragencount++;
+                    document.getElementById("levelbuttonTextfeld").innerHTML = "Warum sollte die Arraygröße in einer HashMap immer ein Primzahl sein?";
+                    document.getElementById("levelbutton0").innerHTML = "A) Um einen schnelleren Zugriff zu garantieren";
+                    document.getElementById("levelbutton1").innerHTML = "B) Um Kollisionen zu vermeiden";
+                    document.getElementById("levelbutton2").innerHTML = "C) Weil es bei der Überprüfung der Datenintegrität hilft";
+                } else {
+                    alert("Falsch!");
+                }
+            } else if (fragencount == 1) { // Frage 2
+               
+                if (LevelAction == 2) {
+                    fragencount++;
+                    removeButtons();
+                    Raetsel4Geloest = true;
+                    gameAction(11);
+                } else {
+                    alert("Falsch!");
+                }
+
             }
 
             break;
@@ -371,6 +401,56 @@ function makeButtons(raetselID) {
 
                 document.getElementById("game").appendChild(newButton);
             }
+
+            break;
+
+        case 4: // Lagerhaus
+
+            var buttonDetailsArray = [];
+
+            var newTextField = document.createElement("div");
+            newTextField.id = "levelbuttonTextfeld";
+            newTextField.setAttribute('class', 'invisible-button');
+            newTextField.innerHTML = "Wann sollte dieser Umbau am besten stattfinden?";
+            newTextField.style.top = "490px";
+            newTextField.style.left = "150px";
+            newTextField.style.width = "500px";
+            newTextField.style.height = "50px";
+            newTextField.style.fontSize = "16px";
+            newTextField.style.letterSpacing = "3px";
+            newTextField.style.textAlign = "left";
+            newTextField.style.fontFamily = "Pixelify Sans";
+            newTextField.style.overflow = "hidden";
+            newTextField.style.borderRadius = "0px";
+            newTextField.style.color = "black";
+            newTextField.style.cursor = "default";
+            document.getElementById("game").appendChild(newTextField);
+
+            buttonDetailsArray.push([550, 150, 200, 40, 4, 1]);
+            buttonDetailsArray.push([550, 380, 170, 40, 4, 2]);
+            buttonDetailsArray.push([550, 560, 220, 40, 4, 3]);
+
+
+            for (let index = 0; index < buttonDetailsArray.length; index++) {
+                const newButton = document.createElement("div");
+                newButton.id = "levelbutton" + index;
+                newButton.setAttribute('class', 'invisible-button');
+                newButton.style.textAlign = "left";
+                newButton.style.fontSize = "14px";
+                newButton.style.color = "black";
+                newButton.style.fontFamily = "Pixelify Sans";
+                newButton.style.top = buttonDetailsArray[index][0] + "px";
+                newButton.style.left = buttonDetailsArray[index][1] + "px";
+                newButton.style.width = buttonDetailsArray[index][2] + "px";
+                newButton.style.height = buttonDetailsArray[index][3] + "px";
+                newButton.setAttribute('onclick', 'levelAction(' + buttonDetailsArray[index][4] + ', ' +  buttonDetailsArray[index][5] + ')');
+
+                document.getElementById("game").appendChild(newButton);
+            }
+
+            document.getElementById("levelbutton0").innerHTML = "A) Übers Wochenende";
+            document.getElementById("levelbutton1").innerHTML = "B) In der Woche";
+            document.getElementById("levelbutton2").innerHTML = "C) vor einem Feiertag";
 
             break;
         
@@ -735,7 +815,7 @@ function gameAction(viewID) {
 
             removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "block";
+            (!Raetsel4Geloest) ? document.getElementById("gamebutton1").style.display = "block" : document.getElementById("gamebutton1").style.display = "none";
 
             // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
@@ -784,6 +864,8 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.width = "18px";
             document.getElementById("gamebutton1").style.height = "55px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(14)'); // ToDo: für Case 13
+
+            (Raetsel4Geloest) ? "" : makeButtons(4);
 
             if (historyArray[historyArray.length - 1] != 13) {
                 historyArray.push(12);
