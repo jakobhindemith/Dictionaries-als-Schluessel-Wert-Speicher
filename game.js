@@ -453,7 +453,7 @@ function gameAction(viewID) {
             // Ändern der Texte und Infos und des Bildes
             document.getElementById("levelText").innerHTML = "Die DHL Insel";
             document.getElementById("gameimage").src = "Island_Postoffice.png";
-            document.getElementById("levelTipps").innerHTML = "<p>Jetzt, wo du weißt, was dich erwarten wird, werde ich dich ein wenig in das Thema der HashMaps einführen.</p><p>Eine Map in der Programmierung ist eine Datenstruktur, welche es ermöglicht, Werte nach einem bestimmten Muster abzulegen und effizient wiederzubeschaffen. Die Grundlage einer solchen Map ist ein, dir sicherlich bekanntes, Array. Also eine Tabelle, in der Werte gespeichert werden und eindeutig einem Index zugeordnet werden.</p><p>Eine Map baut insofern darauf auf, dass sie die Werte mit einer besonderen Indexstruktur speichert, indem sie die Indizes mithilfe eines Schlüssels berechnet und in der Lage ist, die Werte anhand dieses Schlüssels wiederzubeschaffen. Aber ich denke, du schaust es dir einfach selbst an, anstatt mir hier zuzuhören, oder? <p>Hinter mir siehst du die Postfiliale dieser Insel. Diese hat die Briefe bis vor kurzem noch sortiert, indem der Mitarbeiter immer das gesamte Regal systematisch absuchen musste, bis das richtige Fach gefunden wurde. Allerdings kannst du dir vorstellen, dass diese Methode sehr lange dauern kann, oder? Darum wurde das System überarbeitet. Sie arbeitet jetzt wie eine HashMap. Am besten gehst du einfach mal rein und lässt es dir durch den Mitarbeiter erklären.</p>";
+            document.getElementById("levelTipps").innerHTML = "<p>Jetzt, wo du weißt, was dich erwarten wird, werde ich dich ein wenig in das Thema der HashMaps einführen.</br><br></p><p>Eine Map in der Programmierung ist eine Datenstruktur, welche es ermöglicht, Werte nach einem bestimmten Muster abzulegen und effizient wiederzubeschaffen. Die Grundlage einer solchen Map ist ein, dir sicherlich bekanntes, Array. Also eine Tabelle, in der Werte gespeichert werden und eindeutig einem Index zugeordnet werden.</p><p>Eine Map baut insofern darauf auf, dass sie die Werte mit einer besonderen Indexstruktur speichert, indem sie die Indizes mithilfe eines Schlüssels berechnet und in der Lage ist, die Werte anhand dieses Schlüssels wiederzubeschaffen. Aber ich denke, du schaust es dir einfach selbst an, anstatt mir hier zuzuhören, oder? <p>Hinter mir siehst du die Postfiliale dieser Insel. Diese hat die Briefe bis vor kurzem noch sortiert, indem der Mitarbeiter immer das gesamte Regal systematisch absuchen musste, bis das richtige Fach gefunden wurde. Allerdings kannst du dir vorstellen, dass diese Methode sehr lange dauern kann, oder? Darum wurde das System überarbeitet. Sie arbeitet jetzt wie eine HashMap. Am besten gehst du einfach mal rein und lässt es dir durch den Mitarbeiter erklären.</p>";
         
             // Ändern des Buttons
             document.getElementById("gamebutton1").style.top = "190px";
@@ -668,7 +668,7 @@ function gameAction(viewID) {
                 
 
                 document.getElementById("levelText").innerHTML = "Das Gym";
-                document.getElementById("gameimage").src = "pc.png";
+                document.getElementById("gameimage").src = "PC.png";
                 document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
 
                 // //Buy Ticket
@@ -730,11 +730,12 @@ function gameAction(viewID) {
 
             break;
 
+        //Laderampe
         case 12:
 
             removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "none";
+            document.getElementById("gamebutton1").style.display = "block";
 
             // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
@@ -747,10 +748,10 @@ function gameAction(viewID) {
             document.getElementById("levelTipps").innerHTML = "Willkommen im IKEA Möbelhaus";
 
             // IKEA
-            document.getElementById("gamebutton1").style.top = "211px";
-            document.getElementById("gamebutton1").style.left = "288px";
-            document.getElementById("gamebutton1").style.width = "190px";
-            document.getElementById("gamebutton1").style.height = "120px";
+            document.getElementById("gamebutton1").style.top = "366px";
+            document.getElementById("gamebutton1").style.left = "774px";
+            document.getElementById("gamebutton1").style.width = "18px";
+            document.getElementById("gamebutton1").style.height = "55px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(13)'); // ToDo: für Case 13
 
             if (historyArray[historyArray.length - 1] != 12) {
@@ -758,6 +759,38 @@ function gameAction(viewID) {
             }
 
             break;
+
+
+            //Lager Raum
+            case 13:
+
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "none";
+
+            // Inseln freischalten
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+            
+
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("gameimage").src = "lager.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+ 
+            //Button Lager
+            document.getElementById("gamebutton1").style.top = "366px";
+            document.getElementById("gamebutton1").style.left = "774px";
+            document.getElementById("gamebutton1").style.width = "18px";
+            document.getElementById("gamebutton1").style.height = "55px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(14)'); // ToDo: für Case 13
+
+            if (historyArray[historyArray.length - 1] != 13) {
+                historyArray.push(12);
+            }
+
+            break;
+
 
 
         default:
