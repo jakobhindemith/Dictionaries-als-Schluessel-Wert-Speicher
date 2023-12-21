@@ -493,7 +493,6 @@ function gameAction(viewID) {
                 document.getElementById("insel4").style.display = "block";
             }
             
-            document.getElementById("schluesselText").innerHTML = "0 / 4";
             document.getElementById("levelText").innerHTML = "Die Inseln";
             document.getElementById("gameimage").src = "Island.gif";
             document.getElementById("levelTipps").innerHTML = "<p>Sei willkommen, wissbegieriger Teilnehmer. Du, der du dich den Herausforderungen dieser Inseln stellst und mehr über HashMaps lernen möchtest, höre zu, denn ich werde dir erklären, was du zu tun hast. Dieser Ort steckt voller Rätsel und Orte, an denen du dich beweisen und dein Wissen anwenden musst. Für jedes beendete Rätsel wird dir ein Ticket auf die nächste Insel anvertraut. Außerdem gilt es, alle Teile des Schlüssels zu sammeln, welcher dir die letzte Tür öffnen wird. Strenge dich an, und es wird sich für dich auszahlen.</p>";
