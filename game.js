@@ -495,8 +495,13 @@ function gameAction(viewID) {
             
             document.getElementById("levelText").innerHTML = "Die Inseln";
             document.getElementById("gameimage").src = "Island.gif";
-            document.getElementById("levelTipps").innerHTML = "<p>Sei willkommen, wissbegieriger Teilnehmer. Du, der du dich den Herausforderungen dieser Inseln stellst und mehr über HashMaps lernen möchtest, höre zu, denn ich werde dir erklären, was du zu tun hast. Dieser Ort steckt voller Rätsel und Orte, an denen du dich beweisen und dein Wissen anwenden musst. Für jedes beendete Rätsel wird dir ein Ticket auf die nächste Insel anvertraut. Außerdem gilt es, alle Teile des Schlüssels zu sammeln, welcher dir die letzte Tür öffnen wird. Strenge dich an, und es wird sich für dich auszahlen.</p>";
-        
+            document.getElementById("levelTipps").innerHTML = "<p>Sei willkommen, wissbegieriger Teilnehmer."
+            + "Du, der du dich den Herausforderungen dieser Inseln stellst und mehr über HashMaps lernen möchtest,"
+            + "höre zu, denn ich werde dir erklären, was du zu tun hast. Dieser Ort steckt voller Rätsel und Orte, "
+            + "an denen du dich beweisen und dein Wissen anwenden musst. Für jedes beendete Rätsel wird dir ein Ticket auf die nächste Insel anvertraut."
+            + "Außerdem gilt es, alle Teile des Schlüssels zu sammeln, welcher dir die letzte Tür öffnen wird. Strenge dich an,"
+            + "und es wird sich für dich auszahlen.</p>";
+
             // Ändern des Buttons
             document.getElementById("gamebutton1").style.top = "400px";
             document.getElementById("gamebutton1").style.left = "98px";
@@ -535,8 +540,17 @@ function gameAction(viewID) {
             // Ändern der Texte und Infos und des Bildes
             document.getElementById("levelText").innerHTML = "Die DHL Insel";
             document.getElementById("gameimage").src = "Island_Postoffice.png";
-            document.getElementById("levelTipps").innerHTML = "<p>Jetzt, wo du weißt, was dich erwarten wird, werde ich dich ein wenig in das Thema der HashMaps einführen.</br><br></p><p>Eine Map in der Programmierung ist eine Datenstruktur, welche es ermöglicht, Werte nach einem bestimmten Muster abzulegen und effizient wiederzubeschaffen. Die Grundlage einer solchen Map ist ein, dir sicherlich bekanntes, Array. Also eine Tabelle, in der Werte gespeichert werden und eindeutig einem Index zugeordnet werden.</p><p>Eine Map baut insofern darauf auf, dass sie die Werte mit einer besonderen Indexstruktur speichert, indem sie die Indizes mithilfe eines Schlüssels berechnet und in der Lage ist, die Werte anhand dieses Schlüssels wiederzubeschaffen. Aber ich denke, du schaust es dir einfach selbst an, anstatt mir hier zuzuhören, oder? <p>Hinter mir siehst du die Postfiliale dieser Insel. Diese hat die Briefe bis vor kurzem noch sortiert, indem der Mitarbeiter immer das gesamte Regal systematisch absuchen musste, bis das richtige Fach gefunden wurde. Allerdings kannst du dir vorstellen, dass diese Methode sehr lange dauern kann, oder? Darum wurde das System überarbeitet. Sie arbeitet jetzt wie eine HashMap. Am besten gehst du einfach mal rein und lässt es dir durch den Mitarbeiter erklären.</p>";
-        
+            document.getElementById("levelTipps").innerHTML = "<p>Jetzt, wo du weißt, was dich erwarten wird, werde ich dich ein wenig in das Thema der HashMaps einführen."
+            + "</br><br></p><p>Eine Map in der Programmierung ist eine Datenstruktur, welche es ermöglicht, Werte nach einem bestimmten Muster abzulegen und effizient"
+            + "wiederzubeschaffen. Die Grundlage einer solchen Map ist ein, dir sicherlich bekanntes, Array. Also eine Tabelle,"
+            + "in der Werte gespeichert werden und eindeutig einem Index zugeordnet werden.</p><p>Eine Map baut insofern darauf auf,"
+            + "dass sie die Werte mit einer besonderen Indexstruktur speichert, indem sie die Indizes mithilfe eines Schlüssels berechnet und in der Lage ist,"
+            + "die Werte anhand dieses Schlüssels wiederzubeschaffen. Aber ich denke, du schaust es dir einfach selbst an, anstatt mir hier zuzuhören, oder?"
+            + "<p>Hinter mir siehst du die Postfiliale dieser Insel. Diese hat die Briefe bis vor kurzem noch sortiert,"
+            + "indem der Mitarbeiter immer das gesamte Regal systematisch absuchen musste, bis das richtige Fach gefunden wurde. Allerdings kannst du dir vorstellen,"
+            + "dass diese Methode sehr lange dauern kann, oder? Darum wurde das System überarbeitet. Sie arbeitet jetzt wie eine HashMap."
+            + "Am besten gehst du einfach mal rein und lässt es dir durch den Mitarbeiter erklären.</p>";
+
             // Ändern des Buttons
             document.getElementById("gamebutton1").style.top = "190px";
             document.getElementById("gamebutton1").style.left = "288px";
@@ -574,8 +588,15 @@ function gameAction(viewID) {
 
             document.getElementById("levelText").innerHTML = "Das Postoffice";
             document.getElementById("gameimage").src = "Level_Postoffice.gif";
-            document.getElementById("levelTipps").innerHTML = "<p>Der Mitarbeiter in der Postfiliale:</p>Unser neues System arbeitet wie eine HashMap und verwendet eine HashFunktion. Eine HashFunktion im Allgemeinen ist eine Zuordnung, welche Schlüsselwerten einen sogenannten HashWert zuordnet. Wie sicher bzw. verwendbar die Ergebnisse dabei sind, hängt von der Qualität der HashFunktion ab. Je mehr verschiedene HashWerte die Funktion in einem bestimmten Schlüsselraum erzeugen kann, desto besser ist sie.</p>Eine HashMap wiederum verwendet diese HashFunktion, um Schlüssel-Wert-Paare in einem Array zu speichern und später wieder auszulesen. Dabei wird aus dem Schlüssel ein Hash-Wert berechnet, welcher dann als Index in einem Array, in welchem die Daten gespeichert werden, fungiert. Somit können schnell und unabhängig vom Umfang der Datenmenge Datensätze wiedergefunden werden.</p>In unserer Postfiliale kannst du dir das Briefregal neben dir stellen wir uns ein großes Array vor. </p> <p>Die Empfängeradressen sind die Schlüssel, und die Briefe selbst sind die Werte. Unsere HashFunktion berechnet aus den Adressen eine Zahl, die einer Fachnummer entspricht. In dieses Fach legen wir dann unsere Briefe.<p>Hier ist unsere aktuelle HashFunktion: <br><code>(Straße als Zahl + Hausnummer) % Anzahl der Fächer (50) = Fach Index</code> <br> <table><tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td></td><td>.</td><td>,</td><td>ß</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr><tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td>32</td><td>33</td><td>34</td><td>35</td><td>36</td><td>37</td><td>38</td><td>39</td></tr></table>";
-            
+            document.getElementById("levelTipps").innerHTML = "<p>Der Mitarbeiter in der Postfiliale:</p>Unser neues System arbeitet wie eine HashMap und verwendet eine HashFunktion."
+            + "Eine HashFunktion im Allgemeinen ist eine Zuordnung, welche Schlüsselwerten einen sogenannten HashWert zuordnet. Wie sicher bzw. verwendbar die Ergebnisse dabei sind,"
+            + "hängt von der Qualität der HashFunktion ab. Je mehr verschiedene HashWerte die Funktion in einem bestimmten Schlüsselraum erzeugen kann, desto besser ist sie."
+            + "</p>Eine HashMap wiederum verwendet diese HashFunktion, um Schlüssel-Wert-Paare in einem Array zu speichern und später wieder auszulesen. Dabei wird aus dem Schlüssel ein Hash-Wert berechnet,"
+            + "welcher dann als Index in einem Array, in welchem die Daten gespeichert werden, fungiert. Somit können schnell und unabhängig vom Umfang der Datenmenge Datensätze wiedergefunden werden."
+            + "</p>In unserer Postfiliale kannst du dir das Briefregal neben dir stellen wir uns ein großes Array vor. </p> <p>Die Empfängeradressen sind die Schlüssel, und die Briefe selbst sind die Werte."
+            + "Unsere HashFunktion berechnet aus den Adressen eine Zahl, die einer Fachnummer entspricht. In dieses Fach legen wir dann unsere Briefe.<br><br>"
+            + "<p>Hier ist unsere aktuelle HashFunktion: <br><code>(Straße als Zahl + Hausnummer) % Anzahl der Fächer (50) = Fach Index</code> <br><br>"
+            + "<img src='blog.png' alt='Blog Image' style='width: 350px;'>";
         
             // Ändern des Buttons
             document.getElementById("gamebutton1").style.top = "390px";
