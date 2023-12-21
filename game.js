@@ -618,7 +618,7 @@ function gameAction(viewID) {
             removeButtons();
 
             document.getElementById("gamebutton1").style.display = "block";
-
+            (Raetsel2Geloest) ? document.getElementById("gamebutton1").style.display = "none" : document.getElementById("gamebutton1").style.display = "block";;
             // Inseln freischalten
             document.getElementById("insel2").style.display = "none";
             document.getElementById("insel3").style.display = "none";
