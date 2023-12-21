@@ -85,12 +85,12 @@ function levelAction(levelID, LevelAction) {
         case 1:
 
             if (LevelAction == -1) {
-                playaudio("button.mp3", 0.3, false);
+                playaudio("button.mp3", 0.2, false);
                 document.getElementById("levelbuttonTextfeld").innerHTML = "";
             } else if (LevelAction == -2) {
                 if (document.getElementById("levelbuttonTextfeld").innerHTML == "1625") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvv";
-                    playaudio("key-twist-in-lock.mp3", 0.6, false);
+                    playaudio("key-twist-in-lock.mp3", 1, false);
                     removeButtons();
                     insel2ON = true;
                     Raetsel1Geloest = true;
@@ -764,9 +764,7 @@ function gameAction(viewID) {
 
                 (Raetsel2Geloest) ? "" : makeButtons(2);
 
-                if (historyArray[historyArray.length - 1] != 8) {
-                    historyArray.push(8);
-                }
+                
             
             break;
     
@@ -834,7 +832,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.left = "774px";
             document.getElementById("gamebutton1").style.width = "18px";
             document.getElementById("gamebutton1").style.height = "55px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(13)'); // ToDo: für Case 13
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(13)');
 
             stopAllAudio();
             playaudio("truck.mp3", 0.2, true);
@@ -873,10 +871,6 @@ function gameAction(viewID) {
 
             stopAllAudio();
             playaudio("neon.mp3", 0.2, true);
-
-            if (historyArray[historyArray.length - 1] != 13) {
-                historyArray.push(13);
-            }
 
             break;
 
