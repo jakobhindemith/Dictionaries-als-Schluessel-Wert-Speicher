@@ -912,17 +912,3 @@ function gameAction(viewID) {
 
 
 }
-
-/*
-* Codeschnipsel, die wir benötigen werden:
-*
-* Bild ändern:
-* document.getElementById("gameimage").src = "neuesBild.jpg";
-*
-* Texte in der GameInfo ändern: // den Gleichen Code können wir auch bei den Tipps verwenden, oder wir nutzen einen kompletten neuen Tag
-* document.getElementById("schluesselText").innerText = "Neuer Schlüssel";
-* document.getElementById("levelText").innerText = "Aktuelles Level";
-*
-* document.getElementById("insel2").style.display = "block"; //zum Freischalten der Inseln
-*
-*/
