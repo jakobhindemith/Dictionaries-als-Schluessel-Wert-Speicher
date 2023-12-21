@@ -201,6 +201,7 @@ function levelAction(levelID, LevelAction) {
                     fragencount++;
                     removeButtons();
                     Raetsel4Geloest = true;
+                    insel4ON = true;
                     gameAction(11);
                 } else {
                     alert("Falsch!");
@@ -835,6 +836,8 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "55px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(13)'); // ToDo: für Case 13
 
+            stopAllAudio();
+            playaudio("truck.mp3", 0.2, true);
             if (historyArray[historyArray.length - 1] != 12) {
                 historyArray.push(12);
             }
@@ -868,14 +871,17 @@ function gameAction(viewID) {
 
             (Raetsel4Geloest) ? "" : makeButtons(4);
 
+            stopAllAudio();
+            playaudio("neon.mp3", 0.2, true);
+
             if (historyArray[historyArray.length - 1] != 13) {
-                historyArray.push(12);
+                historyArray.push(13);
             }
 
             break;
 
-             //Tor
-             case 14:
+        //Tor
+        case 14:
 
              removeButtons();
  
@@ -899,7 +905,7 @@ function gameAction(viewID) {
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(15)'); 
  
              if (historyArray[historyArray.length - 1] != 14) {
-                 historyArray.push(12);
+                 historyArray.push(14);
              }
  
              break;

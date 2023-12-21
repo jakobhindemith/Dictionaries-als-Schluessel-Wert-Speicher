@@ -11,6 +11,7 @@ body {
     background: rgba(0, 0, 0, 0.55) url(wallpaper.jpg);
     background-blend-mode: darken;
     color: #ffffff;
+
   }
 
 h1 {
@@ -53,6 +54,10 @@ table, th, td {
     text-align: left;
     height: 510px;
     overflow-y: scroll;
+}
+
+.gameelements .tipps::-webkit-scrollbar {
+    display: none;
 }
 
 .gameelements img {
