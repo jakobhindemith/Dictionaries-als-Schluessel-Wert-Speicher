@@ -115,11 +115,13 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").style.top = "304px";
                     stopAllAudio();
                     playaudio("ID_zu_groß.wav", 0.8, false);
+                    playaudio("gym.mp3", 0.2, true);
                 } else {
                     document.getElementById("levelbuttonTextfeldPCInput1").value = "";
                     document.getElementById("levelbuttonTextfeldPCInput1").focus();
                     stopAllAudio();
                     playaudio("Erstes_Raetsel_falsch.wav", 0.8, false);
+                    playaudio("gym.mp3", 0.2, true);
                 }
             } else if (LevelAction == 2) {
                 if (document.getElementById("levelbuttonTextfeldPCInput2").value == "5") {
@@ -130,11 +132,13 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").style.top = "378px";
                     stopAllAudio();
                     playaudio("erklaerung_lineares_sondieren.wav", 0.8, false);
+                    playaudio("gym.mp3", 0.2, true);
                 } else {
                     document.getElementById("levelbuttonTextfeldPCInput2").value = "";
                     document.getElementById("levelbuttonTextfeldPCInput2").focus();
                     stopAllAudio();
                     playaudio("Zweites_Raetsel_falsch.wav", 0.8, false);
+                    playaudio("gym.mp3", 0.2, true);
                 }            
             } else if (LevelAction == 3) {
                 if (document.getElementById("levelbuttonTextfeldPCInput3").value == "21") {
@@ -144,11 +148,13 @@ function levelAction(levelID, LevelAction) {
                     insel3ON = true;
                     stopAllAudio();
                     playaudio("Outro_zweite_Insel.wav", 0.8, false);
+                    playaudio("gym.mp3", 0.2, true);
                 } else {
                     document.getElementById("levelbuttonTextfeldPCInput3").value = "";
                     document.getElementById("levelbuttonTextfeldPCInput3").focus();
                     stopAllAudio();
                     playaudio("Zweites_Raetsel_falsch.wav", 0.8, false);
+                    playaudio("gym.mp3", 0.2, true);
                 }  
             }
                 
@@ -635,6 +641,7 @@ function gameAction(viewID) {
              
 
             stopAllAudio();
+            playaudio("gym.mp3", 0.1, true);
             if (!speakerAudioPlayed[4]){
                 playaudio("Gym_willkommen.wav", 0.8, false); // ID 4
                 speakerAudioPlayed[4] = true;
@@ -672,6 +679,8 @@ function gameAction(viewID) {
                 document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(9)');
 
                 stopAllAudio();
+                playaudio("gym.mp3", 0.2, true);
+
                 (Raetsel2Geloest) ? "" : makeButtons(2);
 
                 if (historyArray[historyArray.length - 1] != 8) {
