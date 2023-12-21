@@ -668,7 +668,7 @@ function gameAction(viewID) {
                 
 
                 document.getElementById("levelText").innerHTML = "Das Gym";
-                document.getElementById("gameimage").src = "PC.png";
+                document.getElementById("gameimage").src = "pc.png";
                 document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio";
 
                 // //Buy Ticket
