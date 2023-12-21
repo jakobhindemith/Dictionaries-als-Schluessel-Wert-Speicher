@@ -148,6 +148,7 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").style.display = "none";
                     Raetsel2Geloest = true;
                     insel3ON = true;
+                    document.getElementById("schluesselText").innerHTML = "2 / 4";
                     stopAllAudio();
                     playaudio("Outro_zweite_Insel.wav", 0.8, false);
                     playaudio("gym.mp3", 0.2, true);
@@ -202,6 +203,7 @@ function levelAction(levelID, LevelAction) {
                     removeButtons();
                     Raetsel4Geloest = true;
                     insel4ON = true;
+                    document.getElementById("schluesselText").innerHTML = "3 / 4";
                     gameAction(11);
                 } else {
                     alert("Falsch!");
