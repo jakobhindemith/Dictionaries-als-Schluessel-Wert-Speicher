@@ -40,10 +40,11 @@ var insel4ON = false;
 
 // Raetsel geloest
 var Raetsel1Geloest = false; // TRESOR
-var parkplatzGeloest = true; // Skip den Parkplatz weil doch kein Rätsel???
+var parkplatzGeloest = true; // Skip den Parkplatz weil doch kein Rätsel
 var Raetsel2Geloest = false; // GYM PC
 var Raetsel3Geloest = false; // POSTREGAL
 var Raetsel4Geloest = false; // LAGERHAUS
+var gameCompleted = false; // Spiel beendet -> Tor öffnen freigeschalten
 
 // Speaker-Audio
 var speakerAudioPlayed = []; // Wurde das Audio vom Sprecher bereits abgespielt
