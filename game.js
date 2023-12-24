@@ -89,17 +89,26 @@ function levelAction(levelID, LevelAction) {
                 playaudio("button.mp3", 0.2, false);
                 document.getElementById("levelbuttonTextfeld").innerHTML = "";
             } else if (LevelAction == -2) {
+                //Erstes Rätsel Gelöst
                 if (document.getElementById("levelbuttonTextfeld").innerHTML == "1625") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvv";
+                    //Audio: Richtiger Code
                     playaudio("key-twist-in-lock.mp3", 1, false);
+                    playaudio("post_ende.wav", 0.8, false);
+
                     removeButtons();
                     insel2ON = true;
                     Raetsel1Geloest = true;
                     document.getElementById("schluesselText").innerHTML = "1 / 4";
                     document.getElementById("gameimage").src = "SchliessfachRaetselOpen.png";
+
+                // wenn Rätsel 1 Falsch
                 } else {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxx";
+                    //Audio: Falscher Code
                     playaudio("invalid-selection.mp3", 0.2, false);
+                    playaudio("post_falsch_1.wav", 0.8, false); 
+                     
                 }
             } else {
                 playaudio("button.mp3", 0.3, false);
@@ -179,7 +188,8 @@ function levelAction(levelID, LevelAction) {
                 Raetsel3Geloest = true;
                 gameAction(3);
             } else {
-                alert("falsch!");
+                //alert("falsch!");
+                playaudio("falsche_antwort.wav", 0.8, false);
             }
 
             break;
@@ -894,6 +904,11 @@ function gameAction(viewID) {
 
             stopAllAudio();
             playaudio("neon.mp3", 0.2, true);
+
+            if (!speakerAudioPlayed[5]){
+                playaudio("möbel_1.wav", 0.8, false); // ID 4
+                speakerAudioPlayed[5] = true;
+            }
 
             break;
 
