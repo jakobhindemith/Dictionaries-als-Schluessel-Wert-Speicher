@@ -197,27 +197,32 @@ function levelAction(levelID, LevelAction) {
         case 4: // Lagerhaus
 
             if (fragencount == 0) { // Frage 1
-
+                   
                 if (LevelAction == 1) {
+                    stopAllAudio();
+                    playaudio("möbel_3 (1).wav", 0.8, false);
                     fragencount++;
                     document.getElementById("levelbuttonTextfeld").innerHTML = "Warum sollte die Arraygröße in einer HashMap immer eine Primzahl sein?";
                     document.getElementById("levelbutton0").innerHTML = "A) Um einen schnelleren Zugriff zu garantieren";
                     document.getElementById("levelbutton1").innerHTML = "B) Um Kollisionen zu vermeiden";
                     document.getElementById("levelbutton2").innerHTML = "C) Weil es bei der Überprüfung der Datenintegrität hilft";
                 } else {
-                    alert("Falsch!");
+                    stopAllAudio();
+                    playaudio("falsche_antwort.wav", 0.8, false);
                 }
             } else if (fragencount == 1) { // Frage 2
                
                 if (LevelAction == 2) {
+                    stopAllAudio();
+                    playaudio("möbel_4.wav", 0.8, false);
                     fragencount++;
                     removeButtons();
                     Raetsel4Geloest = true;
                     insel4ON = true;
                     document.getElementById("schluesselText").innerHTML = "3 / 4";
-                    gameAction(11);
                 } else {
-                    alert("Falsch!");
+                    stopAllAudio();
+                    playaudio("falsche_antwort.wav", 0.8, false);
                 }
 
             }
@@ -891,15 +896,19 @@ function gameAction(viewID) {
 
             document.getElementById("levelText").innerHTML = "Das Möbelhaus";
             document.getElementById("gameimage").src = "lager.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
- 
+            document.getElementById("levelTipps").innerHTML = "<p>Ach! du kommst ja wie gerufen.</p>" +
+            "<p>Ich bin der Besitzer dieses kleinen Möbelladens hier.</p>" +
+            "<p>Ich habe mich bei der letzten Bestellung etwas mitreißen lassen.</p>" +
+            "<p>Ich erwarte morgen meine Bestellung von 150 einzigartigen Möbelstücken.</p> <br>" +
+            "<p>Aber mein Lager und Ausstellungsfläche hat nur rund 50 Plätze.</p>" +
+            "<p>Könntest du heute und morgen einspringen, damit wir den Umbau und die Einlagerung der Möbel so schnell wie möglich hinter uns bringen können?</p>";
+             
             //Button Lager
             document.getElementById("gamebutton1").style.top = "366px";
             document.getElementById("gamebutton1").style.left = "774px";
             document.getElementById("gamebutton1").style.width = "18px";
             document.getElementById("gamebutton1").style.height = "55px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(14)'); // ToDo: für Case 13
-
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(14)');
             (Raetsel4Geloest) ? "" : makeButtons(4);
 
             stopAllAudio();
@@ -917,7 +926,7 @@ function gameAction(viewID) {
 
              removeButtons();
  
-             document.getElementById("gamebutton1").style.display = "none";
+             document.getElementById("gamebutton1").style.display = "block";
  
              // Inseln freischalten
              document.getElementById("insel2").style.display = "none";
@@ -926,12 +935,12 @@ function gameAction(viewID) {
              
  
              document.getElementById("levelText").innerHTML = "Das Möbelhaus";
-             document.getElementById("gameimage").src = "Tor_Insel_4_Leer.png";
+             document.getElementById("gameimage").src = "13.Insel4Nah.png";
              document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
   
              //Button Lager
-             document.getElementById("gamebutton1").style.top = "366px";
-             document.getElementById("gamebutton1").style.left = "774px";
+             document.getElementById("gamebutton1").style.top = "275px";
+             document.getElementById("gamebutton1").style.left = "295px";
              document.getElementById("gamebutton1").style.width = "18px";
              document.getElementById("gamebutton1").style.height = "55px";
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(15)'); 
@@ -941,10 +950,157 @@ function gameAction(viewID) {
              }
  
              break;
+
+            //Tor-Leer
+            case 15:
+
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
+
+            // Inseln freischalten
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+            
+
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("gameimage").src = "Tor_Insel_4_Leer.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
  
+            //Button Lager
+            document.getElementById("gamebutton1").style.top = "445px";
+            document.getElementById("gamebutton1").style.left = "406px";
+            document.getElementById("gamebutton1").style.width = "60px";
+            document.getElementById("gamebutton1").style.height = "60px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(16)'); 
+
+            if (historyArray[historyArray.length - 1] != 15) {
+                historyArray.push(15);
+            }
+
+            break;
+
+
+            //Tor-Gem
+            case 16:
+
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
+
+            // Inseln freischalten
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+            
+
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("gameimage").src = "Tor_Insel_4_1_Gem.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+ 
+            //Button Lager
+            document.getElementById("gamebutton1").style.top = "445px";
+            document.getElementById("gamebutton1").style.left = "406px";
+            document.getElementById("gamebutton1").style.width = "60px";
+            document.getElementById("gamebutton1").style.height = "60px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(17)'); 
+
+            if (historyArray[historyArray.length - 1] != 16) {
+                historyArray.push(16);
+            }
+
+            break;
+
+            //Tor-Gem2
+            case 17:
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
+
+            // Inseln freischalten
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+            
+
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("gameimage").src = "Tor_Insel_4_2_Gem.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+ 
+            //Button Lager
+            document.getElementById("gamebutton1").style.top = "445px";
+            document.getElementById("gamebutton1").style.left = "406px";
+            document.getElementById("gamebutton1").style.width = "60px";
+            document.getElementById("gamebutton1").style.height = "60px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(18)'); 
+
+            if (historyArray[historyArray.length - 1] != 17) {
+                historyArray.push(17);
+            }
+
+            break;
+       
+            //Tor-Gem3
+            case 18:
+            removeButtons();
+
+            document.getElementById("gamebutton1").style.display = "block";
+
+            // Inseln freischalten
+            document.getElementById("insel2").style.display = "none";
+            document.getElementById("insel3").style.display = "none";
+            document.getElementById("insel4").style.display = "none";
+            
+
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("gameimage").src = "Tor_Insel_4_3_Gem.png";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+ 
+            //Button Lager
+            document.getElementById("gamebutton1").style.top = "445px";
+            document.getElementById("gamebutton1").style.left = "406px";
+            document.getElementById("gamebutton1").style.width = "60px";
+            document.getElementById("gamebutton1").style.height = "60px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(19)'); 
+
+            if (historyArray[historyArray.length - 1] != 18) {
+                historyArray.push(18);
+            }
+
+            break;
+
+            //Tor-Gem4
+            case 19:
+                removeButtons();
+    
+                document.getElementById("gamebutton1").style.display = "block";
+    
+                // Inseln freischalten
+                document.getElementById("insel2").style.display = "none";
+                document.getElementById("insel3").style.display = "none";
+                document.getElementById("insel4").style.display = "none";
+                
+    
+                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("gameimage").src = "Tor_Insel_4_Oeffnung.gif";
+                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+     
+                //Button Lager
+                document.getElementById("gamebutton1").style.top = "445px";
+                document.getElementById("gamebutton1").style.left = "406px";
+                document.getElementById("gamebutton1").style.width = "60px";
+                document.getElementById("gamebutton1").style.height = "60px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)'); 
+    
+                if (historyArray[historyArray.length - 1] != 19) {
+                    historyArray.push(19);
+                }
+    
+                break;
 
         default:
-            break;
+            break
 
         }
 
