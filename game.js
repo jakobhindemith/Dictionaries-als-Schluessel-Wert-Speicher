@@ -945,6 +945,9 @@ function gameAction(viewID) {
              document.getElementById("gamebutton1").style.height = "55px";
              document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(15)'); 
  
+             stopAllAudio();
+             playaudio("something-strange-160387.mp3", 0.2, true);
+ 
              if (historyArray[historyArray.length - 1] != 14) {
                  historyArray.push(14);
              }
@@ -1006,6 +1009,8 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "60px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(17)'); 
 
+            playaudio("click-151673.mp3", 0.6, false);
+
             if (historyArray[historyArray.length - 1] != 16) {
                 historyArray.push(16);
             }
@@ -1034,6 +1039,9 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.width = "60px";
             document.getElementById("gamebutton1").style.height = "60px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(18)'); 
+
+            playaudio("click-151673.mp3", 0.6, false);
+
 
             if (historyArray[historyArray.length - 1] != 17) {
                 historyArray.push(17);
@@ -1064,6 +1072,9 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "60px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(19)'); 
 
+            playaudio("click-151673.mp3", 0.6, false);
+
+
             if (historyArray[historyArray.length - 1] != 18) {
                 historyArray.push(18);
             }
@@ -1093,6 +1104,9 @@ function gameAction(viewID) {
                 document.getElementById("gamebutton1").style.height = "60px";
                 document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)'); 
     
+                stopAllAudio();
+                playaudio("interface-124464.mp3", 0.2, false);
+
                 if (historyArray[historyArray.length - 1] != 19) {
                     historyArray.push(19);
                 }
