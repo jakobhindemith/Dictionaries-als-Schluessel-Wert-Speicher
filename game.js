@@ -30,6 +30,7 @@ function zurueck() {
 }
 
 const audioArray = []; // globally accessible array to store audio objects
+const speakeraudioArray = []; // globally accessible array to store audio objects
 const historyArray = []; // globally accessible array to store history
 
 
@@ -61,11 +62,28 @@ function playaudio(audiofilename, volume, looped) {
     audioArray.push(audio); // push the audio object to the array
     audio.play();
 }
+function playspeakeraudio(audiofilename, volume, looped) {
+
+    const audio = new Audio(audiofilename);
+    audio.volume = volume;
+    audio.loop = looped;
+    speakeraudioArray.push(audio); // push the audio object to the array
+    audio.play();
+}
 
 function stopAllAudio() {
     // Stop all audio from the array
      audioArray.forEach(audio => {
         audio.pause();
+        audio.remove();
+    });
+}
+
+function stopAllSpeakerAudio() {
+    // Stop all audio from the speaker audio array
+     speakeraudioArray.forEach(audio => {
+        audio.pause();
+        audio.remove();
     });
 }
 
@@ -86,15 +104,15 @@ function levelAction(levelID, LevelAction) {
         case 1:
 
             if (LevelAction == -1) {
-                playaudio("button.mp3", 0.2, false);
+                playspeakeraudio("button.mp3", 0.2, false);
                 document.getElementById("levelbuttonTextfeld").innerHTML = "";
             } else if (LevelAction == -2) {
                 //Erstes Rätsel Gelöst
                 if (document.getElementById("levelbuttonTextfeld").innerHTML == "1625") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvv";
                     //Audio: Richtiger Code
-                    playaudio("key-twist-in-lock.mp3", 1, false);
-                    playaudio("post_ende.wav", 0.8, false);
+                    playspeakeraudio("key-twist-in-lock.mp3", 1, false);
+                    playspeakeraudio("post_ende.wav", 1, false);
 
                     removeButtons();
                     insel2ON = true;
@@ -106,12 +124,12 @@ function levelAction(levelID, LevelAction) {
                 } else {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxx";
                     //Audio: Falscher Code
-                    playaudio("invalid-selection.mp3", 0.2, false);
-                    playaudio("post_falsch_1.wav", 0.8, false); 
+                    playspeakeraudio("invalid-selection.mp3", 0.2, false);
+                    playspeakeraudio("post_falsch_1.wav", 0.8, false); 
                      
                 }
             } else {
-                playaudio("button.mp3", 0.3, false);
+                playspeakeraudio("button.mp3", 0.3, false);
                 document.getElementById("levelbuttonTextfeld").innerHTML += LevelAction;
             }
             break;
@@ -125,15 +143,13 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInput2").focus();
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").setAttribute('onclick', 'levelAction(2, 2)');
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").style.top = "304px";
-                    stopAllAudio();
-                    playaudio("ID_zu_groß.wav", 0.8, false);
-                    playaudio("gym.mp3", 0.2, true);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("ID_zu_groß.wav", 0.8, false);
                 } else {
                     document.getElementById("levelbuttonTextfeldPCInput1").value = "";
                     document.getElementById("levelbuttonTextfeldPCInput1").focus();
-                    stopAllAudio();
-                    playaudio("Erstes_Raetsel_falsch.wav", 0.8, false);
-                    playaudio("gym.mp3", 0.2, true);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("Erstes_Raetsel_falsch.wav", 0.8, false);
                 }
             } else if (LevelAction == 2) {
                 if (document.getElementById("levelbuttonTextfeldPCInput2").value == "5") {
@@ -142,15 +158,13 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInput3").focus();
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").setAttribute('onclick', 'levelAction(2, 3)');
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").style.top = "378px";
-                    stopAllAudio();
-                    playaudio("erklaerung_lineares_sondieren.wav", 0.8, false);
-                    playaudio("gym.mp3", 0.2, true);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("erklaerung_lineares_sondieren.wav", 0.8, false);
                 } else {
                     document.getElementById("levelbuttonTextfeldPCInput2").value = "";
                     document.getElementById("levelbuttonTextfeldPCInput2").focus();
-                    stopAllAudio();
-                    playaudio("Zweites_Raetsel_falsch.wav", 0.8, false);
-                    playaudio("gym.mp3", 0.2, true);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("Zweites_Raetsel_falsch.wav", 0.8, false);
                 }            
             } else if (LevelAction == 3) {
                 if (document.getElementById("levelbuttonTextfeldPCInput3").value == "21") {
@@ -159,15 +173,13 @@ function levelAction(levelID, LevelAction) {
                     Raetsel2Geloest = true;
                     insel3ON = true;
                     document.getElementById("schluesselText").innerHTML = "2 / 4";
-                    stopAllAudio();
-                    playaudio("Outro_zweite_Insel.wav", 0.8, false);
-                    playaudio("gym.mp3", 0.2, true);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("Outro_zweite_Insel.wav", 0.8, false);
                 } else {
                     document.getElementById("levelbuttonTextfeldPCInput3").value = "";
                     document.getElementById("levelbuttonTextfeldPCInput3").focus();
-                    stopAllAudio();
-                    playaudio("Zweites_Raetsel_falsch.wav", 0.8, false);
-                    playaudio("gym.mp3", 0.2, true);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("Zweites_Raetsel_falsch.wav", 0.8, false);
                 }  
             }
                 
@@ -188,8 +200,8 @@ function levelAction(levelID, LevelAction) {
                 Raetsel3Geloest = true;
                 gameAction(3);
             } else {
-                //alert("falsch!");
-                playaudio("falsche_antwort.wav", 0.8, false);
+                stopAllSpeakerAudio();
+                playspeakeraudio("falsche_antwort.wav", 1, false);
             }
 
             break;
@@ -199,30 +211,30 @@ function levelAction(levelID, LevelAction) {
             if (fragencount == 0) { // Frage 1
                    
                 if (LevelAction == 1) {
-                    stopAllAudio();
-                    playaudio("möbel_3 (1).wav", 0.8, false);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("möbel_3 (1).wav", 0.8, false);
                     fragencount++;
                     document.getElementById("levelbuttonTextfeld").innerHTML = "Warum sollte die Arraygröße in einer HashMap immer eine Primzahl sein?";
                     document.getElementById("levelbutton0").innerHTML = "A) Um einen schnelleren Zugriff zu garantieren";
                     document.getElementById("levelbutton1").innerHTML = "B) Um Kollisionen zu vermeiden";
                     document.getElementById("levelbutton2").innerHTML = "C) Weil es bei der Überprüfung der Datenintegrität hilft";
                 } else {
-                    stopAllAudio();
-                    playaudio("falsche_antwort.wav", 0.8, false);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("falsche_antwort.wav", 0.8, false);
                 }
             } else if (fragencount == 1) { // Frage 2
                
                 if (LevelAction == 2) {
-                    stopAllAudio();
-                    playaudio("möbel_4.wav", 0.8, false);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("möbel_4.wav", 0.8, false);
                     fragencount++;
                     removeButtons();
                     Raetsel4Geloest = true;
                     insel4ON = true;
                     document.getElementById("schluesselText").innerHTML = "3 / 4";
                 } else {
-                    stopAllAudio();
-                    playaudio("falsche_antwort.wav", 0.8, false);
+                    stopAllSpeakerAudio();
+                    playspeakeraudio("falsche_antwort.wav", 0.8, false);
                 }
 
             }
@@ -535,7 +547,7 @@ function gameAction(viewID) {
 
             // Section: Speaker-Audio
             if (!speakerAudioPlayed[0]){
-                playaudio("Erste_Insel_Teil_eins.wav", 0.8, false); // Id 0
+                playspeakeraudio("Erste_Insel_Teil_eins.wav", 0.8, false); // Id 0
                 speakerAudioPlayed[0] = true;
             }
 
@@ -580,7 +592,7 @@ function gameAction(viewID) {
 
             // Section: Speaker-Audio
             if (!speakerAudioPlayed[1]){
-                playaudio("HashMap_erklaerung.wav", 0.8, false); // Id 1
+                playspeakeraudio("HashMap_erklaerung.wav", 0.8, false); // Id 1
                 speakerAudioPlayed[1] = true;
             }
             
@@ -703,7 +715,7 @@ function gameAction(viewID) {
 
             // Section: Speaker-Audio
             if (!speakerAudioPlayed[3]){
-                playaudio("zweite_Insel_Intro.wav", 0.8, false); // Id 3
+                playspeakeraudio("zweite_Insel_Intro.wav", 0.8, false); // Id 3
                 speakerAudioPlayed[3] = true;
             }
             break;
@@ -751,18 +763,18 @@ function gameAction(viewID) {
              // Buttons Bildschirm
 
              
-                document.getElementById("gamebutton1").style.top = "452px";
-                document.getElementById("gamebutton1").style.left = "533px";
-                document.getElementById("gamebutton1").style.width = "105px";
-                document.getElementById("gamebutton1").style.height = "60px";
-                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(8)');
+            document.getElementById("gamebutton1").style.top = "452px";
+            document.getElementById("gamebutton1").style.left = "533px";
+            document.getElementById("gamebutton1").style.width = "105px";
+            document.getElementById("gamebutton1").style.height = "60px";
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(8)');
              
              
 
             stopAllAudio();
             playaudio("gym.mp3", 0.1, true);
             if (!speakerAudioPlayed[4]){
-                playaudio("Gym_willkommen.wav", 0.8, false); // ID 4
+                playspeakeraudio("Gym_willkommen.wav", 0.8, false); // ID 4
                 speakerAudioPlayed[4] = true;
             }
 
@@ -915,7 +927,7 @@ function gameAction(viewID) {
             playaudio("neon.mp3", 0.2, true);
 
             if (!speakerAudioPlayed[5]){
-                playaudio("möbel_1.wav", 0.8, false); // ID 4
+                playspeakeraudio("möbel_1.wav", 0.8, false); // ID 4
                 speakerAudioPlayed[5] = true;
             }
 
@@ -943,8 +955,9 @@ function gameAction(viewID) {
              document.getElementById("gamebutton1").style.left = "295px";
              document.getElementById("gamebutton1").style.width = "18px";
              document.getElementById("gamebutton1").style.height = "55px";
-             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(15)'); 
+             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)'); //15
  
+             stopAllSpeakerAudio();
              stopAllAudio();
              playaudio("something-strange-160387.mp3", 0.2, true);
  
@@ -957,129 +970,129 @@ function gameAction(viewID) {
             //Tor-Leer
             case 15:
 
-            removeButtons();
+                removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "block";
+                document.getElementById("gamebutton1").style.display = "block";
 
-            // Inseln freischalten
-            document.getElementById("insel2").style.display = "none";
-            document.getElementById("insel3").style.display = "none";
-            document.getElementById("insel4").style.display = "none";
-            
+                // Inseln freischalten
+                document.getElementById("insel2").style.display = "none";
+                document.getElementById("insel3").style.display = "none";
+                document.getElementById("insel4").style.display = "none";
+                
 
-            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
-            document.getElementById("gameimage").src = "Tor_Insel_4_Leer.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
- 
-            //Button Lager
-            document.getElementById("gamebutton1").style.top = "445px";
-            document.getElementById("gamebutton1").style.left = "406px";
-            document.getElementById("gamebutton1").style.width = "60px";
-            document.getElementById("gamebutton1").style.height = "60px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(16)'); 
+                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("gameimage").src = "Tor_Insel_4_Leer.png";
+                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+    
+                //Button Lager
+                document.getElementById("gamebutton1").style.top = "445px";
+                document.getElementById("gamebutton1").style.left = "406px";
+                document.getElementById("gamebutton1").style.width = "60px";
+                document.getElementById("gamebutton1").style.height = "60px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(16)'); 
 
-            if (historyArray[historyArray.length - 1] != 15) {
-                historyArray.push(15);
-            }
+                if (historyArray[historyArray.length - 1] != 15) {
+                    historyArray.push(15);
+                }
 
-            break;
+                break;
 
 
             //Tor-Gem
             case 16:
 
-            removeButtons();
+                removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "block";
+                document.getElementById("gamebutton1").style.display = "block";
 
-            // Inseln freischalten
-            document.getElementById("insel2").style.display = "none";
-            document.getElementById("insel3").style.display = "none";
-            document.getElementById("insel4").style.display = "none";
-            
+                // Inseln freischalten
+                document.getElementById("insel2").style.display = "none";
+                document.getElementById("insel3").style.display = "none";
+                document.getElementById("insel4").style.display = "none";
+                
 
-            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
-            document.getElementById("gameimage").src = "Tor_Insel_4_1_Gem.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
- 
-            //Button Lager
-            document.getElementById("gamebutton1").style.top = "445px";
-            document.getElementById("gamebutton1").style.left = "406px";
-            document.getElementById("gamebutton1").style.width = "60px";
-            document.getElementById("gamebutton1").style.height = "60px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(17)'); 
+                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("gameimage").src = "Tor_Insel_4_1_Gem.png";
+                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+    
+                //Button Lager
+                document.getElementById("gamebutton1").style.top = "445px";
+                document.getElementById("gamebutton1").style.left = "406px";
+                document.getElementById("gamebutton1").style.width = "60px";
+                document.getElementById("gamebutton1").style.height = "60px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(17)'); 
 
-            playaudio("click-151673.mp3", 0.6, false);
+                playspeakeraudio("click-151673.mp3", 0.6, false);
 
-            if (historyArray[historyArray.length - 1] != 16) {
-                historyArray.push(16);
-            }
+                if (historyArray[historyArray.length - 1] != 16) {
+                    historyArray.push(16);
+                }
 
-            break;
+                break;
 
             //Tor-Gem2
             case 17:
-            removeButtons();
+                removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "block";
+                document.getElementById("gamebutton1").style.display = "block";
 
-            // Inseln freischalten
-            document.getElementById("insel2").style.display = "none";
-            document.getElementById("insel3").style.display = "none";
-            document.getElementById("insel4").style.display = "none";
-            
+                // Inseln freischalten
+                document.getElementById("insel2").style.display = "none";
+                document.getElementById("insel3").style.display = "none";
+                document.getElementById("insel4").style.display = "none";
+                
 
-            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
-            document.getElementById("gameimage").src = "Tor_Insel_4_2_Gem.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
- 
-            //Button Lager
-            document.getElementById("gamebutton1").style.top = "445px";
-            document.getElementById("gamebutton1").style.left = "406px";
-            document.getElementById("gamebutton1").style.width = "60px";
-            document.getElementById("gamebutton1").style.height = "60px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(18)'); 
+                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("gameimage").src = "Tor_Insel_4_2_Gem.png";
+                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+    
+                //Button Lager
+                document.getElementById("gamebutton1").style.top = "445px";
+                document.getElementById("gamebutton1").style.left = "406px";
+                document.getElementById("gamebutton1").style.width = "60px";
+                document.getElementById("gamebutton1").style.height = "60px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(18)'); 
 
-            playaudio("click-151673.mp3", 0.6, false);
+                playspeakeraudio("click-151673.mp3", 0.6, false);
 
 
-            if (historyArray[historyArray.length - 1] != 17) {
-                historyArray.push(17);
-            }
+                if (historyArray[historyArray.length - 1] != 17) {
+                    historyArray.push(17);
+                }
 
-            break;
+                break;
        
             //Tor-Gem3
             case 18:
-            removeButtons();
+                removeButtons();
 
-            document.getElementById("gamebutton1").style.display = "block";
+                document.getElementById("gamebutton1").style.display = "block";
 
-            // Inseln freischalten
-            document.getElementById("insel2").style.display = "none";
-            document.getElementById("insel3").style.display = "none";
-            document.getElementById("insel4").style.display = "none";
-            
+                // Inseln freischalten
+                document.getElementById("insel2").style.display = "none";
+                document.getElementById("insel3").style.display = "none";
+                document.getElementById("insel4").style.display = "none";
+                
 
-            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
-            document.getElementById("gameimage").src = "Tor_Insel_4_3_Gem.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
- 
-            //Button Lager
-            document.getElementById("gamebutton1").style.top = "445px";
-            document.getElementById("gamebutton1").style.left = "406px";
-            document.getElementById("gamebutton1").style.width = "60px";
-            document.getElementById("gamebutton1").style.height = "60px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(19)'); 
+                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("gameimage").src = "Tor_Insel_4_3_Gem.png";
+                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+    
+                //Button Lager
+                document.getElementById("gamebutton1").style.top = "445px";
+                document.getElementById("gamebutton1").style.left = "406px";
+                document.getElementById("gamebutton1").style.width = "60px";
+                document.getElementById("gamebutton1").style.height = "60px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(19)'); 
 
-            playaudio("click-151673.mp3", 0.6, false);
+                playspeakeraudio("click-151673.mp3", 0.6, false);
 
 
-            if (historyArray[historyArray.length - 1] != 18) {
-                historyArray.push(18);
-            }
+                if (historyArray[historyArray.length - 1] != 18) {
+                    historyArray.push(18);
+                }
 
-            break;
+                break;
 
             //Tor-Gem4
             case 19:
@@ -1105,12 +1118,49 @@ function gameAction(viewID) {
                 document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)'); 
     
                 stopAllAudio();
-                playaudio("interface-124464.mp3", 0.2, false);
+                playspeakeraudio("interface-124464.mp3", 0.2, false);
 
                 if (historyArray[historyArray.length - 1] != 19) {
                     historyArray.push(19);
                 }
     
+                break;
+
+            case 20:
+                removeButtons();
+    
+                document.getElementById("gamebutton1").style.display = "none";
+    
+                // Inseln freischalten
+                document.getElementById("insel2").style.display = "none";
+                document.getElementById("insel3").style.display = "none";
+                document.getElementById("insel4").style.display = "none";
+                
+    
+                document.getElementById("levelText").innerHTML = "Die finale Insel";
+                document.getElementById("gameimage").src = "lagermitraetsel.png";
+                document.getElementById("levelTipps").innerHTML = "Willkommen auf der finalen Insel";
+     
+                //Button Lager
+                document.getElementById("gamebutton1").style.top = "445px";
+                document.getElementById("gamebutton1").style.left = "406px";
+                document.getElementById("gamebutton1").style.width = "60px";
+                document.getElementById("gamebutton1").style.height = "60px";
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)'); 
+    
+                playspeakeraudio("vierte_Insel_Intro.wav", 0.2, false);
+
+
+                // TODO:
+                // Rästel erstellen und Weiterleitung auf Case 15 mit Prüfung ob alle Rätsel gelöst und Tor freigeschaltet
+
+
+
+                if (historyArray[historyArray.length - 1] != 19) {
+                    historyArray.push(19);
+                }
+    
+
                 break;
 
         default:
