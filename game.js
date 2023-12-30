@@ -196,16 +196,17 @@ function levelAction(levelID, LevelAction) {
                 pressedcount++;
             } else if (LevelAction == 2 && pressedcount == 1) {
                 stopAllSpeakerAudio();
-                playspeakeraudio("letter.mp3", 1, false);
                 pressedcount++;
+                playspeakeraudio("post_2.mp3", 1, false);
             } else if (LevelAction == 3 && pressedcount == 2) {
                 stopAllSpeakerAudio();
                 pressedcount++;
                 Raetsel3Geloest = true;
                 playspeakeraudio("letter.mp3", 1, false);
+                playspeakeraudio("post_3.mp3", 1, false);
                 setTimeout(function() {
                     gameAction(3);
-                }, 2000);
+                }, 18000);
             } else {
                 stopAllSpeakerAudio();
                 playspeakeraudio("falsche_antwort.wav", 1, false);
@@ -300,6 +301,10 @@ function levelAction(levelID, LevelAction) {
                 removeButtons();
                 Raetsel5Geloest = true;
                 document.getElementById("schluesselText").innerHTML = "4 / 4";
+                if (!speakerAudioPlayed[7]){
+                    playspeakeraudio("Outro_Final.wav", 1, false);
+                    speakerAudioPlayed[7] = true;
+                }
                 gameAction(15);
             } else {
                 stopAllSpeakerAudio();
@@ -713,11 +718,11 @@ function gameAction(viewID) {
             
             document.getElementById("levelText").innerHTML = "Die Inseln";
             document.getElementById("gameimage").src = "Island.gif";
-            document.getElementById("levelTipps").innerHTML = "<p>Sei willkommen, wissbegieriger Teilnehmer."
-            + "Du, der du dich den Herausforderungen dieser Inseln stellst und mehr über HashMaps lernen möchtest,"
+            document.getElementById("levelTipps").innerHTML = "<p>Sei willkommen, wissbegieriger Teilnehmer. "
+            + "Du, der du dich den Herausforderungen dieser Inseln stellst und mehr über HashMaps lernen möchtest, "
             + "höre zu, denn ich werde dir erklären, was du zu tun hast. Dieser Ort steckt voller Rätsel und Orte, "
-            + "an denen du dich beweisen und dein Wissen anwenden musst. Für jedes beendete Rätsel wird dir ein Ticket auf die nächste Insel anvertraut."
-            + "Außerdem gilt es, alle Teile des Schlüssels zu sammeln, welcher dir die letzte Tür öffnen wird. Strenge dich an,"
+            + "an denen du dich beweisen und dein Wissen anwenden musst. Für jede beendete Insel wird dir ein Kristall anvertraut. "
+            + "Diese musst du sammeln, damit du am Ende das Tor öffnen kannst. Strenge dich an, "
             + "und es wird sich für dich auszahlen.</p>";
 
             // Ändern des Buttons
@@ -757,17 +762,17 @@ function gameAction(viewID) {
 
 
             // Ändern der Texte und Infos und des Bildes
-            document.getElementById("levelText").innerHTML = "Die DHL Insel";
+            document.getElementById("levelText").innerHTML = "Die Postamt - Insel";
             document.getElementById("gameimage").src = "Island_Postoffice.png";
-            document.getElementById("levelTipps").innerHTML = "<p>Jetzt, wo du weißt, was dich erwarten wird, werde ich dich ein wenig in das Thema der HashMaps einführen."
-            + "</br><br></p><p>Eine Map in der Programmierung ist eine Datenstruktur, welche es ermöglicht, Werte nach einem bestimmten Muster abzulegen und effizient"
-            + "wiederzubeschaffen. Die Grundlage einer solchen Map ist ein, dir sicherlich bekanntes, Array. Also eine Tabelle,"
-            + "in der Werte gespeichert werden und eindeutig einem Index zugeordnet werden.</p><p>Eine Map baut insofern darauf auf,"
-            + "dass sie die Werte mit einer besonderen Indexstruktur speichert, indem sie die Indizes mithilfe eines Schlüssels berechnet und in der Lage ist,"
+            document.getElementById("levelTipps").innerHTML = "<p>Jetzt, wo du weißt, was dich erwarten wird, werde ich dich ein wenig in das Thema der HashMaps einführen. "
+            + "</br><br></p><p>Eine Map in der Programmierung ist eine Datenstruktur, welche es ermöglicht, Werte nach einem bestimmten Muster abzulegen und effizient "
+            + "wiederzubeschaffen. Die Grundlage einer solchen Map ist ein, dir sicherlich bekanntes, Array. Also eine Tabelle, "
+            + "in der Werte gespeichert werden und eindeutig einem Index zugeordnet werden.</p><p>Eine Map baut insofern darauf auf, "
+            + "dass sie die Werte mit einer besonderen Indexstruktur speichert, indem sie die Indizes mithilfe eines Schlüssels berechnet und in der Lage ist, "
             + "die Werte anhand dieses Schlüssels wiederzubeschaffen. Aber ich denke, du schaust es dir einfach selbst an, anstatt mir hier zuzuhören, oder?"
-            + "<p>Hinter mir siehst du die Postfiliale dieser Insel. Diese hat die Briefe bis vor kurzem noch sortiert,"
-            + "indem der Mitarbeiter immer das gesamte Regal systematisch absuchen musste, bis das richtige Fach gefunden wurde. Allerdings kannst du dir vorstellen,"
-            + "dass diese Methode sehr lange dauern kann, oder? Darum wurde das System überarbeitet. Sie arbeitet jetzt wie eine HashMap."
+            + "<p>Hinter mir siehst du die Postfiliale dieser Insel. Diese hat die Briefe bis vor kurzem noch sortiert, "
+            + "indem der Mitarbeiter immer das gesamte Regal systematisch absuchen musste, bis das richtige Fach gefunden wurde. Allerdings kannst du dir vorstellen, "
+            + "dass diese Methode sehr lange dauern kann, oder? Darum wurde das System überarbeitet. Sie arbeitet jetzt wie eine HashMap. "
             + "Am besten gehst du einfach mal rein und lässt es dir durch den Mitarbeiter erklären.</p>";
 
             // Ändern des Buttons
@@ -806,14 +811,14 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
 
-            document.getElementById("levelText").innerHTML = "Das Postoffice";
+            document.getElementById("levelText").innerHTML = "Das Postamt";
             document.getElementById("gameimage").src = "Level_Postoffice.gif";
-            document.getElementById("levelTipps").innerHTML = "<p>Der Mitarbeiter in der Postfiliale:</p>Unser neues System arbeitet wie eine HashMap und verwendet eine HashFunktion."
-            + "Eine HashFunktion im Allgemeinen ist eine Zuordnung, welche Schlüsselwerten einen sogenannten HashWert zuordnet. Wie sicher bzw. verwendbar die Ergebnisse dabei sind,"
-            + "hängt von der Qualität der HashFunktion ab. Je mehr verschiedene HashWerte die Funktion in einem bestimmten Schlüsselraum erzeugen kann, desto besser ist sie."
-            + "</p>Eine HashMap wiederum verwendet diese HashFunktion, um Schlüssel-Wert-Paare in einem Array zu speichern und später wieder auszulesen. Dabei wird aus dem Schlüssel ein Hash-Wert berechnet,"
-            + "welcher dann als Index in einem Array, in welchem die Daten gespeichert werden, fungiert. Somit können schnell und unabhängig vom Umfang der Datenmenge Datensätze wiedergefunden werden."
-            + "</p>In unserer Postfiliale kannst du dir das Briefregal neben dir stellen wir uns ein großes Array vor. </p> <p>Die Empfängeradressen sind die Schlüssel, und die Briefe selbst sind die Werte."
+            document.getElementById("levelTipps").innerHTML = "Unser neues System arbeitet wie eine HashMap und verwendet eine HashFunktion. "
+            + "Eine HashFunktion im Allgemeinen ist eine Zuordnung, welche Schlüsselwerten einen sogenannten HashWert zuordnet. Wie sicher bzw. verwendbar die Ergebnisse dabei sind, "
+            + "hängt von der Qualität der HashFunktion ab. Je mehr verschiedene HashWerte die Funktion in einem bestimmten Schlüsselraum erzeugen kann, desto besser ist sie. "
+            + "</p>Eine HashMap wiederum verwendet diese HashFunktion, um Schlüssel-Wert-Paare in einem Array zu speichern und später wieder auszulesen. Dabei wird aus dem Schlüssel ein Hash-Wert berechnet, "
+            + "welcher dann als Index in einem Array, in welchem die Daten gespeichert werden, fungiert. Somit können schnell und unabhängig vom Umfang der Datenmenge Datensätze wiedergefunden werden. "
+            + "</p>In unserer Postfiliale kannst du dir das Briefregal neben dir wie ein großes Array vorstellen. </p> <p>Die Empfängeradressen sind die Schlüssel, und die Briefe selbst sind die Werte. "
             + "Unsere HashFunktion berechnet aus den Adressen eine Zahl, die einer Fachnummer entspricht. In dieses Fach legen wir dann unsere Briefe.<br><br>"
             + "<p>Hier ist unsere aktuelle HashFunktion: <br><code>(Straße als Zahl + Hausnummer) % Anzahl der Fächer (50) = Fach Index</code> <br><br>"
             + "<img src='blog.png' alt='Blog Image' style='width: 350px;'>";
@@ -827,7 +832,12 @@ function gameAction(viewID) {
 
             stopAllAudio();
             stopAllSpeakerAudio();
-            playaudio("8-bit-arcade.mp3", 0.02, true);
+            playaudio("8-bit-arcade.mp3", 0.01, true);
+
+            if (!speakerAudioPlayed[8]){
+                playspeakeraudio("post_1.mp3", 1, false);
+                speakerAudioPlayed[8] = true;
+            }
             (Raetsel3Geloest) ? "" : makeButtons(3);
             if (historyArray[historyArray.length - 1] != 3) {
                 historyArray.push(3);
@@ -845,16 +855,11 @@ function gameAction(viewID) {
             document.getElementById("insel3").style.display = "none";
             document.getElementById("insel4").style.display = "none";
 
-            document.getElementById("levelText").innerHTML = "Das Postoffice";
+            document.getElementById("levelText").innerHTML = "Das Postamt - Tresor";
             (Raetsel1Geloest) ? document.getElementById("gameimage").src = "SchliessfachRaetselOpen.png" : document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
             document.getElementById("levelTipps").innerHTML = "Der Modulo-Operator, oft durch das Prozentzeichen (%) dargestellt, ist ein mathematischer Operator, der den Rest einer Division zweier Zahlen berechnet. Wenn du beispielsweise a % b berechnest, gibt der Modulo-Operator den Rest der Division von a durch b zurück.<br><br>" +
             "Beispiel:<br>" + "10 % 3 ergibt 1, weil 10 durch 3 geteilt 3 mal geht und ein Rest von 1 bleibt.<br><br>" +
-            "Der Modulo-Operator ist in vielen Anwendungen nützlich, insbesondere wenn es um Zyklen oder Wiederholungen geht. Zum Beispiel kann er verwendet werden, um festzustellen, ob eine Zahl gerade oder ungerade ist (wenn a % 2 gleich 0 ist, ist die Zahl gerade).<br><br>" +
-            "1.Aufgabe: 3 % 2 = ?<br>" + // = 1
-            "2.Aufgabe: 4 % 4 = ?<br>" + // = 0
-            "3.Aufgabe: 5 % 8 = ?<br>" + // = 5
-            "4.Aufgabe: 21 % 3 = ?<br>" + // = 0
-            "5.Aufgabe: 44 % 14 = ?<br>"; // = 2
+            "Der Modulo-Operator ist in vielen Anwendungen nützlich, insbesondere wenn es um Zyklen oder Wiederholungen geht. Zum Beispiel kann er verwendet werden, um festzustellen, ob eine Zahl gerade oder ungerade ist (wenn a % 2 gleich 0 ist, ist die Zahl gerade).<br><br><i>Tipp: Ich glaube, es war eine größere Zahl, die gefehlt hat, um auf den vierstelligen Code zu kommen.</i>";
             
         
             (Raetsel1Geloest) ? "" : makeButtons(1);
@@ -877,9 +882,9 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
         
 
-            document.getElementById("levelText").innerHTML = "Das Postoffice";
+            document.getElementById("levelText").innerHTML = "Die Fitness - Insel";
             document.getElementById("gameimage").src = "Insel_Gym.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parkplatz";
+            document.getElementById("levelTipps").innerHTML = "Willkommen auf der Insel der Starken und Fitnessbegeisterten.";
         
             if (!parkplatzGeloest) {
                  // Button Parkplatz
@@ -929,7 +934,7 @@ function gameAction(viewID) {
 
             document.getElementById("levelText").innerHTML = "Der Parkplatz";
             document.getElementById("gameimage").src = "parkplatz.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen beim Parkplatz";
+            document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parkplatz";
         
             stopAllAudio();
                 
@@ -993,7 +998,7 @@ function gameAction(viewID) {
                 document.getElementById("insel4").style.display = "none";
                 
 
-                document.getElementById("levelText").innerHTML = "Das Gym";
+                document.getElementById("levelText").innerHTML = "Das Gym - PC";
                 document.getElementById("gameimage").src = "pc.png";
                 document.getElementById("levelTipps").innerHTML = "<br><br><img src='blog.png' style='width: 350px;'>";
 
@@ -1035,9 +1040,9 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
             
 
-            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("levelText").innerHTML = "Die Möbelhaus - Insel";
             document.getElementById("gameimage").src = "Insel_IKEA.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im IKEA Möbelhaus";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Möbelhaus";
 
             // IKEA
             document.getElementById("gamebutton1").style.top = "211px";
@@ -1068,9 +1073,9 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
             
 
-            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus - Wareneingang";
             document.getElementById("gameimage").src = "lkw.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im IKEA Möbelhaus";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Möbelhaus";
 
             // IKEA
             document.getElementById("gamebutton1").style.top = "366px";
@@ -1101,7 +1106,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
             
 
-            document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+            document.getElementById("levelText").innerHTML = "Das Möbelhaus - Lager";
             document.getElementById("gameimage").src = "lager.png";
             document.getElementById("levelTipps").innerHTML = "<p>Ach! du kommst ja wie gerufen.</p>" +
             "<p>Ich bin der Besitzer dieses kleinen Möbelladens hier.</p>" +
@@ -1141,20 +1146,24 @@ function gameAction(viewID) {
              document.getElementById("insel4").style.display = "none";
              
  
-             document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+             document.getElementById("levelText").innerHTML = "Die Gruselinsel";
              document.getElementById("gameimage").src = "13.Insel4Nah.png";
-             document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+             document.getElementById("levelTipps").innerHTML = "Willkommen auf der Gruselinsel - der letzten Insel dieses Abenteuers";
   
              //Button Lager
              document.getElementById("gamebutton1").style.top = "275px";
              document.getElementById("gamebutton1").style.left = "295px";
              document.getElementById("gamebutton1").style.width = "18px";
              document.getElementById("gamebutton1").style.height = "55px";
-             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)'); //15
- 
+             
+             (Raetsel5Geloest) ? document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(15)') : document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)');;
+
              stopAllSpeakerAudio();
              stopAllAudio();
-             playspeakeraudio("vierte_Insel_Intro.wav", 0.8, false);
+             if (!speakerAudioPlayed[6]){
+                playspeakeraudio("vierte_Insel_Intro.wav", 0.8, false);
+                speakerAudioPlayed[6] = true;
+            }
              playaudio("something-strange-160387long.mp3", 0.05, true);
  
              if (historyArray[historyArray.length - 1] != 14) {
@@ -1176,9 +1185,9 @@ function gameAction(viewID) {
                 document.getElementById("insel4").style.display = "none";
                 
 
-                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("levelText").innerHTML = "Die Gruselinsel";
                 document.getElementById("gameimage").src = "Tor_Insel_4_Leer.png";
-                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+                document.getElementById("levelTipps").innerHTML = "Willkommen auf der Gruselinsel - der letzten Insel dieses Abenteuers";
     
                 //Button Lager
                 document.getElementById("gamebutton1").style.top = "445px";
@@ -1187,8 +1196,6 @@ function gameAction(viewID) {
                 document.getElementById("gamebutton1").style.height = "60px";
                 document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(16)'); 
 
-                stopAllSpeakerAudio();
-                playspeakeraudio("Outro_Final.wav", 0.8, false);
 
                 if (historyArray[historyArray.length - 1] != 15) {
                     historyArray.push(15);
@@ -1210,9 +1217,9 @@ function gameAction(viewID) {
                 document.getElementById("insel4").style.display = "none";
                 
 
-                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("levelText").innerHTML = "Die Gruselinsel";
                 document.getElementById("gameimage").src = "Tor_Insel_4_1_Gem.png";
-                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+                document.getElementById("levelTipps").innerHTML = "Willkommen auf der Gruselinsel - der letzten Insel dieses Abenteuers";
     
                 //Button Lager
                 document.getElementById("gamebutton1").style.top = "445px";
@@ -1242,9 +1249,9 @@ function gameAction(viewID) {
                 document.getElementById("insel4").style.display = "none";
                 
 
-                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("levelText").innerHTML = "Die Gruselinsel";
                 document.getElementById("gameimage").src = "Tor_Insel_4_2_Gem.png";
-                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+                document.getElementById("levelTipps").innerHTML = "Willkommen auf der Gruselinsel - der letzten Insel dieses Abenteuers";
     
                 //Button Lager
                 document.getElementById("gamebutton1").style.top = "445px";
@@ -1274,9 +1281,9 @@ function gameAction(viewID) {
                 document.getElementById("insel4").style.display = "none";
                 
 
-                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("levelText").innerHTML = "Die Gruselinsel";
                 document.getElementById("gameimage").src = "Tor_Insel_4_3_Gem.png";
-                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+                document.getElementById("levelTipps").innerHTML = "Willkommen auf der Gruselinsel - der letzten Insel dieses Abenteuers";
     
                 //Button Lager
                 document.getElementById("gamebutton1").style.top = "445px";
@@ -1306,9 +1313,9 @@ function gameAction(viewID) {
                 document.getElementById("insel4").style.display = "none";
                 
     
-                document.getElementById("levelText").innerHTML = "Das Möbelhaus";
+                document.getElementById("levelText").innerHTML = "Die Gruselinsel";
                 document.getElementById("gameimage").src = "Tor_Insel_4_Oeffnung.gif";
-                document.getElementById("levelTipps").innerHTML = "Willkommen im Lager";
+                document.getElementById("levelTipps").innerHTML = "Willkommen auf der Gruselinsel - der letzten Insel dieses Abenteuers";
      
                 //Button Lager
                 document.getElementById("gamebutton1").style.top = "445px";
@@ -1319,7 +1326,7 @@ function gameAction(viewID) {
     
                 stopAllAudio();
                 playspeakeraudio("interface-124464.mp3", 0.2, false);
-
+                
                 makeButtons(6);
 
                 if (historyArray[historyArray.length - 1] != 19) {
@@ -1351,18 +1358,17 @@ function gameAction(viewID) {
                 document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)'); 
     
                 stopAllSpeakerAudio();
-                playspeakeraudio("Outro.wav", 0.8, false);
+                if (!speakerAudioPlayed[7]){
+                    playspeakeraudio("Outro.wav", 0.8, false);
+                    speakerAudioPlayed[7] = true;
+                }
+
+                (Raetsel5Geloest) ? "" : makeButtons(5);
 
 
 
-                // TODO:
-                // Rästel erstellen und Weiterleitung auf Case 15 mit Prüfung ob alle Rätsel gelöst und Tor freigeschaltet
-
-                makeButtons(5);
-
-
-                if (historyArray[historyArray.length - 1] != 19) {
-                    historyArray.push(19);
+                if (historyArray[historyArray.length - 1] != 20) {
+                    historyArray.push(20);
                 }
     
 
