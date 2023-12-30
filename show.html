@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta contenteditable="false">
+    <meta Http-Equiv="Cache" content="no-cache">
+    <meta Http-Equiv="Pragma-Control" content="no-cache">
+    <meta Http-Equiv="Cache-directive" Content="no-cache">
+    <meta Http-Equiv="Pragma-directive" Content="no-cache">
+    <meta Http-Equiv="Cache-Control" Content="no-cache">
+    <meta Http-Equiv="Pragma" Content="no-cache">
+    <meta Http-Equiv="Expires" Content="0">
+    <meta Http-Equiv="Pragma-directive: no-cache">
+    <meta Http-Equiv="Cache-directive: no-cache">
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="description" content="In dieser Webanwendung wird spielerisch die Funktionsweise von HashMaps und Ähnlichem erklärt.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+        
+        html, body {
+                width: 744px;
+                height: 1052px;
+        }
+
+        body {
+                background-image: url("showImage.png");
+                background-repeat: no-repeat;
+                background-size: 100%;
+        }
+
+        .invisible-button {
+            background-color: transparent; /* Unsichtbare Hintergrundfarbe */
+            width: 130px; /* Breite des Buttons anpassen */
+            height: 70px; /* Höhe des Buttons anpassen */
+            position: absolute; /* Absolute Positionierung */
+            top: 375px; /* Anpassen der Top-Position */
+            left: 355px; /* Anpassen der Left-Position */
+            z-index: 2; /* Stelle sicher, dass der Button über dem Bild liegt */
+            cursor: pointer;
+            border-radius: 20%;
+        }
+    </style>
+    <title>Interaktives Tutorial</title>
+    <script>
+        window.onload = function() {
+            document.getElementById("namespace").innerHTML = location.search.split('name=')[1];
+        };
+    </script>
+
+
+</head>
+<body>
+    <div id="levelbuttonTextfeld" class="invisible-button" style="top: 480px; left: 120px; width: 500px; height: 400px; font-size: 26px; letter-spacing: 2px; text-align: center; font-family: &quot;Pixelify Sans&quot;; overflow: hidden; border-radius: 0px; color: black; cursor: default;">HERZLICHEN<br>GLÜCKWUNSCH!<br><br><b><span id="namespace"></span></b><br><br>Du hast das Tutorial<br><b>Dictionaries als<br>Schlüssel-Wert-Speicher</b><br>erfolgreich beendet!</div>
+
+    <div id="showroom"></div>
+
+</body>
+</html>
