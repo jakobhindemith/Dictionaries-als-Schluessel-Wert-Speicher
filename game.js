@@ -870,9 +870,12 @@ function gameAction(viewID) {
 
             document.getElementById("levelText").innerHTML = "Das Postamt - Tresor";
             (Raetsel1Geloest) ? document.getElementById("gameimage").src = "SchliessfachRaetselOpen.png" : document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
-            document.getElementById("levelTipps").innerHTML = "Der Modulo-Operator, oft durch das Prozentzeichen (%) dargestellt, ist ein mathematischer Operator, der den Rest einer Division zweier Zahlen berechnet. Wenn du beispielsweise a % b berechnest, gibt der Modulo-Operator den Rest der Division von a durch b zurück.<br><br>" +
-            "Beispiel:<br>" + "10 % 3 ergibt 1, weil 10 durch 3 geteilt dreimal geht und ein Rest von 1 bleibt.<br><br>" +
-            "Der Modulo-Operator ist in vielen Anwendungen nützlich, insbesondere wenn es um Zyklen oder Wiederholungen geht. Zum Beispiel kann er verwendet werden, um festzustellen, ob eine Zahl gerade oder ungerade ist (wenn a % 2 gleich 0 ist, ist die Zahl gerade).<br><br><i>Tipp: Ich glaube, es war eine größere Zahl, die gefehlt hat, um auf den vierstelligen Code zu kommen.<br>Achso, und zähl erste die Buchstabenwerte zusammen und multipliziere erst dann...</i><br><img src='blog.png' style='width: 350px;'>";
+            document.getElementById("levelTipps").innerHTML = "Der Modulo-Operator, oft durch das Prozentzeichen (%) dargestellt, ist ein mathematischer Operator,"
+            + "der den Rest einer Division zweier Zahlen berechnet. Wenn du beispielsweise a % b berechnest, gibt der Modulo-Operator den Rest der Division von a durch b zurück.<br><br>" +
+            + "Beispiel:<br> 10 % 3 ergibt 1, weil 10 durch 3 geteilt dreimal geht und ein Rest von 1 bleibt.<br><br>"
+            + "Der Modulo-Operator ist in vielen Anwendungen nützlich, insbesondere wenn es um Zyklen oder Wiederholungen geht. Zum Beispiel kann er verwendet werden, um festzustellen,"
+            + "ob eine Zahl gerade oder ungerade ist (wenn a % 2 gleich 0 ist, ist die Zahl gerade).<br><br><i>Tipp: Ich glaube, es war eine größere Zahl, die gefehlt hat,"
+            + "um auf den vierstelligen Code zu kommen.<br>Achso, und zähl erste die Buchstabenwerte zusammen und multipliziere erst dann...</i><br><img src='blog.png' style='width: 350px;'>";
             
         
             (Raetsel1Geloest) ? "" : makeButtons(1);
@@ -897,7 +900,11 @@ function gameAction(viewID) {
 
             document.getElementById("levelText").innerHTML = "Die Fitness - Insel";
             document.getElementById("gameimage").src = "Insel_Gym.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen auf der zweiten Insel.<br>Wie ich sehe, hast du die Rätsel der ersten Insel hinter dich gebracht. Gut gemacht. Du hast gelernt, was eine HashMap im Allgemeinen ist und wurdest mit der HashFunktion vertraut gemacht.<br>Für die Rätsel dieser Insel musst du dein bisheriges Wissen anwenden und dir neues aneignen. Auf dieser Insel steht das Fitness-Studio unseres Bootcamps. Hier kannst du zu deinen kognitiven Fähigkeiten auch deine Muskeln trainieren. Geh doch einfach mal rein. Der Rezeptionist wird dir sicherlich erklären, wie es funktioniert.";
+            document.getElementById("levelTipps").innerHTML = "Willkommen auf der zweiten Insel.<br>Wie ich sehe, hast du die Rätsel der ersten Insel hinter dich gebracht." 
+            + "Gut gemacht. Du hast gelernt, was eine HashMap im Allgemeinen ist und wurdest mit der HashFunktion vertraut gemacht.<br>"
+            + "Für die Rätsel dieser Insel musst du dein bisheriges Wissen anwenden und dir neues aneignen. Auf dieser Insel steht das Fitness-Studio unseres Bootcamps."
+            + "Hier kannst du zu deinen kognitiven Fähigkeiten auch deine Muskeln trainieren. Geh doch einfach mal rein. Der Rezeptionist wird dir sicherlich erklären,"
+            + "wie es funktioniert.";
         
             if (!parkplatzGeloest) {
                  // Button Parkplatz
@@ -970,7 +977,10 @@ function gameAction(viewID) {
 
             document.getElementById("levelText").innerHTML = "Das Gym";
             document.getElementById("gameimage").src = "gym.png";
-            document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio Hashpump. Du bist das erste Mal hier, oder? Dann lass mich einen neuen Mitgliedseintrag für dich machen. Wie ist dein Name? Aha, Noah der Wizard also… Gut. nun zu deiner Mitglieds ID. Diese wird bei uns aus deinem Namen mithilfe einer HashFunktion berechnet. Deine ID ist auch gleichzeitig deine Schließfachnummer. Deine Nummer kannst du also ganz einfach mit dieser Formel berechnen:<br><code>&sum;(NAME) = Schließfachnummer</code><br><i>Hinweis: Das Minus (die Nummer 13) ist ein Leerzeichen, Noah der Wizard</i>";
+            document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio Hashpump. Du bist das erste Mal hier, oder? Dann lass mich einen neuen Mitgliedseintrag für dich machen."
+            + "Wie ist dein Name? Aha, Noah der Wizard also… Gut. nun zu deiner Mitglieds ID. Diese wird bei uns aus deinem Namen mithilfe einer HashFunktion berechnet."
+            + "Deine ID ist auch gleichzeitig deine Schließfachnummer. Deine Nummer kannst du also ganz einfach mit dieser Formel berechnen:"
+            + "<br><code>&sum;(NAME) = Schließfachnummer</code><br><i>Hinweis: Das Minus (die Nummer 13) ist ein Leerzeichen, Noah der Wizard</i>";
 
              // Buttons Bildschirm
 
@@ -979,7 +989,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.left = "533px";
             document.getElementById("gamebutton1").style.width = "105px";
             document.getElementById("gamebutton1").style.height = "60px";
-            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(8)');
+            document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(10)');
              
              
 
@@ -997,7 +1007,7 @@ function gameAction(viewID) {
             break;
         
             
-            case 8:
+            case 10:
 
             removeButtons();
 
@@ -1013,14 +1023,16 @@ function gameAction(viewID) {
 
                 document.getElementById("levelText").innerHTML = "Das Gym - PC";
                 document.getElementById("gameimage").src = "pc.png";
-                document.getElementById("levelTipps").innerHTML = "Deine Nummer kannst du also ganz einfach mit dieser Formel berechnen:<br><code>&sum;(NAME) = Schließfachnummer</code><br><i>Hinweis: Das Minus (die Nummer 13) ist ein Leerzeichen, Noah der Wizard</i><br><br><img src='blog.png' style='width: 350px;'>";
+                document.getElementById("levelTipps").innerHTML = "Deine Nummer kannst du also ganz einfach mit dieser Formel berechnen:"
+                + "<br><code>&sum;(NAME) = Schließfachnummer</code><br><i>Hinweis: Das Minus (die Nummer 13) ist ein Leerzeichen,"
+                + "Noah der Wizard</i><br><br><img src='blog.png' style='width: 350px;'>";
 
                 // //Buy Ticket
                 document.getElementById("gamebutton1").style.top = "300px";
                 document.getElementById("gamebutton1").style.left = "340px";
                 document.getElementById("gamebutton1").style.width = "205px";
                 document.getElementById("gamebutton1").style.height = "70px";
-                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(9)');
+                document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(11)');
 
                 stopAllAudio();
                 playaudio("gym.mp3", 0.2, true);
@@ -1031,15 +1043,6 @@ function gameAction(viewID) {
             
             break;
     
-    
-
-        case 9:
-            
-            break;
-
-        case 10:
-
-            break;
 
         case 11:    // IKEA-INSEL NAH
             
@@ -1161,7 +1164,10 @@ function gameAction(viewID) {
  
              document.getElementById("levelText").innerHTML = "Die Gruselinsel";
              document.getElementById("gameimage").src = "13.Insel4Nah.png";
-             document.getElementById("levelTipps").innerHTML = "Meinen ausdrücklichen Glückwunsch, Teilnehmer, dass du es bis auf die letzte Insel geschafft hast. Du hast dich auf jeder Insel bewiesen und dein Wissen erweitert. Du hast gelernt, was eine HashMap ist und wie man mit ihr umgehen kann. Du hast gelernt, was eine Kollision ist und wie man sie beheben kann. Um zu testen, ob du wirklich bereit bist, habe ich noch ein letztes Quiz für dich. Bist du bereit? Dann los.";
+             document.getElementById("levelTipps").innerHTML = "Meinen ausdrücklichen Glückwunsch, Teilnehmer,"
+             + "dass du es bis auf die letzte Insel geschafft hast. Du hast dich auf jeder Insel bewiesen und dein Wissen erweitert."
+             + "Du hast gelernt, was eine HashMap ist und wie man mit ihr umgehen kann. Du hast gelernt, was eine Kollision ist und wie man sie beheben kann."
+             + "Um zu testen, ob du wirklich bereit bist, habe ich noch ein letztes Quiz für dich. Bist du bereit? Dann los.";
   
              //Button Lager
              document.getElementById("gamebutton1").style.top = "275px";
@@ -1169,7 +1175,7 @@ function gameAction(viewID) {
              document.getElementById("gamebutton1").style.width = "18px";
              document.getElementById("gamebutton1").style.height = "55px";
              
-             (Raetsel5Geloest) ? document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(15)') : document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)');;
+             (Raetsel5Geloest) ? document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(13)') : document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)');;
 
              stopAllSpeakerAudio();
              stopAllAudio();
