@@ -175,6 +175,7 @@ function levelAction(levelID, LevelAction) {
 
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxx";
 
+                    stopAllSpeakerAudio();
                     playspeakeraudio("invalid-selection.mp3", 0.2, false);
                     playspeakeraudio("post_falsch_1.wav", 0.8, false);   
                 }
