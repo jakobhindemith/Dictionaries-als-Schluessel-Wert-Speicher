@@ -428,6 +428,9 @@ function levelAction(levelID, LevelAction) {
                         speakerAudioPlayed[7] = true;
                     }
 
+                    document.getElementById("Button 4").disabled = true;
+                    document.getElementById("Button 2").disabled = true;
+                    document.getElementById("buttonbar").style.display = "none";
                     gameAction(15);
 
                 } else {
