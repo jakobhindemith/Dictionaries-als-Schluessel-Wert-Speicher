@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
+
+<!--
+    This is the main file of the game. It contains the game itself and the map.
+    The game is based on a state machine. The current state is saved in the variable "level".
+    The game is controlled by the function "gameAction()". It takes the current level as an argument and
+    executes the corresponding action. The actions are defined in the function "gameAction()".
+
+    The style of the game is defined in the file "style.css".
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta contenteditable="false">
@@ -18,23 +28,22 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <meta name="description" content="In dieser Webanwendung wird spielerisch die Funktionsweise von HashMaps und Ähnlichem erklärt.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
     </style>
+
     <title>Interaktives Tutorial</title>
+
 </head>
+
 <body>
 
-<head>
-    <script>
-        //playaudio("waves.mp3", 0.2);
-    </script>
-</head>
-    
     <div class="header">
         <h1>Interaktives Tutorial zu HashMaps</h1>
         <h2>Löse die einzelnen Rätsel auf den Inseln um die 4 Edelsteine zu sammeln und Noah dem Wizard zu helfen, von der Insel zu entkommen.</h2>    
     </div>
+
     <div class="gameelements">
         <div class="game" id="game">
             <div class="gameinfo">
@@ -43,14 +52,13 @@
             <br>
             <img src="titleScreen.png" id="gameimage" alt="Game Title Screen">
             
-            <!-- Unsichtbarer Button -->
+            <!-- Invisible Button -->
             <div class="invisible-button" id="gamebutton1" onclick="gameAction(1)" onmouseover="show('gamebutton1')" onmouseleave="hide('gamebutton1')"></div> 
 
             <!-- MAP Buttons-->
             <div class="invisible-button" id="insel2" onclick="gameAction(5)" onmouseover="show('insel2')" onmouseleave="hide('insel2')" style="display: none; width: 130px; height: 130px; left: 260px; top: 420px;"></div>
             <div class="invisible-button" id="insel3" onclick="gameAction(11)" onmouseover="show('insel3')" onmouseleave="hide('insel3')" style="display: none; width: 140px; height: 140px; left: 265px; top: 220px"></div>
             <div class="invisible-button" id="insel4" onclick="gameAction(14)" onmouseover="show('insel4')" onmouseleave="hide('insel4')" style="display: none; width: 230px; height: 220px; left: 500px; top: 240px;"></div>
-
 
             <div class="buttonbar" id="buttonbar" style="display: none;">
                 <button class="buttonbar-buttons" id="Button 1" onmouseover="showAll()" onmouseleave="hideAll()" style="cursor: default;">Hinweis</button>
@@ -59,6 +67,7 @@
                 <button class="buttonbar-buttons" id="Button 3" onclick="restartGame()">Neu Starten</button>
             </div>
         </div>
+
         <div class="tipps">
             <span id="levelTipps">
                 <center><img src="CharWizardNoah.png" alt="Wizard" style="width: 250px;"></center>

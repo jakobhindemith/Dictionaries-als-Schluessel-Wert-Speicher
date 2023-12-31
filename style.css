@@ -1,18 +1,22 @@
+/*
+This is the main stylesheet for the game. It contains all the styling for the game.
+It imports the font "Pixelify Sans" from Google Fonts.
+All the styling is done with basic CSS.
+*/
+
 * {
     margin: 0;
     padding: 0;
     border: 0;
-  }
+}
 
 body {
     font: 62.5%/1.5 "Arial", "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
     background-size: cover;
-
     background: rgba(0, 0, 0, 0.55) url(wallpaper.jpg);
     background-blend-mode: darken;
     color: #ffffff;
-
-  }
+}
 
 h1 {
     text-align: center;
@@ -92,7 +96,6 @@ table, th, td {
     color: white;
 }
 
- /* Füge dem unsichtbaren Button-Stil hinzu */
  .invisible-button {
     background-color: transparent; /* Unsichtbare Hintergrundfarbe */
     width: 130px; /* Breite des Buttons anpassen */

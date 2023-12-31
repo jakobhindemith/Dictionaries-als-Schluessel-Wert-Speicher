@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
+
+<!--
+    This is the show page of the game. It is displayed when the player completes the tutorial.
+    It contains a certificate, which is printed when the player presses the "print" button.
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta contenteditable="false">
@@ -42,20 +48,27 @@
             border-radius: 20%;
         }
     </style>
+
     <title>Interaktives Tutorial</title>
+
     <script>
+        /*
+        This script is used to print the name of the player on the certificate.
+        It is executed when the page is loaded.
+        The name is extracted from the URL, which is passed to the page when the player completes the tutorial.
+        */
+
         window.onload = function() {
             document.getElementById("namespace").innerHTML = location.search.split('name=')[1];
             window.print();
         };
     </script>
 
-
 </head>
+
 <body>
     <div id="levelbuttonTextfeld" class="invisible-button" style="top: 480px; left: 120px; width: 500px; height: 400px; font-size: 26px; letter-spacing: 2px; text-align: center; font-family: &quot;Pixelify Sans&quot;; overflow: hidden; border-radius: 0px; color: black; cursor: default;">HERZLICHEN<br>GLÜCKWUNSCH!<br><br><b><span id="namespace"></span></b><br><br>Du hast das Tutorial<br><b>Dictionaries als<br>Schlüssel-Wert-Speicher</b><br>erfolgreich beendet!</div>
 
     <div id="showroom"></div>
-
 </body>
 </html>
