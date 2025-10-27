@@ -9,6 +9,8 @@ To support full functionality of the App, please make sure to have a stable inte
 
 Made with 🤍 by Michael Primke and Jakob Hindemith
 
+To start the Game just go to http://127.0.0.1:5500/index.html in your Browser and beginn your journy.
+
 
 --- Quellen ---
 

@@ -148,7 +148,7 @@ function levelAction(levelID, LevelAction) {
         case 1: // Level: Tresor
 
             if (LevelAction == -1) {
-                playspeakeraudio("button.mp3", 0.05, false);
+                playspeakeraudio("artwork/mp3/button.mp3", 0.05, false);
                 document.getElementById("levelbuttonTextfeld").innerHTML = "";
 
             } else if (LevelAction == -2) {
@@ -156,8 +156,8 @@ function levelAction(levelID, LevelAction) {
                 if (document.getElementById("levelbuttonTextfeld").innerHTML == "1625") {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "vvvv";
 
-                    playspeakeraudio("key-twist-in-lock.mp3", 1, false);
-                    playspeakeraudio("post_ende.wav", 1, false);
+                    playspeakeraudio("artwork/mp3/key-twist-in-lock.mp3", 1, false);
+                    playspeakeraudio("artwork/wav/post_ende.wav", 1, false);
 
                     removeButtons();
 
@@ -165,7 +165,7 @@ function levelAction(levelID, LevelAction) {
                     Raetsel1Geloest = true;
 
                     document.getElementById("schluesselText").innerHTML = "1 / 4";
-                    document.getElementById("gameimage").src = "SchliessfachRaetselOpen.png";
+                    document.getElementById("gameimage").src = "artwork/png/SchliessfachRaetselOpen.png";
 
                     setTimeout(function() {
                         gameAction(2);
@@ -176,12 +176,12 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeld").innerHTML = "xxxx";
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("invalid-selection.mp3", 0.2, false);
-                    playspeakeraudio("post_falsch_1.wav", 0.8, false);   
+                    playspeakeraudio("artwork/mp3/invalid-selection.mp3", 0.2, false);
+                    playspeakeraudio("artwork/wav/post_falsch_1.wav", 0.8, false);   
                 }
             } else {
 
-                playspeakeraudio("button.mp3", 0.05, false);
+                playspeakeraudio("artwork/mp3/button.mp3", 0.05, false);
 
                 document.getElementById("levelbuttonTextfeld").innerHTML += LevelAction;
             }
@@ -201,7 +201,7 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").style.top = "304px";
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("ID_zu_groß.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/ID_zu_groß.wav", 0.8, false);
 
                 } else {
 
@@ -209,7 +209,7 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInput1").focus();
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("Erstes_Raetsel_falsch.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/Erstes_Raetsel_falsch.wav", 0.8, false);
                 }
             } else if (LevelAction == 2) {
 
@@ -222,7 +222,7 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInputSubmit").style.top = "378px";
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("erklaerung_lineares_sondieren.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/erklaerung_lineares_sondieren.wav", 0.8, false);
 
                 } else {
 
@@ -230,7 +230,7 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInput2").focus();
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("Zweites_Raetsel_falsch.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/Zweites_Raetsel_falsch.wav", 0.8, false);
                 }            
             } else if (LevelAction == 3) {
 
@@ -243,7 +243,7 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("schluesselText").innerHTML = "2 / 4";
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("Outro_zweite_Insel.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/Outro_zweite_Insel.wav", 0.8, false);
 
                     setTimeout(function() {
                         gameAction(5);
@@ -255,7 +255,7 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbuttonTextfeldPCInput3").focus();
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("Zweites_Raetsel_falsch.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/Zweites_Raetsel_falsch.wav", 0.8, false);
                 }  
             }
 
@@ -266,26 +266,26 @@ function levelAction(levelID, LevelAction) {
             if (LevelAction == 1 && pressedcount == 0) {
 
                 stopAllSpeakerAudio();
-                playspeakeraudio("letter.mp3", 1, false);
-                document.getElementById("gameimage").src = "Level_PostofficeB.gif";
+                playspeakeraudio("artwork//mp3/letter.mp3", 1, false);
+                document.getElementById("gameimage").src = "artwork/gif/Level_PostofficeB.gif";
                 pressedcount++;
 
             } else if (LevelAction == 2 && pressedcount == 1) {
 
                 stopAllSpeakerAudio();
                 pressedcount++;
-                playspeakeraudio("post_2.mp3", 1, false);
-                document.getElementById("gameimage").src = "Level_PostofficeC.gif";
+                playspeakeraudio("artwork/mp3/post_2.mp3", 1, false);
+                document.getElementById("gameimage").src = "artwork/gif/Level_PostofficeC.gif";
 
             } else if (LevelAction == 3 && pressedcount == 2) {
 
                 stopAllSpeakerAudio();
                 pressedcount++;
-                document.getElementById("gameimage").src = "Level_Postoffice.gif";
+                document.getElementById("gameimage").src = "artwork/gif/Level_Postoffice.gif";
                 Raetsel3Geloest = true;
 
-                playspeakeraudio("letter.mp3", 1, false);
-                playspeakeraudio("post_3.mp3", 1, false);
+                playspeakeraudio("artwork/mp3/letter.mp3", 1, false);
+                playspeakeraudio("artwork/mp3/artwork/post_3.mp3", 1, false);
 
                 setTimeout(function() {
                     gameAction(3);
@@ -294,7 +294,7 @@ function levelAction(levelID, LevelAction) {
             } else {
 
                 stopAllSpeakerAudio();
-                playspeakeraudio("falsche_antwort.wav", 1, false);
+                playspeakeraudio("artwork/wav/falsche_antwort.wav", 1, false);
             }
 
             break;
@@ -306,7 +306,7 @@ function levelAction(levelID, LevelAction) {
                 if (LevelAction == 1) {
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("möbel_3 (1).wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/möbel_3 (1).wav", 0.8, false);
 
                     fragencount++;
 
@@ -318,7 +318,7 @@ function levelAction(levelID, LevelAction) {
                 } else {
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("falsche_antwort.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/falsche_antwort.wav", 0.8, false);
                 }
 
             } else if (fragencount == 1) { // Frage 2
@@ -326,7 +326,7 @@ function levelAction(levelID, LevelAction) {
                 if (LevelAction == 2) {
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("möbel_4.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/möbel_4.wav", 0.8, false);
 
                     fragencount++;
 
@@ -339,7 +339,7 @@ function levelAction(levelID, LevelAction) {
                 } else {
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("falsche_antwort.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/falsche_antwort.wav", 0.8, false);
                 }
 
             }
@@ -361,12 +361,12 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbutton1").innerHTML = "B) Die gesamte Tabelle muss gerehasht werden";
                     document.getElementById("levelbutton2").innerHTML = "C) Die entstehende Lücke macht das Suchen nach Elementen nach ihr unmöglich";
 
-                    playspeakeraudio("8-bit-powerup-6768.mp3", 0.1, false);
+                    playspeakeraudio("artwork/mp3/8-bit-powerup-6768.mp3", 0.1, false);
 
                 } else {
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("letztes_Quiz_falsche_Antwort.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/letztes_Quiz_falsche_Antwort.wav", 0.8, false);
                 }
 
             } else if (fragencountTor == 1) { // Frage 2
@@ -387,7 +387,7 @@ function levelAction(levelID, LevelAction) {
                 } else {
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("letztes_Quiz_falsche_Antwort.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/letztes_Quiz_falsche_Antwort.wav", 0.8, false);
                 }
 
             } else if (fragencountTor == 2) { // Frage 2
@@ -403,12 +403,12 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("levelbutton1").innerHTML = "B) Wenn ein neues Element hinzugefügt wird";
                     document.getElementById("levelbutton2").innerHTML = "C) Wenn ein Element gelöscht wird";
 
-                    playspeakeraudio("8-bit-powerup-6768.mp3", 0.1, false);
+                    playspeakeraudio("artwork/mp3/8-bit-powerup-6768.mp3", 0.1, false);
 
                 } else {
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("letztes_Quiz_falsche_Antwort.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/letztes_Quiz_falsche_Antwort.wav", 0.8, false);
                 }
 
             } else if (fragencountTor == 3) { // Frage 2
@@ -424,7 +424,7 @@ function levelAction(levelID, LevelAction) {
                     document.getElementById("schluesselText").innerHTML = "4 / 4";
 
                     if (!speakerAudioPlayed[7]){
-                        playspeakeraudio("Outro_Final.wav", 1, false);
+                        playspeakeraudio("artwork/wav/Outro_Final.wav", 1, false);
                         speakerAudioPlayed[7] = true;
                     }
 
@@ -436,7 +436,7 @@ function levelAction(levelID, LevelAction) {
                 } else {
 
                     stopAllSpeakerAudio();
-                    playspeakeraudio("letztes_Quiz_falsche_Antwort.wav", 0.8, false);
+                    playspeakeraudio("artwork/wav/letztes_Quiz_falsche_Antwort.wav", 0.8, false);
                 }
 
             }
@@ -587,7 +587,7 @@ function makeButtons(raetselID) {
     
         case 3: // LeveL: Postregal
 
-            document.getElementById("gameimage").src = "Level_PostofficeA.gif";
+            document.getElementById("gameimage").src = "artwork/gif/Level_PostofficeA.gif";
 
             var buttonDetailsArray = [];
 
@@ -856,7 +856,7 @@ function gameAction(viewID) {
             }
             
             document.getElementById("levelText").innerHTML = "Die Inseln";
-            document.getElementById("gameimage").src = "Island.gif";
+            document.getElementById("gameimage").src = "artwork/gif/Island.gif";
             document.getElementById("levelTipps").innerHTML = "<p>Sei willkommen, wissbegieriger Teilnehmer. "
             + "Du, der du dich den Herausforderungen dieser Inseln stellst und mehr über HashMaps lernen möchtest, "
             + "höre zu, denn ich werde dir erklären, was du zu tun hast. Dieser Ort steckt voller Rätsel und Orte, "
@@ -874,20 +874,20 @@ function gameAction(viewID) {
             stopAllAudio();
             stopAllSpeakerAudio();
 
-            playaudio("waves.mp3", 0.2, true);
+            playaudio("artwork/mp3/waves.mp3", 0.2, true);
             
             if (historyArray[historyArray.length - 1] != 1) {
                 historyArray.push(1);
             }
 
             if (!speakerAudioPlayed[0]){
-                playspeakeraudio("Erste_Insel_Teil_eins.wav", 0.8, false); // Id 0
+                playspeakeraudio("artwork/wav/Erste_Insel_Teil_eins.wav", 0.8, false); // Id 0
                 speakerAudioPlayed[0] = true;
             }
 
             break;
 
-        case 2: // INSEL 1 NAH
+        case 2: // ISLAND 1 - Post
 
             removeButtons();
 
@@ -898,7 +898,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
             document.getElementById("levelText").innerHTML = "Die Postamt - Insel";
-            document.getElementById("gameimage").src = "Island_Postoffice.png";
+            document.getElementById("gameimage").src = "artwork/png/Island_Postoffice.png";
             document.getElementById("levelTipps").innerHTML = "<p>Jetzt, wo du weißt, was dich erwarten wird, werde ich dich ein wenig in das Thema der HashMaps einführen. "
             + "</br><br></p><p>Eine Map in der Programmierung ist eine Datenstruktur, welche es ermöglicht, Werte nach einem bestimmten Muster abzulegen und effizient "
             + "wiederzubeschaffen. Die Grundlage einer solchen Map ist ein, dir sicherlich bekanntes, Array. Also eine Tabelle, "
@@ -918,11 +918,11 @@ function gameAction(viewID) {
 
             stopAllAudio();
             stopAllSpeakerAudio();
-            playaudio("waves.mp3", 0.2, true);
+            playaudio("artwork/mp3/waves.mp3", 0.2, true);
             removeButtons();
 
             if (!speakerAudioPlayed[1]){
-                playspeakeraudio("HashMap_erklaerung.wav", 0.8, false); // Id 1
+                playspeakeraudio("artwork/wav/HashMap_erklaerung.wav", 0.8, false); // Id 1
                 speakerAudioPlayed[1] = true;
             }
 
@@ -931,7 +931,7 @@ function gameAction(viewID) {
             }
             break;
 
-        case 3: // INSEL 1 - Postoffice
+        case 3: // ISLAND 1 - Postoffice
 
             removeButtons();
 
@@ -942,7 +942,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
             document.getElementById("levelText").innerHTML = "Das Postamt";
-            document.getElementById("gameimage").src = "Level_Postoffice.gif";
+            document.getElementById("gameimage").src = "artwork/gif/Level_Postoffice.gif";
             document.getElementById("levelTipps").innerHTML = "Unser neues System arbeitet wie eine HashMap und verwendet eine HashFunktion. "
             + "Eine HashFunktion im Allgemeinen ist eine Zuordnung, welche Schlüsselwerten einen sogenannten HashWert zuordnet. Wie sicher bzw. verwendbar die Ergebnisse dabei sind, "
             + "hängt von der Qualität der HashFunktion ab. Je mehr verschiedene HashWerte die Funktion in einem bestimmten Schlüsselraum erzeugen kann, desto besser ist sie. "
@@ -961,10 +961,10 @@ function gameAction(viewID) {
 
             stopAllAudio();
             stopAllSpeakerAudio();
-            playaudio("8-bit-arcade.mp3", 0.01, true);
+            playaudio("artwork/mp3/8-bit-arcade.mp3", 0.01, true);
 
             if (!speakerAudioPlayed[8]){
-                playspeakeraudio("post_1.mp3", 1, false);
+                playspeakeraudio("artwork/mp3/post_1.mp3", 1, false);
                 speakerAudioPlayed[8] = true;
             }
 
@@ -975,7 +975,7 @@ function gameAction(viewID) {
             }
             break;
 
-        case 4: // INSEL 1 - Postoffice - Rätsel
+        case 4: // ISLAND 1 - Safe
 
             removeButtons();
 
@@ -986,13 +986,13 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
             document.getElementById("levelText").innerHTML = "Das Postamt - Tresor";
-            (Raetsel1Geloest) ? document.getElementById("gameimage").src = "SchliessfachRaetselOpen.png" : document.getElementById("gameimage").src = "SchliessfachRaetsel.png";
+            (Raetsel1Geloest) ? document.getElementById("gameimage").src = "artwork/png/SchliessfachRaetselOpen.png" : document.getElementById("gameimage").src = "artwork/png/SchliessfachRaetsel.png";
             document.getElementById("levelTipps").innerHTML = "Der Modulo-Operator, oft durch das Prozentzeichen (%) dargestellt, ist ein mathematischer Operator,"
             + "der den Rest einer Division zweier Zahlen berechnet. Wenn du beispielsweise a % b berechnest, gibt der Modulo-Operator den Rest der Division von a durch b zurück.<br><br>"
             + "Beispiel:<br> 10 % 3 ergibt 1, weil 10 durch 3 geteilt dreimal geht und ein Rest von 1 bleibt.<br><br>"
             + "Der Modulo-Operator ist in vielen Anwendungen nützlich, insbesondere wenn es um Zyklen oder Wiederholungen geht. Zum Beispiel kann er verwendet werden, um festzustellen,"
             + "ob eine Zahl gerade oder ungerade ist (wenn a % 2 gleich 0 ist, ist die Zahl gerade).<br><br><i>Tipp: Ich glaube, es war eine größere Zahl, die gefehlt hat,"
-            + "um auf den vierstelligen Code zu kommen.<br>Achso, und zähl erste die Buchstabenwerte zusammen und multipliziere erst dann...</i><br><img src='blog.png' style='width: 350px;'>";
+            + "um auf den vierstelligen Code zu kommen.<br>Achso, und zähl erste die Buchstabenwerte zusammen und multipliziere erst dann...</i><br><img src='artwork/png/blog.png' style='width: 350px;'>";
         
             (Raetsel1Geloest) ? "" : makeButtons(1);
 
@@ -1002,7 +1002,7 @@ function gameAction(viewID) {
 
             break;
 
-        case 5: // INSEL 2 NAH
+        case 5: // ISLAND 2 - Gym
 
             removeButtons();
 
@@ -1013,7 +1013,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
         
             document.getElementById("levelText").innerHTML = "Die Fitness - Insel";
-            document.getElementById("gameimage").src = "Insel_Gym.png";
+            document.getElementById("gameimage").src = "artwork/png/Insel_Gym.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf der zweiten Insel.<br>Wie ich sehe, hast du die Rätsel der ersten Insel hinter dich gebracht." 
             + "Gut gemacht. Du hast gelernt, was eine HashMap im Allgemeinen ist und wurdest mit der HashFunktion vertraut gemacht.<br>"
             + "Für die Rätsel dieser Insel musst du dein bisheriges Wissen anwenden und dir neues aneignen. Auf dieser Insel steht das Fitness-Studio unseres Bootcamps."
@@ -1040,20 +1040,20 @@ function gameAction(viewID) {
             
             stopAllAudio();
             stopAllSpeakerAudio();
-            playaudio("waves.mp3", 0.2, true);
+            playaudio("artwork/mp3/waves.mp3", 0.2, true);
             
             if (historyArray[historyArray.length - 1] != 5) {
                 historyArray.push(5);
             }
 
             if (!speakerAudioPlayed[3]){
-                playspeakeraudio("zweite_Insel_Intro.wav", 0.8, false); // Id 3
+                playspeakeraudio("artwork/wav/zweite_Insel_Intro.wav", 0.8, false); // Id 3
                 speakerAudioPlayed[3] = true;
             }
 
             break;
 
-        case 6:
+        case 6: // ISLAND 2 - Parkinglot
 
             removeButtons();
 
@@ -1064,7 +1064,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
             document.getElementById("levelText").innerHTML = "Der Parkplatz";
-            document.getElementById("gameimage").src = "parkplatz.png";
+            document.getElementById("gameimage").src = "artwork/mp3/parkplatz.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf dem Parkplatz";
         
             stopAllAudio();
@@ -1075,7 +1075,7 @@ function gameAction(viewID) {
 
             break;
 
-        case 7:
+        case 7: // ISLAND 2 - Gym - Entrance
 
             removeButtons();
 
@@ -1088,7 +1088,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
             document.getElementById("levelText").innerHTML = "Das Gym";
-            document.getElementById("gameimage").src = "gym.png";
+            document.getElementById("gameimage").src = "artwork/png/gym.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen im Fitnessstudio Hashpump. Du bist das erste Mal hier, oder? Dann lass mich einen neuen Mitgliedseintrag für dich machen."
             + "Wie ist dein Name? Aha, Noah der Wizard also… Gut. nun zu deiner Mitglieds ID. Diese wird bei uns aus deinem Namen mithilfe einer HashFunktion berechnet."
             + "Deine ID ist auch gleichzeitig deine Schließfachnummer. Deine Nummer kannst du also ganz einfach mit dieser Formel berechnen:"
@@ -1102,10 +1102,10 @@ function gameAction(viewID) {
              
             stopAllAudio();
             stopAllSpeakerAudio();
-            playaudio("gym.mp3", 0.1, true);
+            playaudio("artwork/mp3/gym.mp3", 0.1, true);
 
             if (!speakerAudioPlayed[4]){
-                playspeakeraudio("Gym_willkommen.wav", 0.8, false); // ID 4
+                playspeakeraudio("artwork/wav/Gym_willkommen.wav", 0.8, false); // ID 4
                 speakerAudioPlayed[4] = true;
             }
 
@@ -1115,7 +1115,7 @@ function gameAction(viewID) {
 
             break;
         
-        case 10: // Level: Gym - PC
+        case 10: // ISLAND 2 - Gym - PC
 
             removeButtons();
 
@@ -1126,10 +1126,10 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
                 
             document.getElementById("levelText").innerHTML = "Das Gym - PC";
-            document.getElementById("gameimage").src = "pc.png";
+            document.getElementById("gameimage").src = "artwork/png/pc.png";
             document.getElementById("levelTipps").innerHTML = "Deine Nummer kannst du also ganz einfach mit dieser Formel berechnen:"
             + "<br><code>&sum;(NAME) = Schließfachnummer</code><br><i>Hinweis: Das Minus (die Nummer 13) ist ein Leerzeichen,"
-            + "Noah der Wizard</i><br><br><img src='blog.png' style='width: 350px;'>";
+            + "Noah der Wizard</i><br><br><img src='artwork/png/blog.png' style='width: 350px;'>";
 
             document.getElementById("gamebutton1").style.top = "300px";
             document.getElementById("gamebutton1").style.left = "340px";
@@ -1138,13 +1138,13 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(11)');
 
             stopAllAudio();
-            playaudio("gym.mp3", 0.2, true);
+            playaudio("artwork/mp3/gym.mp3", 0.2, true);
 
             (Raetsel2Geloest) ? "" : makeButtons(2); 
             
             break;
 
-        case 11: // IKEA-INSEL NAH
+        case 11: // ISLAND 3 - IKEA
             
             removeButtons();
 
@@ -1155,7 +1155,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
             
             document.getElementById("levelText").innerHTML = "Die Möbelhaus - Insel";
-            document.getElementById("gameimage").src = "Insel_IKEA.png";
+            document.getElementById("gameimage").src = "artwork/png/Insel_IKEA.png";
             document.getElementById("levelTipps").innerHTML = "Willkommen auf der Möbelhaus-Insel, komme doch gerne herein!";
 
             document.getElementById("gamebutton1").style.top = "211px";
@@ -1165,7 +1165,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(12)');
 
             stopAllAudio();
-            playaudio("waves.mp3", 0.2, true);
+            playaudio("artwork/mp3/waves.mp3", 0.2, true);
 
             if (historyArray[historyArray.length - 1] != 11) {
                 historyArray.push(11);
@@ -1173,7 +1173,7 @@ function gameAction(viewID) {
 
             break;
 
-        case 12: // Level: Loading-Ramp
+        case 12: // ISLAND 3 - IKEA - Loading-Ramp
 
             removeButtons();
 
@@ -1184,7 +1184,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
             
             document.getElementById("levelText").innerHTML = "Das Möbelhaus - Wareneingang";
-            document.getElementById("gameimage").src = "lkw.png";
+            document.getElementById("gameimage").src = "artwork/png/lkw.png";
             document.getElementById("levelTipps").innerHTML = "Das hier ist der Wareneingang. Hier werden die Möbel angeliefert. Öffne die Tür einfach über das Bedienfeld rechts und komme herein.";
 
             document.getElementById("gamebutton1").style.top = "366px";
@@ -1194,7 +1194,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(13)');
 
             stopAllAudio();
-            playaudio("truck.mp3", 0.2, true);
+            playaudio("artwork/mp3/truck.mp3", 0.2, true);
 
             if (historyArray[historyArray.length - 1] != 12) {
                 historyArray.push(12);
@@ -1202,7 +1202,7 @@ function gameAction(viewID) {
 
             break;
 
-        case 13: // Level: Storage
+        case 13: // ISLAND 3 - IKEA - Storage
 
             removeButtons();
 
@@ -1213,7 +1213,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
             document.getElementById("levelText").innerHTML = "Das Möbelhaus - Lager";
-            document.getElementById("gameimage").src = "lager.png";
+            document.getElementById("gameimage").src = "artwork/png/lager.png";
             document.getElementById("levelTipps").innerHTML = "<p>Ach! du kommst ja wie gerufen.</p>" +
             "<p>Ich bin der Besitzer dieses kleinen Möbelladens hier.</p>" +
             "<p>Ich habe mich bei der letzten Bestellung etwas mitreißen lassen.</p>" +
@@ -1230,16 +1230,16 @@ function gameAction(viewID) {
             (Raetsel4Geloest) ? "" : makeButtons(4);
 
             stopAllAudio();
-            playaudio("neon.mp3", 0.2, true);
+            playaudio("artwork/mp3/neon.mp3", 0.2, true);
 
             if (!speakerAudioPlayed[5]){
-                playspeakeraudio("möbel_1.wav", 0.8, false); // ID 4
+                playspeakeraudio("artwork/wav/möbel_1.wav", 0.8, false); // ID 4
                 speakerAudioPlayed[5] = true;
             }
 
             break;
 
-        case 14: // Level: Tor
+        case 14: // ISLAND 4 - Tor
 
             removeButtons();
  
@@ -1250,7 +1250,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
              
             document.getElementById("levelText").innerHTML = "Die Gruselinsel";
-            document.getElementById("gameimage").src = "13.Insel4Nah.png";
+            document.getElementById("gameimage").src = "artwork/png/13.Insel4Nah.png";
             document.getElementById("levelTipps").innerHTML = "Meinen ausdrücklichen Glückwunsch, Teilnehmer,"
             + "dass du es bis auf die letzte Insel geschafft hast. Du hast dich auf jeder Insel bewiesen und dein Wissen erweitert."
             + "Du hast gelernt, was eine HashMap ist und wie man mit ihr umgehen kann. Du hast gelernt, was eine Kollision ist und wie man sie beheben kann."
@@ -1266,11 +1266,11 @@ function gameAction(viewID) {
             stopAllSpeakerAudio();
             stopAllAudio();
             if (!speakerAudioPlayed[6]){
-                playspeakeraudio("vierte_Insel_Intro.wav", 0.8, false);
+                playspeakeraudio("artwork/wav/vierte_Insel_Intro.wav", 0.8, false);
                 speakerAudioPlayed[6] = true;
             }
 
-            playaudio("something-strange-160387long.mp3", 0.05, true);
+            playaudio("artwork/mp3/something-strange-160387long.mp3", 0.05, true);
  
             if (historyArray[historyArray.length - 1] != 14) {
                  historyArray.push(14);
@@ -1278,7 +1278,7 @@ function gameAction(viewID) {
  
              break;
 
-        case 15: // Level: Tor - Empty
+        case 15: // ISLAND 4 - Tor - Empty
 
             removeButtons();
 
@@ -1289,7 +1289,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
             document.getElementById("levelText").innerHTML = "Die Gruselinsel";
-            document.getElementById("gameimage").src = "Tor_Insel_4_Leer.png";
+            document.getElementById("gameimage").src = "artwork/png/Tor_Insel_4_Leer.png";
             document.getElementById("levelTipps").innerHTML = "Da du dir meine ausdrückliche Anerkennung verdient hast, möchte ich dir als Zeichen diesen Kristall überreichen. Er ist einer der Schlüssel für das letzte Tor. Nun hast du alle vier. Schreite voran und öffne das Tor.";
     
             document.getElementById("gamebutton1").style.top = "445px";
@@ -1299,7 +1299,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(16)'); 
 
             if (!speakerAudioPlayed[7]){
-                playspeakeraudio("Outro.wav", 0.8, false);
+                playspeakeraudio("artwork/wav/Outro.wav", 0.8, false);
                 speakerAudioPlayed[7] = true;
             }
 
@@ -1309,7 +1309,7 @@ function gameAction(viewID) {
 
             break;
 
-        case 16: // Level: Tor Gem 1
+        case 16: // ISLAND 4 - Tor Gem 1
 
             removeButtons();
 
@@ -1320,7 +1320,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
 
             document.getElementById("levelText").innerHTML = "Die Gruselinsel";
-            document.getElementById("gameimage").src = "Tor_Insel_4_1_Gem.png";
+            document.getElementById("gameimage").src = "artwork/png/Tor_Insel_4_1_Gem.png";
             document.getElementById("levelTipps").innerHTML = "Da du dir meine ausdrückliche Anerkennung verdient hast, möchte ich dir als Zeichen diesen Kristall überreichen. Er ist einer der Schlüssel für das letzte Tor. Nun hast du alle vier. Schreite voran und öffne das Tor.";
     
             document.getElementById("gamebutton1").style.top = "445px";
@@ -1330,7 +1330,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(17)'); 
 
             stopAllSpeakerAudio();
-            playspeakeraudio("click-151673.mp3", 0.6, false);
+            playspeakeraudio("artwork/mp3/click-151673.mp3", 0.6, false);
 
             if (historyArray[historyArray.length - 1] != 16) {
                 historyArray.push(16);
@@ -1338,7 +1338,7 @@ function gameAction(viewID) {
 
             break;
 
-        case 17: // Level: Tor Gem 2
+        case 17: // ISLAND 4 - Tor Gem 2
                 
             removeButtons();
 
@@ -1349,7 +1349,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
                 
             document.getElementById("levelText").innerHTML = "Die Gruselinsel";
-            document.getElementById("gameimage").src = "Tor_Insel_4_2_Gem.png";
+            document.getElementById("gameimage").src = "artwork/png/Tor_Insel_4_2_Gem.png";
             document.getElementById("levelTipps").innerHTML = "Da du dir meine ausdrückliche Anerkennung verdient hast, möchte ich dir als Zeichen diesen Kristall überreichen. Er ist einer der Schlüssel für das letzte Tor. Nun hast du alle vier. Schreite voran und öffne das Tor.";
     
             document.getElementById("gamebutton1").style.top = "445px";
@@ -1358,7 +1358,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "60px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(18)'); 
 
-            playspeakeraudio("click-151673.mp3", 0.6, false);
+            playspeakeraudio("artwork/mp3/click-151673.mp3", 0.6, false);
 
             if (historyArray[historyArray.length - 1] != 17) {
                 historyArray.push(17);
@@ -1366,7 +1366,7 @@ function gameAction(viewID) {
 
             break;
        
-        case 18: // Level: Tor Gem 3
+        case 18: // ISLAND 4 - Tor Gem 3
 
             removeButtons();
 
@@ -1377,7 +1377,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
                 
             document.getElementById("levelText").innerHTML = "Die Gruselinsel";
-            document.getElementById("gameimage").src = "Tor_Insel_4_3_Gem.png";
+            document.getElementById("gameimage").src = "artwork/png/Tor_Insel_4_3_Gem.png";
             document.getElementById("levelTipps").innerHTML = "Da du dir meine ausdrückliche Anerkennung verdient hast, möchte ich dir als Zeichen diesen Kristall überreichen. Er ist einer der Schlüssel für das letzte Tor. Nun hast du alle vier. Schreite voran und öffne das Tor.";
     
             document.getElementById("gamebutton1").style.top = "445px";
@@ -1386,7 +1386,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").style.height = "60px";
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(19)'); 
 
-            playspeakeraudio("click-151673.mp3", 0.6, false);
+            playspeakeraudio("artwork/mp3/click-151673.mp3", 0.6, false);
 
             if (historyArray[historyArray.length - 1] != 18) {
                  historyArray.push(18);
@@ -1394,7 +1394,7 @@ function gameAction(viewID) {
 
             break;
 
-        case 19: // Level: Tor Gem 4
+        case 19: // ISLAND 4 - Tor Gem 4
 
             removeButtons();
     
@@ -1405,7 +1405,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
     
             document.getElementById("levelText").innerHTML = "Die Gruselinsel";
-            document.getElementById("gameimage").src = "Tor_Insel_4_Oeffnung.gif";
+            document.getElementById("gameimage").src = "artwork/gif/Tor_Insel_4_Oeffnung.gif";
             document.getElementById("levelTipps").innerHTML = "Da du dir meine ausdrückliche Anerkennung verdient hast, möchte ich dir als Zeichen diesen Kristall überreichen. Er ist einer der Schlüssel für das letzte Tor. Nun hast du alle vier. Schreite voran und öffne das Tor.";
      
             document.getElementById("gamebutton1").style.top = "445px";
@@ -1415,7 +1415,7 @@ function gameAction(viewID) {
             document.getElementById("gamebutton1").setAttribute('onclick', 'gameAction(20)'); 
 
             stopAllAudio();
-            playspeakeraudio("interface-124464.mp3", 0.2, false);
+            playspeakeraudio("artwork/mp3/interface-124464.mp3", 0.2, false);
                 
             makeButtons(6);
 
@@ -1425,7 +1425,7 @@ function gameAction(viewID) {
     
             break;
 
-        case 20: // Level: Tor - Quiz
+        case 20: // ISLAND 4 - Tor - Quiz
                 
             removeButtons();
     
@@ -1436,7 +1436,7 @@ function gameAction(viewID) {
             document.getElementById("insel4").style.display = "none";
     
             document.getElementById("levelText").innerHTML = "Die finale Insel";
-            document.getElementById("gameimage").src = "lagermitraetsel.png";
+            document.getElementById("gameimage").src = "artwork/png/lagermitraetsel.png";
             document.getElementById("levelTipps").innerHTML = "Meinen ausdrücklichen Glückwunsch, Teilnehmer, dass du es bis auf die letzte Insel geschafft hast. Du hast dich auf jeder Insel bewiesen und dein Wissen erweitert. Du hast gelernt, was eine HashMap ist und wie man mit ihr umgehen kann. Du hast gelernt, was eine Kollision ist und wie man sie beheben kann. Um zu testen, ob du wirklich bereit bist, habe ich noch ein letztes Quiz für dich. Bist du bereit? Dann los.";
      
             document.getElementById("gamebutton1").style.top = "445px";
