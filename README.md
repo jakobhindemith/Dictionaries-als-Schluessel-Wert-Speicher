@@ -1,18 +1,16 @@
 # Dictionaries als Schlüssel - / Wert - Speicher
 
-This is the README.md file of the game.
-
 Please read before starting the game.
 
 This game is browserbased and optimized for the Google Chrome browser. Full functionality in other browsers or other OS than Windows 10 and newer can not be guaranteed.
 To support full functionality of the App, please make sure to have a stable internet connection, so the fonts can be loaded from the fonts.google.com servers.
 
-Made with 🤍 by Michael Primke and Jakob Hindemith
+Made with 🤍 by Michael Primke and Jakob Hindemith.
 
 To start the Game, just go to http://127.0.0.1:5500/index.html in your browser and begin your journey.
 
 
---- Quellen ---
+--- Sources ---
 
 https://images2.alphacoders.com/941/941898.jpg
 
