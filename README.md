@@ -1,4 +1,4 @@
-# Dictionaries als Schlüssel - / Wert - Speicher
+# Hashmap-Island 🏝️
 
 Please read before starting the game.
 
